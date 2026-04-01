@@ -216,10 +216,8 @@ const App = () => {
         format: 'a4'
       });
 
-      // Load static logos once
+      // Load static logo once
       const nutrifixLogo = await fetchImageAsBase64('/nutrifix-logo.png');
-      const nfLogo = await fetchImageAsBase64('/nf-logo.png');
-      const dhLogo = await fetchImageAsBase64('/dh-logo.png');
 
       // --- COVER PAGE ---
       doc.setFillColor(31, 41, 55); // Dark Slate
@@ -323,14 +321,7 @@ const App = () => {
           contentY += (compLines.length * 5) + 20;
         }
 
-        // --- FOOTER BRAND LOGO (STICKY AT BOTTOM) ---
-        const footerLogo = product.brand === 'nf' ? nfLogo : dhLogo;
-        if (footerLogo) {
-          const w = product.brand === 'nf' ? 30 : 25;
-          const h = product.brand === 'nf' ? 15 : 18;
-          doc.addImage(footerLogo, 'PNG', 195 - w, 265, w, h);
-        }
-        
+        // --- FOOTER (PRISTINE CLEAN) ---
         doc.setTextColor(156, 163, 175);
         doc.setFontSize(8);
         doc.text(`Scientific Reference Sheet | Page ${doc.internal.getNumberOfPages()}`, 15, 285);
