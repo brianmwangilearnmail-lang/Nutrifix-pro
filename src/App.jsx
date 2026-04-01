@@ -230,17 +230,13 @@ const App = () => {
         format: 'a4'
       });
 
-      // Load static logo once
-      const nutrifixLogo = await fetchImageAsBase64('/nutrifix-logo.png');
-
-      // --- COVER PAGE ---
-      doc.setFillColor(15, 23, 42); // Deep Navy/Slate
+      doc.setFillColor(0, 0, 0); // Pure Black
       doc.rect(0, 0, 210, 297, 'F');
       
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(255, 255, 255); // Pure White
       doc.setFontSize(32);
       doc.setFont(undefined, 'bold');
-      doc.text("PRODUCT CATALOGUE", 105, 150, { align: 'center' });
+      doc.text("PRODUCT CATALOGUE", 105, 165, { align: 'center' });
       
       doc.setFontSize(14);
       doc.setFont(undefined, 'normal');
@@ -256,12 +252,7 @@ const App = () => {
         doc.setFillColor(0, 0, 0);
         doc.rect(140, 0, 70, 297, 'F');
         
-        // --- 1. TOP HEADER (Nutrifix Logo) ---
-        if (nutrifixLogo) {
-          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 35, 14); // Scaled for top left
-        }
-
-        // --- 2. PRODUCT MAIN HEADER (WITH WRAP) ---
+        // --- 1. PRODUCT MAIN HEADER (WITH WRAP) ---
         doc.setTextColor(15, 23, 42); // Black
         doc.setFontSize(22);
         doc.setFont(undefined, 'bold');
