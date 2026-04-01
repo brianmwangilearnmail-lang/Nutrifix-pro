@@ -16,6 +16,8 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentBrand, setCurrentBrand] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [tempProduct, setTempProduct] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   
@@ -187,6 +189,33 @@ const App = () => {
     } catch (err) {
       console.error('Add product failed:', err);
       alert('Failed to add product to the cloud.');
+    }
+  };
+
+  const handleUpdateProduct = async () => {
+    if (!tempProduct) return;
+    
+    try {
+      const { error } = await supabase
+        .from('products')
+        .update({
+          name: tempProduct.name,
+          brand: tempProduct.brand,
+          composition: tempProduct.composition,
+          details: tempProduct.details
+        })
+        .eq('id', tempProduct.id);
+
+      if (error) throw error;
+      
+      // Update local state
+      setProducts(prev => prev.map(p => p.id === tempProduct.id ? tempProduct : p));
+      setSelectedProduct(tempProduct);
+      setIsEditing(false);
+      alert('Product updated successfully!');
+    } catch (err) {
+      console.error('Update failed:', err);
+      alert('Failed to sync changes to the cloud.');
     }
   };
   // PDF GENERATION
@@ -505,16 +534,75 @@ const App = () => {
 
       {/* DETAIL MODAL */}
       {selectedProduct && (
-        <div className="modal-overlay" onClick={() => setSelectedProduct(null)}>
+        <div className="modal-overlay" onClick={() => {
+            if (isEditing) {
+              if (confirm('Discard unsaved changes?')) {
+                setSelectedProduct(null);
+                setIsEditing(false);
+              }
+            } else {
+              setSelectedProduct(null);
+              setIsEditing(false);
+            }
+        }}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div className="modal-header">
-              <div>
-                <h2 className="product-name" style={{fontSize: '1.8rem', color: 'var(--primary)'}}>{selectedProduct.name}</h2>
-                <p className="product-category" style={{marginTop: '0.25rem'}}>{selectedProduct.composition}</p>
+              <div className="flex-1 mr-4">
+                {isEditing ? (
+                  <>
+                    <input 
+                      className="edit-input-name" 
+                      value={tempProduct?.name || ''} 
+                      onChange={(e) => setTempProduct({...tempProduct, name: e.target.value})}
+                    />
+                    <input 
+                      className="edit-input-composition" 
+                      value={tempProduct?.composition || ''} 
+                      onChange={(e) => setTempProduct({...tempProduct, composition: e.target.value})}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <h2 className="product-name" style={{fontSize: '1.8rem', color: 'var(--primary)'}}>{selectedProduct.name}</h2>
+                    <p className="product-category" style={{marginTop: '0.25rem'}}>{selectedProduct.composition}</p>
+                  </>
+                )}
               </div>
-              <button className="close-btn" onClick={() => setSelectedProduct(null)}>
-                <X size={20} />
-              </button>
+              <div className="flex items-center gap-3">
+                {userRole === 'admin' && !isEditing && (
+                  <button 
+                    className="p-2 text-slate-400 hover:text-emerald-500 transition-colors"
+                    onClick={() => {
+                      setTempProduct({...selectedProduct});
+                      setIsEditing(true);
+                    }}
+                  >
+                    <Edit3 size={20} />
+                  </button>
+                )}
+                {isEditing && (
+                  <>
+                    <button 
+                      className="px-3 py-1 bg-emerald-500 text-white rounded-lg text-sm font-bold shadow-sm"
+                      onClick={handleUpdateProduct}
+                    >
+                      Save
+                    </button>
+                    <button 
+                      className="px-3 py-1 bg-slate-200 text-slate-600 rounded-lg text-sm font-bold hover:bg-slate-300"
+                      onClick={() => setIsEditing(false)}
+                    >
+                      Cancel
+                    </button>
+                  </>
+                )}
+                <button className="close-btn" onClick={() => {
+                    setSelectedProduct(null);
+                    setIsEditing(false);
+                }}>
+                  <X size={20} />
+                </button>
+              </div>
             </div>
             
             <div className="modal-body">
@@ -537,12 +625,30 @@ const App = () => {
               </div>
               
               <div className="modal-details text-left">
-                {Object.entries(selectedProduct.details).map(([key, value]) => (
-                  <div key={key} className="info-section">
-                    <div className="info-label">{key}</div>
-                    <div className="info-value">{value}</div>
-                  </div>
-                ))}
+                {isEditing ? (
+                  Object.entries(tempProduct.details).map(([key, value]) => (
+                    <div key={key} className="info-section">
+                      <label className="info-label text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1 block">
+                        {key}
+                      </label>
+                      <textarea 
+                        className="edit-textarea"
+                        value={value}
+                        onChange={(e) => {
+                          const newDetails = {...tempProduct.details, [key]: e.target.value};
+                          setTempProduct({...tempProduct, details: newDetails});
+                        }}
+                      />
+                    </div>
+                  ))
+                ) : (
+                  Object.entries(selectedProduct.details).map(([key, value]) => (
+                    <div key={key} className="info-section">
+                      <div className="info-label">{key}</div>
+                      <div className="info-value">{value}</div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
