@@ -230,6 +230,9 @@ const App = () => {
         format: 'a4'
       });
 
+      // Load static logo once
+      const nutrifixLogo = await fetchImageAsBase64('/nutrifix-logo.png');
+
       // --- COVER PAGE ---
       doc.setFillColor(15, 23, 42); // Deep Navy/Slate
       doc.rect(0, 0, 210, 297, 'F');
@@ -253,7 +256,12 @@ const App = () => {
         doc.setFillColor(0, 0, 0);
         doc.rect(140, 0, 70, 297, 'F');
         
-        // --- 1. PRODUCT MAIN HEADER (WITH WRAP) ---
+        // --- 1. TOP HEADER (Nutrifix Logo) ---
+        if (nutrifixLogo) {
+          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 35, 14); // Scaled for top left
+        }
+
+        // --- 2. PRODUCT MAIN HEADER (WITH WRAP) ---
         doc.setTextColor(15, 23, 42); // Black
         doc.setFontSize(22);
         doc.setFont(undefined, 'bold');
