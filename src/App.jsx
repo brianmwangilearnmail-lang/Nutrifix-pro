@@ -407,26 +407,24 @@ const App = () => {
           ))}
         </div>
         {userRole === 'admin' && (
-          <>
-            <button className="add-btn" onClick={() => setShowAddModal(true)}>
-              <PlusCircle size={18} />
-              Add Product 
-            </button>
-            <button 
-              className={`add-btn ${isGeneratingPDF ? 'loading' : ''}`} 
-              onClick={handleDownloadPDF} 
-              disabled={isGeneratingPDF}
-              style={{ background: 'var(--slate-700)', border: 'none' }}
-            >
-              {isGeneratingPDF ? (
-                <Loader2 size={18} className="animate-spin" />
-              ) : (
-                <Download size={18} />
-              )}
-              {isGeneratingPDF ? 'Generating...' : 'Download Catalogue'}
-            </button>
-          </>
+          <button className="add-btn" onClick={() => setShowAddModal(true)}>
+            <PlusCircle size={18} />
+            Add Product 
+          </button>
         )}
+        <button 
+          className={`add-btn ${isGeneratingPDF ? 'loading' : ''}`} 
+          onClick={handleDownloadPDF} 
+          disabled={isGeneratingPDF}
+          style={{ background: 'var(--slate-700)', border: 'none' }}
+        >
+          {isGeneratingPDF ? (
+            <Loader2 size={18} className="animate-spin" />
+          ) : (
+            <Download size={18} />
+          )}
+          {isGeneratingPDF ? 'Generating...' : 'Download Catalogue'}
+        </button>
       </div>
 
       <div className="product-grid">
