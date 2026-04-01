@@ -1,0 +1,1484 @@
+[
+  {
+    "id": 1,
+    "brand": "nf",
+    "name": "Nac 600mg",
+    "category": "amino acid",
+    "composition": "n-acetyl cysteine 600mg",
+    "details": {
+      "Overview &amp Key Benefits": "NAC (N-Acetyl Cysteine) is a potent antioxidant amino acid that serves as a direct precursor to glutathione, the body's master antioxidant. It helps support healthy liver detoxification, lung function, and kidney health while strengthening immune defences.",
+      "How It Works": "NAC replenishes intracellular glutathione by providing cysteine, the rate-limiting amino acid in glutathione synthesis. It also has direct mucolytic (mucus-thinning) activity in the respiratory tract.",
+      "Indications": "Beneficial for individuals seeking liver support, respiratory health (bronchitis, COPD, chronic mucus), kidney protection, and overall antioxidant support. Also used to support immunity.",
+      "Dosage": "600mg once or twice daily, or as directed by a healthcare professional.",
+      "Interactions": "May enhance the effect of nitroglycerin and antihypertensive drugs. Use with caution alongside activated charcoal (reduces absorption). Generally safe with most supplements.",
+      "Duration of Use": "Can be taken long-term at standard doses. Consult a healthcare professional for extended use beyond 6 months.",
+      "Best Time to Take": "Best taken on an empty stomach in the morning, or as directed. Can be taken with food if stomach upset occurs.",
+      "Other Therapies": "Combines well with Vitamin C and other antioxidants. Compatible with standard medical treatments; always inform your doctor.",
+      "Precautions": "Avoid during pregnancy and breastfeeding unless advised by a doctor. May cause nausea or mild gastrointestinal discomfort in sensitive individuals. Do not exceed recommended dose."
+    },
+    "image": ""
+  },
+  {
+    "id": 2,
+    "brand": "nf",
+    "name": "5-htp 100mg time release",
+    "category": "amino acids",
+    "composition": "5-hydroxytryptophan 100mg time release",
+    "details": {
+      "Overview &amp Key Benefits": "5-HTP is a natural amino acid and chemical precursor to serotonin, which helps support healthy mood, sleep quality, and emotional well-being. The time-release formulation provides steady delivery throughout the day.",
+      "How It Works": "5-HTP crosses the blood-brain barrier and is directly converted to serotonin, a key neurotransmitter involved in mood regulation, appetite control, and sleep initiation.",
+      "Indications": "Suitable for adults experiencing occasional low mood, difficulty sleeping, or mild anxiety. Also used to support appetite management.",
+      "Dosage": "100mg once daily, typically in the evening. Dosage may be increased to twice daily under professional guidance.",
+      "Interactions": "Should NOT be combined with antidepressants (SSRIs, MAOIs, SNRIs) due to risk of serotonin syndrome. Avoid with other serotonin-modulating substances.",
+      "Duration of Use": "Short-term use of 4–12 weeks is typical. Consult a healthcare professional before long-term use.",
+      "Best Time to Take": "Best taken 30–60 minutes before bedtime to support sleep.",
+      "Other Therapies": "May complement relaxation practices, sleep hygiene protocols, and cognitive behavioural strategies.",
+      "Precautions": "Not for use during pregnancy or breastfeeding. Do not use with prescription antidepressants without medical supervision. Discontinue if unusual mood changes occur."
+    },
+    "image": ""
+  },
+  {
+    "id": 3,
+    "brand": "nf",
+    "name": "L-arginine 1000mg",
+    "category": "amino acids",
+    "composition": "l-arginine 1000mg",
+    "details": {
+      "Overview &amp Key Benefits": "L-Arginine is a semi-essential amino acid that serves as a building block for nitric oxide, which helps support healthy blood flow and cardiovascular function. It may also help support exercise capacity and healthy blood pressure already within normal range.",
+      "How It Works": "L-Arginine is converted to nitric oxide (NO) by nitric oxide synthase, causing blood vessel relaxation (vasodilation) and improved circulation throughout the body.",
+      "Indications": "Beneficial for adults with stable cardiovascular concerns, individuals seeking to support exercise performance, and those looking to maintain healthy circulation.",
+      "Dosage": "1000mg one to three times daily, or as directed by a healthcare professional.",
+      "Interactions": "May enhance the blood-pressure-lowering effect of antihypertensive medications. Use cautiously with erectile dysfunction medications (PDE5 inhibitors). Avoid in herpes simplex as arginine may promote viral replication.",
+      "Duration of Use": "Can be used continuously. Periodic breaks of 2–4 weeks are advisable for long-term users.",
+      "Best Time to Take": "Take 30–60 minutes before exercise for performance support, or in the morning and evening for cardiovascular benefits.",
+      "Other Therapies": "Works well alongside Omega-3 fatty acids and CoQ10 for comprehensive cardiovascular support.",
+      "Precautions": "Not recommended for individuals with active herpes simplex infections. Use with caution after recent heart attack. Consult a doctor if on blood pressure or heart medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 4,
+    "brand": "nf",
+    "name": "L-carnitine 500mg",
+    "category": "amino acids",
+    "composition": "l-carnitine 500mg",
+    "details": {
+      "Overview &amp Key Benefits": "L-Carnitine is an amino acid essential for transporting fatty acids into the mitochondria where they are burned for energy. It provides antioxidant support and is especially beneficial for active individuals, the elderly, and those on vegetarian diets.",
+      "How It Works": "L-Carnitine acts as a shuttle, transporting long-chain fatty acids across the mitochondrial membrane for beta-oxidation (energy production), thereby supporting fat metabolism and cellular energy.",
+      "Indications": "Ideal for active individuals seeking improved exercise recovery, the elderly to support energy and muscle function, vegetarians/vegans with limited dietary intake, and those managing cardiovascular health.",
+      "Dosage": "500mg one to three times daily, preferably before meals or exercise.",
+      "Interactions": "May improve insulin sensitivity — monitor blood glucose if on diabetic medications. Generally well-tolerated with most medications and supplements.",
+      "Duration of Use": "Safe for long-term use. Many studies support continuous use up to 12 months.",
+      "Best Time to Take": "Take 30–60 minutes before exercise for athletic performance, or with breakfast for general energy support.",
+      "Other Therapies": "Combines effectively with CoQ10 for mitochondrial and energy support. Compatible with most wellness protocols.",
+      "Precautions": "May produce a fishy body odour in high doses. Not recommended for individuals with hypothyroidism without medical supervision. Consult a doctor if on anticoagulant therapy."
+    },
+    "image": ""
+  },
+  {
+    "id": 5,
+    "brand": "nf",
+    "name": "L-theanine 250mg",
+    "category": "amino acids",
+    "composition": "l-theanine 250mg vegetarian capsules",
+    "details": {
+      "Overview &amp Key Benefits": "L-Theanine is a naturally occurring amino acid found primarily in green tea, known for promoting a state of calm alertness without drowsiness. It helps support mental relaxation, focus, and reduced stress response.",
+      "How It Works": "L-Theanine promotes alpha brain wave activity, increases GABA and serotonin levels, and reduces cortisol responses, supporting a relaxed yet mentally alert state.",
+      "Indications": "Suitable for individuals experiencing stress, anxiety, difficulty concentrating, or those seeking improved sleep quality without sedation.",
+      "Dosage": "250mg once or twice daily, as needed for relaxation and focus.",
+      "Interactions": "May enhance the calming effects of GABA supplements and magnesium. Can be combined with caffeine to reduce jitteriness. Generally free of significant drug interactions.",
+      "Duration of Use": "Safe for long-term use. Widely studied with an excellent safety profile.",
+      "Best Time to Take": "Take in the morning for daytime focus and stress relief, or in the evening to support winding down before bed.",
+      "Other Therapies": "Pairs well with magnesium for sleep support, or with B-complex vitamins for comprehensive stress management.",
+      "Precautions": "Generally well tolerated. Use with caution alongside sedative medications, as it may have additive effects. Safe during normal health conditions; consult a doctor during pregnancy."
+    },
+    "image": ""
+  },
+  {
+    "id": 6,
+    "brand": "nf",
+    "name": "Glutathione 300mg (lipomicel)",
+    "category": "amino acids",
+    "composition": "glutathione lipomicel matrix 300mg",
+    "details": {
+      "Overview &amp Key Benefits": "Glutathione is the body's master antioxidant, critical for cellular protection, immune function, and detoxification. The LipoMicel Matrix delivery system dramatically enhances absorption compared to standard glutathione capsules.",
+      "How It Works": "Glutathione neutralises free radicals, regenerates other antioxidants (Vitamins C and E), supports liver detoxification pathways, and plays a central role in immune cell function.",
+      "Indications": "Beneficial for individuals seeking anti-ageing support, liver health, enhanced immunity, skin brightening, and those exposed to environmental toxins or oxidative stress.",
+      "Dosage": "300mg once daily, or as directed by a healthcare professional.",
+      "Interactions": "May enhance the efficacy of Vitamin C. Generally compatible with most medications; consult a doctor if on immunosuppressants.",
+      "Duration of Use": "Can be taken long-term. Regular use over 3–6 months typically shows optimal results.",
+      "Best Time to Take": "Best taken on an empty stomach in the morning for maximum absorption.",
+      "Other Therapies": "Works synergistically with NAC, Alpha Lipoic Acid, and Vitamin C as part of a comprehensive antioxidant programme.",
+      "Precautions": "Generally very well tolerated. Avoid in individuals with known sulphur sensitivity. Consult a healthcare professional during pregnancy or breastfeeding."
+    },
+    "image": ""
+  },
+  {
+    "id": 7,
+    "brand": "nf",
+    "name": "Lutein 40mg + zeaxanthin 7mg",
+    "category": "botanical",
+    "composition": "lutein 40mg, zeaxanthin 7mg (from marigold)",
+    "details": {
+      "Overview &amp Key Benefits": "Lutein and Zeaxanthin are carotenoids that concentrate in the macula of the eye and act as natural light filters and antioxidants. This formula helps maintain eyesight and support eye health, particularly in conditions associated with sunlight damage such as cataracts and age-related macular degeneration (AMD).",
+      "How It Works": "These carotenoids filter harmful blue light and UV radiation from reaching the retinal cells, while quenching free radicals that cause oxidative damage to the macula and lens.",
+      "Indications": "Recommended for adults over 40, individuals with high screen exposure, those with a family history of AMD or cataracts, and people in high sun-exposure environments.",
+      "Dosage": "1 softgel (Lutein 40mg + Zeaxanthin 7mg) daily with a meal containing fat to enhance absorption.",
+      "Interactions": "Fat-soluble — absorption is enhanced when taken with a fat-containing meal. Generally no significant drug interactions.",
+      "Duration of Use": "Long-term use is safe and recommended, especially for age-related eye health maintenance.",
+      "Best Time to Take": "Take with the largest meal of the day (lunch or dinner) for optimal carotenoid absorption.",
+      "Other Therapies": "Complements Vitamin A and Omega-3 supplementation for comprehensive eye health support.",
+      "Precautions": "Avoid excessive doses beyond the recommended amount, as very high intake may cause skin yellowing (carotenodermia). Consult a doctor if on cholesterol-lowering medications that may reduce carotenoid absorption."
+    },
+    "image": ""
+  },
+  {
+    "id": 8,
+    "brand": "nf",
+    "name": "Reliefibre organic tropical 268g",
+    "category": "botanical",
+    "composition": "organic partially hydrolyzed guar gum (phgg) 5g per serving",
+    "details": {
+      "Overview &amp Key Benefits": "Reliefibre is a clinically studied soluble dietary fibre that helps improve bowel regularity and relieve minor symptoms associated with irritable bowel syndrome (IBS). PHGG is gentle, tasteless, and highly tolerated.",
+      "How It Works": "PHGG is a prebiotic soluble fibre that is slowly fermented in the large intestine, normalising transit time, feeding beneficial gut bacteria, and modulating gut motility without causing gas or bloating.",
+      "Indications": "Suitable for individuals with IBS, irregular bowel habits (constipation or loose stools), antibiotic-associated diarrhoea, or those seeking general digestive health support.",
+      "Dosage": "5g (one scoop) dissolved in water or juice, once to twice daily. Begin with a smaller dose and gradually increase.",
+      "Interactions": "May delay absorption of oral medications — take medications 1–2 hours apart from fibre supplements. Generally very safe alongside most supplements.",
+      "Duration of Use": "Can be used daily long-term as part of a healthy diet. Gradual dose introduction over 1–2 weeks is recommended.",
+      "Best Time to Take": "Can be taken at any time of day, mixed into water, juice, smoothies, or food.",
+      "Other Therapies": "Combines well with probiotics (Acidophilus &amp; Bifidus) for synbiotic gut health support. Compatible with all dietary protocols.",
+      "Precautions": "Ensure adequate water intake when using fibre supplements. Start with a low dose to avoid initial bloating. Consult a doctor if bowel habits change significantly or unexpectedly."
+    },
+    "image": ""
+  },
+  {
+    "id": 9,
+    "brand": "nf",
+    "name": "Osteomove joint care",
+    "category": "dietary supplement",
+    "composition": "glucosamine 750mg, msm 300mg, chondroitin 200mg, boswellia 50mg, collagen ii 7.5mg, hyaluronic acid 7.5mg, manganese",
+    "details": {
+      "Overview &amp Key Benefits": "OsteoMove is a comprehensive multi-ingredient joint care formula that combines the most clinically supported nutrients for cartilage, tendon, and joint health. It helps provide effective relief from inflammation and joint discomfort associated with osteoarthritis.",
+      "How It Works": "Glucosamine and chondroitin provide building blocks for cartilage synthesis; MSM reduces inflammatory markers; Boswellia inhibits pro-inflammatory enzymes (5-LOX); Hyaluronic acid and Collagen II support joint lubrication and structural integrity.",
+      "Indications": "For adults with osteoarthritis, joint stiffness or discomfort, active individuals with joint wear, and those seeking preventive joint health support as they age.",
+      "Dosage": "2 tablets twice daily with meals, or as directed by a healthcare professional. Allow 4–8 weeks for full benefit.",
+      "Interactions": "Use caution with anticoagulants (warfarin) as glucosamine may have mild blood-thinning effects. Monitor blood sugar levels if diabetic, as glucosamine may slightly affect insulin sensitivity.",
+      "Duration of Use": "Long-term use is safe and encouraged for ongoing joint maintenance. Full benefits are typically seen after 4–8 weeks of consistent use.",
+      "Best Time to Take": "Take with meals to minimise potential digestive discomfort.",
+      "Other Therapies": "Complements physiotherapy, anti-inflammatory diets, and omega-3 supplementation for comprehensive joint care.",
+      "Precautions": "Avoid if allergic to shellfish (glucosamine source). Not recommended during pregnancy. Consult a doctor if on anticoagulant medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 10,
+    "brand": "nf",
+    "name": "Apple cider vinegar 500mg",
+    "category": "dietary supplement",
+    "composition": "fermented apple cider vinegar 500mg",
+    "details": {
+      "Overview &amp Key Benefits": "Apple Cider Vinegar (ACV) in convenient capsule form provides the benefits of fermented ACV without the harsh taste or tooth erosion risk of the liquid form. It helps support digestion, healthy blood sugar levels, and overall metabolic wellness.",
+      "How It Works": "The acetic acid in ACV slows gastric emptying, improves insulin sensitivity, supports beneficial gut bacteria, and may help modulate appetite and blood glucose responses after meals.",
+      "Indications": "Suitable for adults seeking digestive support, healthy weight management, blood sugar balance (within normal range), and general metabolic health.",
+      "Dosage": "500mg (1 capsule) one to two times daily with meals.",
+      "Interactions": "May enhance the blood-sugar-lowering effect of diabetic medications — monitor glucose levels carefully. Avoid combining with diuretic medications without medical advice.",
+      "Duration of Use": "Safe for ongoing daily use as part of a wellness routine.",
+      "Best Time to Take": "Take with or just before meals to support digestive benefits.",
+      "Other Therapies": "Complements a balanced diet and healthy lifestyle. Can be used alongside probiotics for digestive support.",
+      "Precautions": "Consult a doctor if on insulin or oral hypoglycaemic medications. Not a replacement for prescribed diabetic management. Avoid during pregnancy without professional guidance."
+    },
+    "image": ""
+  },
+  {
+    "id": 11,
+    "brand": "nf",
+    "name": "Nmn surge 150mg",
+    "category": "dietary supplement",
+    "composition": "nicotinamide mononucleotide (nmn) 150mg",
+    "details": {
+      "Overview &amp Key Benefits": "NMN is a direct precursor to NAD+ (Nicotinamide Adenine Dinucleotide), a coenzyme critical for cellular energy metabolism, DNA repair, and healthy ageing. NMN Surge helps support healthy ageing at the cellular level.",
+      "How It Works": "NMN is rapidly absorbed and converted to NAD+ in body tissues. Higher NAD+ levels activate sirtuins (longevity proteins) and support mitochondrial biogenesis, energy production, and DNA repair mechanisms.",
+      "Indications": "Designed for adults over 35 seeking healthy ageing support, improved energy levels, cognitive clarity, and cellular vitality.",
+      "Dosage": "150–300mg once daily (1–2 capsules), preferably in the morning.",
+      "Interactions": "Generally well tolerated. May enhance the effects of resveratrol and other sirtuin-activating compounds. No known significant drug interactions.",
+      "Duration of Use": "Intended for long-term continuous use. Benefits are cumulative and typically noticeable after 4–8 weeks.",
+      "Best Time to Take": "Best taken in the morning as it supports energy metabolism throughout the day.",
+      "Other Therapies": "Pairs synergistically with Resveratrol, CoQ10, and Glutathione for comprehensive cellular anti-ageing support.",
+      "Precautions": "Generally safe for most adults. Not recommended during pregnancy or breastfeeding due to limited safety data. Consult a doctor if on medications that affect NAD+ metabolism."
+    },
+    "image": ""
+  },
+  {
+    "id": 12,
+    "brand": "nf",
+    "name": "Evening primrose oil 1000mg",
+    "category": "dietary supplement",
+    "composition": "evening primrose oil 1000mg (gla approx. 90mg)",
+    "details": {
+      "Overview &amp Key Benefits": "Evening Primrose Oil (EPO) is rich in gamma-linolenic acid (GLA), an omega-6 fatty acid that helps support women's hormonal health, provides nutritional support for PMS symptoms, and promotes healthy skin.",
+      "How It Works": "GLA is converted to DGLA, a precursor to anti-inflammatory prostaglandins (PGE1), which help modulate hormonal balance, reduce breast tenderness, and support skin barrier function.",
+      "Indications": "Particularly beneficial for women experiencing PMS, menstrual discomfort, breast tenderness, menopausal symptoms, and those with dry or inflamed skin conditions such as eczema.",
+      "Dosage": "1000mg (1 softgel) one to three times daily with meals.",
+      "Interactions": "May have mild blood-thinning effects — use caution with anticoagulants (warfarin). May lower the seizure threshold in combination with certain medications.",
+      "Duration of Use": "Can be used long-term. Allow 2–3 menstrual cycles to assess full hormonal benefits.",
+      "Best Time to Take": "Take with meals to maximise fatty acid absorption.",
+      "Other Therapies": "Combines well with Vitex (Chasteberry) for hormonal support and with Omega-3 for balanced essential fatty acid intake.",
+      "Precautions": "Avoid in individuals with epilepsy or seizure disorders without medical advice. Use caution in the last weeks of pregnancy as it may affect uterine tone. Consult a doctor if on anticoagulants."
+    },
+    "image": ""
+  },
+  {
+    "id": 13,
+    "brand": "nf",
+    "name": "Nem natural eggshell membrane 500mg",
+    "category": "dietary supplement",
+    "composition": "natural eggshell membrane 500mg, calcium 34mg",
+    "details": {
+      "Overview &amp Key Benefits": "NEM (Natural Eggshell Membrane) is a unique natural source of collagen, glucosamine, chondroitin, hyaluronic acid, and calcium — the essential structural nutrients for healthy joints and connective tissue. One capsule per day provides comprehensive joint support.",
+      "How It Works": "The eggshell membrane contains the precursor molecules for joint matrix synthesis — collagen types I, V, and X, glycosaminoglycans, and hyaluronic acid — which help nourish cartilage and connective tissue.",
+      "Indications": "Suitable for adults with joint discomfort, reduced flexibility, osteoarthritis, or those seeking preventive joint support. Also beneficial for skin and nail health.",
+      "Dosage": "500mg once daily with a meal.",
+      "Interactions": "No significant known drug interactions. Safe alongside glucosamine and chondroitin supplements.",
+      "Duration of Use": "Long-term use is supported. Clinical studies show benefits within 10–30 days of consistent use.",
+      "Best Time to Take": "Take with any main meal.",
+      "Other Therapies": "Can be used alongside physiotherapy and anti-inflammatory protocols for enhanced joint management.",
+      "Precautions": "Contraindicated in individuals with egg allergies. Consult a healthcare professional during pregnancy or breastfeeding."
+    },
+    "image": ""
+  },
+  {
+    "id": 14,
+    "brand": "nf",
+    "name": "Tb marine collagen powder 135g",
+    "category": "dietary supplement",
+    "composition": "marine collagen peptide 2000mg, hydrolysed collagen 1880mg, biotin 500mcg, elastin 120mg, l-glutamine 500mg, hyaluronic acid 50mg, vitamin c 60mg, l-tryptophan 100mg per scoop",
+    "details": {
+      "Overview &amp Key Benefits": "A comprehensive anti-ageing collagen formula combining marine collagen with supporting nutrients to visibly help reduce wrinkles, improve skin elasticity, and support overall skin health within 28 days of use.",
+      "How It Works": "Hydrolysed collagen peptides are absorbed and stimulate fibroblasts to produce new collagen. Vitamin C is essential for collagen cross-linking; Hyaluronic Acid retains skin moisture; Biotin supports hair and nail strength.",
+      "Indications": "Designed for adults seeking visible skin rejuvenation, anti-ageing support, reduced appearance of wrinkles and fine lines, improved hair and nail strength.",
+      "Dosage": "One scoop dissolved in water or a beverage once daily.",
+      "Interactions": "Generally free of significant drug interactions. Vitamin C in the formula enhances iron absorption — monitor if on iron medications.",
+      "Duration of Use": "Consistent use for at least 4–8 weeks is recommended to appreciate full aesthetic benefits.",
+      "Best Time to Take": "Can be taken at any time; many prefer it in the morning as part of their routine.",
+      "Other Therapies": "Complements topical skincare, adequate hydration, and sun protection for optimal skin health outcomes.",
+      "Precautions": "Avoid if allergic to fish or seafood (marine-sourced collagen). Consult a doctor if pregnant or breastfeeding."
+    },
+    "image": ""
+  },
+  {
+    "id": 15,
+    "brand": "nf",
+    "name": "Tb multi-collagen powder 267g",
+    "category": "dietary supplement",
+    "composition": "verisol bovine collagen 9.95g + marine collagen complex 25mg + nem eggshell membrane per scoop",
+    "details": {
+      "Overview &amp Key Benefits": "A premium multi-source collagen complex combining bovine (Types I &amp; III), marine, and eggshell membrane collagen to comprehensively support skin, joints, tendons, ligaments, and connective tissue health.",
+      "How It Works": "Different collagen types target different tissues: Type I supports skin and tendons; Type III supports skin and vascular walls; Type II (from NEM) supports joint cartilage. The blend ensures whole-body connective tissue nourishment.",
+      "Indications": "Ideal for adults seeking comprehensive connective tissue support including skin, joints, hair, nails, gut lining, and those managing osteoarthritis joint discomfort.",
+      "Dosage": "One scoop (approx. 10g) dissolved in water or a beverage once daily.",
+      "Interactions": "No significant drug interactions. Vitamin C co-supplementation enhances collagen synthesis.",
+      "Duration of Use": "Long-term use is recommended for sustained connective tissue support.",
+      "Best Time to Take": "Best taken in the morning on an empty stomach for optimal peptide absorption.",
+      "Other Therapies": "Works synergistically with Hyaluronic Acid and Vitamin C. Compatible with joint care medications.",
+      "Precautions": "Not suitable for individuals allergic to fish, seafood, or eggs. Consult a healthcare professional if pregnant or breastfeeding."
+    },
+    "image": ""
+  },
+  {
+    "id": 16,
+    "brand": "nf",
+    "name": "Coq10 200mg",
+    "category": "enzyme",
+    "composition": "coenzyme q10 (ubiquinone) 200mg",
+    "details": {
+      "Overview &amp Key Benefits": "CoQ10 is a fat-soluble antioxidant found in every cell of the body, essential for mitochondrial energy (ATP) production. It provides powerful antioxidant support for normal heart function and promotes overall energy and vitality.",
+      "How It Works": "CoQ10 is a key component of the mitochondrial electron transport chain, enabling cells to produce ATP (cellular energy). As an antioxidant, it protects cell membranes and mitochondria from oxidative damage.",
+      "Indications": "Particularly important for adults over 40 (natural CoQ10 levels decline with age), individuals on statin medications (which deplete CoQ10), those with heart conditions, and anyone seeking energy support.",
+      "Dosage": "100–200mg once daily with a fat-containing meal for optimal absorption.",
+      "Interactions": "May have mild blood-pressure-lowering effects alongside antihypertensives. May enhance anticoagulant effects — monitor if on warfarin. Statins significantly deplete CoQ10, making supplementation important.",
+      "Duration of Use": "Long-term continuous use is safe and beneficial, especially for statin users and older adults.",
+      "Best Time to Take": "Take with the main meal of the day (lunch or dinner) as CoQ10 is fat-soluble.",
+      "Other Therapies": "Pairs well with L-Carnitine for comprehensive mitochondrial support. Complements cardiac medication regimens when approved by a doctor.",
+      "Precautions": "May slightly lower blood pressure — monitor in hypotensive individuals. Consult a doctor before use if on anticoagulants or blood pressure medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 17,
+    "brand": "nf",
+    "name": "Lactase enzyme 250mg",
+    "category": "enzyme",
+    "composition": "lactase 250mg (9000 fcc alu) from aspergillus oryzae",
+    "details": {
+      "Overview &amp Key Benefits": "Lactase is the digestive enzyme required to break down lactose (milk sugar). This supplement helps individuals with lactose intolerance enjoy dairy products comfortably by providing the enzyme their digestive system lacks.",
+      "How It Works": "Supplemental lactase breaks down lactose into absorbable simple sugars (glucose and galactose) before it reaches the large intestine, preventing the bloating, cramping, and diarrhoea caused by undigested lactose fermentation.",
+      "Indications": "Designed for individuals with lactose intolerance who wish to consume dairy products without gastrointestinal discomfort.",
+      "Dosage": "1 capsule with the first bite of any dairy-containing meal. May require 2 capsules for larger dairy servings.",
+      "Interactions": "No significant drug interactions. Safe with all standard medications.",
+      "Duration of Use": "Can be used as needed before any dairy-containing meal. Safe for long-term regular use.",
+      "Best Time to Take": "Always take immediately before or with dairy-containing food.",
+      "Other Therapies": "Complements probiotic therapy to support overall gut health in lactose-intolerant individuals.",
+      "Precautions": "Not a substitute for a medically diagnosed dairy allergy (different from lactose intolerance). Consult a doctor if gastrointestinal symptoms persist despite enzyme supplementation."
+    },
+    "image": ""
+  },
+  {
+    "id": 18,
+    "brand": "nf",
+    "name": "Papaya enzyme chewable",
+    "category": "enzymes",
+    "composition": "papain 17.75mg (300,000 usp pu), amylase 20mg, bromelain 2.25mg per tablet",
+    "details": {
+      "Overview &amp Key Benefits": "A natural digestive enzyme complex derived from papaya, pineapple, and plant sources that helps support protein, carbohydrate, and fibre digestion. Pleasant chewable format is ideal for post-meal digestive comfort.",
+      "How It Works": "Papain breaks down proteins; Amylase digests starches and carbohydrates; Bromelain has additional anti-inflammatory and protein-digesting properties — together they comprehensively support the digestive process.",
+      "Indications": "Suitable for individuals experiencing bloating, gas, indigestion, or heaviness after meals. Useful for those with reduced stomach acid or digestive enzyme insufficiency.",
+      "Dosage": "1–3 chewable tablets after meals, as needed for digestive comfort.",
+      "Interactions": "Bromelain may mildly enhance anticoagulant effects. Generally safe with most medications and supplements.",
+      "Duration of Use": "Safe for ongoing use as a digestive aid. No dependency risk.",
+      "Best Time to Take": "Take immediately after meals for optimal digestive support.",
+      "Other Therapies": "Complements probiotic therapy and a high-fibre diet for overall digestive wellness.",
+      "Precautions": "Avoid if allergic to papaya, pineapple, or latex (cross-reactivity). Consult a doctor if on anticoagulant medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 19,
+    "brand": "nf",
+    "name": "R-alpha lipoic acid 100mg",
+    "category": "essential fatty acid",
+    "composition": "r-lipoic acid 100mg",
+    "details": {
+      "Overview &amp Key Benefits": "R-Alpha Lipoic Acid (R-ALA) is the natural, biologically active form of alpha-lipoic acid — a universal antioxidant that is both fat- and water-soluble. It supports healthy ageing, nerve health, and may help support individuals with diabetic neuropathy.",
+      "How It Works": "R-ALA is a potent antioxidant that regenerates other antioxidants (Vitamins C and E, Glutathione), supports mitochondrial energy production, and helps maintain healthy blood glucose levels by improving insulin sensitivity.",
+      "Indications": "Beneficial for individuals with diabetic neuropathy, those seeking anti-ageing antioxidant support, and people with nerve-related concerns such as tingling or numbness.",
+      "Dosage": "100mg once or twice daily, ideally on an empty stomach.",
+      "Interactions": "May enhance the blood-sugar-lowering effect of diabetic medications — monitor glucose carefully. May interact with thyroid medications at high doses.",
+      "Duration of Use": "Long-term use is supported. Ongoing use at 100–200mg daily is well-tolerated.",
+      "Best Time to Take": "Best taken on an empty stomach (30 min before meals) for maximum absorption.",
+      "Other Therapies": "Works synergistically with Glutathione, NAC, and B vitamins for comprehensive neuroprotective support.",
+      "Precautions": "Monitor blood glucose closely if on insulin or oral hypoglycaemics. Avoid at high doses during pregnancy. R-ALA is more potent than racemic ALA — do not exceed recommended dose."
+    },
+    "image": ""
+  },
+  {
+    "id": 20,
+    "brand": "nf",
+    "name": "Rx omega-3 900mg epa+dha",
+    "category": "essential fatty acids",
+    "composition": "fish concentrate 1425mg, omega-3 900mg, epa 600mg, dha 300mg",
+    "details": {
+      "Overview &amp Key Benefits": "A high-potency pharmaceutical-grade Omega-3 formulation providing 900mg of EPA and DHA per softgel to help support heart function, reduce triglyceride levels, and support overall cardiovascular wellness.",
+      "How It Works": "EPA and DHA modulate prostaglandin synthesis, reduce inflammatory eicosanoids, lower triglycerides, improve HDL cholesterol, and help maintain healthy heart rhythm and blood vessel function.",
+      "Indications": "Recommended for adults with elevated triglycerides, cardiovascular concerns, inflammatory conditions, and those seeking to support overall heart and metabolic health.",
+      "Dosage": "1–3 softgels daily with meals, or as directed by a healthcare professional.",
+      "Interactions": "May enhance anticoagulant effects at doses above 3g/day — consult a doctor if on warfarin. May slightly lower blood pressure alongside antihypertensives.",
+      "Duration of Use": "Safe for long-term daily use. Consistent use over 3+ months shows the greatest cardiovascular benefits.",
+      "Best Time to Take": "Take with meals to reduce fishy burps and enhance absorption.",
+      "Other Therapies": "Complements statin therapy, CoQ10, and overall cardiovascular management programmes.",
+      "Precautions": "Consult a doctor before use if on blood-thinning medications. Use with caution before surgery. Ensure the product meets pharmaceutical-grade standards for heavy metal safety."
+    },
+    "image": ""
+  },
+  {
+    "id": 21,
+    "brand": "nf",
+    "name": "Wild alaska salmon oil 1300mg",
+    "category": "essential fatty acids",
+    "composition": "salmon oil 1300mg, omega-3 263mg, epa 107mg, dha 93mg",
+    "details": {
+      "Overview &amp Key Benefits": "Wild Alaska Salmon Oil provides a natural, whole-food source of Omega-3 fatty acids (EPA and DHA) that helps support normal brain and visual function in adults and children, and may help reduce triglyceride levels.",
+      "How It Works": "EPA and DHA from salmon oil support neurological function by maintaining cell membrane fluidity in brain tissue, supporting retinal development and visual processing, and modulating inflammatory pathways.",
+      "Indications": "Suitable for all ages — children for brain and visual development; adults for cognitive function, mood support, and cardiovascular health.",
+      "Dosage": "1–3 softgels daily with meals.",
+      "Interactions": "May mildly enhance anticoagulant effects at higher doses. Generally well tolerated alongside most medications.",
+      "Duration of Use": "Safe for long-term daily use for all age groups.",
+      "Best Time to Take": "Take with meals for best absorption and to minimise any aftertaste.",
+      "Other Therapies": "Complements Vitamin D3 and general children's multivitamins for paediatric brain development support.",
+      "Precautions": "Contains fish-derived ingredients — avoid if allergic to fish or seafood. Consult a doctor before use in children under 2 years."
+    },
+    "image": ""
+  },
+  {
+    "id": 22,
+    "brand": "nf",
+    "name": "Black cohosh 40mg",
+    "category": "herbal supplement",
+    "composition": "black cohosh extract (cimicifuga racemosa rhizome and root) 40mg",
+    "details": {
+      "Overview &amp Key Benefits": "Black Cohosh is a clinically studied herb traditionally used to help reduce the frequency and intensity of menopausal and PMS symptoms including hot flashes, night sweats, and mood fluctuations.",
+      "How It Works": "Black Cohosh contains triterpene glycosides that appear to modulate serotonin and dopamine receptors involved in thermoregulation and mood, providing non-hormonal relief for menopausal symptoms.",
+      "Indications": "Specifically for women experiencing peri-menopause or menopause symptoms, and for younger women with PMS-related hormonal discomfort.",
+      "Dosage": "40mg once daily, or as directed by a healthcare professional.",
+      "Interactions": "May interact with hormone therapies (HRT). Avoid concurrent use with hepatotoxic medications. Use with caution alongside tamoxifen.",
+      "Duration of Use": "Typically used for 3–6 months. Consult a healthcare professional before extending beyond 6 months.",
+      "Best Time to Take": "Can be taken at any time of day with food.",
+      "Other Therapies": "May be combined with Vitex for complementary hormonal support. Compatible with dietary and lifestyle approaches to managing menopause.",
+      "Precautions": "Rare reports of liver toxicity — discontinue if jaundice or abdominal pain develop. Not for use during pregnancy. Consult a doctor if on hormone-sensitive medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 23,
+    "brand": "nf",
+    "name": "Lung, bronchial &amp; sinus",
+    "category": "herbal supplement",
+    "composition": "nac 200mg, wild berry black 100mg, horehound 50mg, bromelain 100mg, mullein 100mg",
+    "details": {
+      "Overview &amp Key Benefits": "A targeted herbal and amino acid blend formulated to help support respiratory health — promoting easy breathing, thinning mucus secretions, and soothing the bronchial passages and sinuses.",
+      "How It Works": "NAC acts as a mucolytic and antioxidant in lung tissue; Horehound and Mullein soothe bronchial mucous membranes; Bromelain has anti-inflammatory properties in the airways; Wild Berry Black provides antioxidant and immune support.",
+      "Indications": "Suitable for individuals with chronic bronchitis, sinusitis, seasonal respiratory discomfort, or those seeking ongoing respiratory health maintenance.",
+      "Dosage": "2–3 tablets daily with meals, or as directed by a healthcare professional.",
+      "Interactions": "Bromelain may enhance anticoagulant effects. NAC may interact with nitroglycerin. Consult a doctor if on respiratory medications.",
+      "Duration of Use": "Can be taken continuously for respiratory support. Reassess after 8–12 weeks of use.",
+      "Best Time to Take": "Take with meals throughout the day.",
+      "Other Therapies": "Complements nebuliser therapy, saline nasal irrigation, and standard respiratory medical treatments.",
+      "Precautions": "Consult a doctor if on prescribed respiratory medications. Not a replacement for prescribed asthma or COPD treatments. Discontinue if respiratory symptoms worsen."
+    },
+    "image": ""
+  },
+  {
+    "id": 24,
+    "brand": "nf",
+    "name": "Macarich 500mg + ginseng",
+    "category": "herbal supplement",
+    "composition": "maca 500mg, ginseng 200mg",
+    "details": {
+      "Overview &amp Key Benefits": "MacaRich combines Maca root and Ginseng — two powerhouse adaptogenic herbs that work together to help support immune health, improve hormonal balance, enhance libido, and boost physical and mental vitality.",
+      "How It Works": "Maca supports hypothalamic-pituitary-gonadal axis function to help balance sex hormones naturally; Ginseng (ginsenosides) modulates the HPA stress axis and supports immune cell activity and energy production.",
+      "Indications": "Suitable for men and women seeking improved libido, hormonal balance, stress resilience, physical energy, fertility support, and immune health.",
+      "Dosage": "1 capsule (500mg Maca + 200mg Ginseng) once or twice daily.",
+      "Interactions": "Ginseng may interact with anticoagulants, diabetes medications, and stimulants. Maca is generally well tolerated.",
+      "Duration of Use": "Cycles of 4–8 weeks on, 2 weeks off are commonly recommended for adaptogenic herbs.",
+      "Best Time to Take": "Best taken in the morning to support energy and vitality throughout the day.",
+      "Other Therapies": "Complements zinc supplementation for male reproductive health. Can be combined with Evening Primrose Oil for women's hormonal support.",
+      "Precautions": "Avoid high-dose Ginseng if on blood-thinning medications or stimulants. Consult a doctor if on hormone therapy or diabetic medications. Not recommended during pregnancy."
+    },
+    "image": ""
+  },
+  {
+    "id": 25,
+    "brand": "nf",
+    "name": "Sr ashwagandha ksm-66 600mg",
+    "category": "herbal supplement",
+    "composition": "organic ksm-66 ashwagandha extract 600mg",
+    "details": {
+      "Overview &amp Key Benefits": "Ashwagandha (KSM-66) is the world's most clinically studied ashwagandha root extract. It helps support memory, cognitive function, stress resilience, blood sugar management, cardiovascular health, and muscle strength.",
+      "How It Works": "Withanolides in ashwagandha modulate the HPA axis to reduce cortisol, support thyroid hormone production, enhance mitochondrial function, and promote GABA-ergic activity for calming effects.",
+      "Indications": "Ideal for adults experiencing chronic stress, anxiety, fatigue, cognitive fog, poor sleep, and those seeking improved physical performance and muscle recovery.",
+      "Dosage": "600mg once daily with meals.",
+      "Interactions": "May enhance the effect of sedatives and thyroid medications. May mildly lower blood sugar — monitor if on antidiabetic medications.",
+      "Duration of Use": "Safe for long-term use. Benefits are cumulative, typically fully apparent after 8–12 weeks.",
+      "Best Time to Take": "Can be taken with breakfast or dinner. Evening use may enhance sleep quality.",
+      "Other Therapies": "Pairs well with L-Theanine for anxiety and stress management. Complements physical training programmes.",
+      "Precautions": "Avoid during pregnancy and breastfeeding. Use with caution in hyperthyroidism. Not recommended for individuals with autoimmune conditions without medical supervision."
+    },
+    "image": ""
+  },
+  {
+    "id": 26,
+    "brand": "nf",
+    "name": "Vitex (chaste tree) 80mg",
+    "category": "herbal supplement",
+    "composition": "vitex agnus-castus (chasteberry) extract 80mg std. 0.6% aucubin",
+    "details": {
+      "Overview &amp Key Benefits": "Vitex (Chaste Tree berry) is a leading herbal support for female hormonal balance. It helps reduce PMS symptoms including breast tenderness, bloating, and mood swings while supporting the female reproductive system.",
+      "How It Works": "Vitex acts on the pituitary gland to help normalise the luteinising hormone (LH)/follicle-stimulating hormone (FSH) ratio, indirectly supporting progesterone levels and establishing healthier hormonal cycles.",
+      "Indications": "Specifically designed for women with PMS, irregular menstrual cycles, hormonal acne, breast tenderness, or symptoms associated with peri-menopause.",
+      "Dosage": "80mg once daily in the morning on an empty stomach.",
+      "Interactions": "May interact with hormone therapies (oestrogens, progestogens, contraceptives). Avoid with dopamine antagonists. Not to be combined with fertility medications without medical supervision.",
+      "Duration of Use": "Requires 3–6 months of consistent use to see full hormonal benefits. Can be continued long-term.",
+      "Best Time to Take": "Best taken in the morning before breakfast to mirror natural pituitary signalling rhythms.",
+      "Other Therapies": "Complements Evening Primrose Oil and Black Cohosh for comprehensive women's hormonal health.",
+      "Precautions": "Not for use during pregnancy or breastfeeding. Not recommended for women currently using hormonal contraceptives or fertility treatments without medical guidance. Should not be used in girls under 18 without supervision."
+    },
+    "image": ""
+  },
+  {
+    "id": 27,
+    "brand": "nf",
+    "name": "Wellbet berberine 500mg",
+    "category": "herbal supplement",
+    "composition": "berberine hcl 500mg",
+    "details": {
+      "Overview &amp Key Benefits": "Berberine is a plant alkaloid with extensive clinical research supporting its ability to help maintain healthy blood sugar levels already within the normal range, support cardiovascular health, and promote healthy gut flora balance.",
+      "How It Works": "Berberine activates AMPK (AMP-activated protein kinase) — often called the 'metabolic master switch' — improving insulin sensitivity, reducing glucose production in the liver, and supporting lipid metabolism.",
+      "Indications": "Suitable for adults with pre-diabetes or type 2 diabetes (adjunct), elevated cholesterol, metabolic syndrome, and PCOS. Also used for gut health support.",
+      "Dosage": "500mg two to three times daily with meals.",
+      "Interactions": "May significantly enhance blood-sugar-lowering effects of metformin and insulin — close blood glucose monitoring required. May interact with cyclosporin and certain antibiotics.",
+      "Duration of Use": "Cycles of 8–12 weeks followed by a 4-week break are commonly recommended.",
+      "Best Time to Take": "Take with meals, three times daily for optimal blood sugar management.",
+      "Other Therapies": "Complements dietary modification and exercise for metabolic health. Can be combined with Chromium &amp; Vanadium for enhanced blood sugar support.",
+      "Precautions": "Monitor blood glucose carefully if on diabetic medications — risk of hypoglycaemia. Avoid during pregnancy and breastfeeding. Consult a doctor before use with prescription medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 28,
+    "brand": "nf",
+    "name": "Cranrich cranberry 500mg",
+    "category": "herbal supplement",
+    "composition": "cranberry concentrate 500mg (36:1 extract, no added sugar)",
+    "details": {
+      "Overview &amp Key Benefits": "Cranrich delivers a highly concentrated cranberry extract — equivalent to 18g of fresh cranberries per capsule — to help support urinary tract health and provide powerful antioxidant protection without any added sugar.",
+      "How It Works": "Proanthocyanidins (PACs) in cranberry prevent the adhesion of certain bacteria (E. coli) to the walls of the urinary tract, helping reduce recurrence of urinary tract infections (UTIs) without antibiotic use.",
+      "Indications": "Recommended for women and men prone to recurrent UTIs, those seeking urinary tract maintenance, and individuals wanting antioxidant support.",
+      "Dosage": "500mg once to twice daily. During an active UTI, 2 capsules twice daily may be used short-term.",
+      "Interactions": "May enhance the effect of warfarin (anticoagulant) — monitor INR if on blood thinners.",
+      "Duration of Use": "Can be used continuously for ongoing urinary tract health maintenance.",
+      "Best Time to Take": "Take with a full glass of water, at any time of day.",
+      "Other Therapies": "Complements D-Mannose and probiotic supplementation for comprehensive urinary tract health.",
+      "Precautions": "Not a substitute for prescribed antibiotic treatment of active UTIs — seek medical care for confirmed infections. Monitor INR if on warfarin. Consult a doctor if kidney stones are present, as oxalate content may be relevant."
+    },
+    "image": ""
+  },
+  {
+    "id": 29,
+    "brand": "nf",
+    "name": "Ginkgo biloba phytosome 60mg",
+    "category": "herbal supplement",
+    "composition": "ginkgo biloba phytosome 60mg with phosphatidylcholine (superior bioavailability)",
+    "details": {
+      "Overview &amp Key Benefits": "This advanced Phytosome formulation bonds Ginkgo Biloba with phosphatidylcholine for dramatically superior absorption compared to standard extracts, helping to effectively support cerebral circulation, memory, and cognitive function.",
+      "How It Works": "Ginkgo's active compounds (flavonoids and terpenoids) improve microcirculation by inhibiting platelet activating factor, dilating blood vessels, and acting as antioxidants in the brain and retina.",
+      "Indications": "Beneficial for adults over 40, individuals with age-related memory decline, poor concentration, tinnitus, dizziness, or peripheral circulation issues.",
+      "Dosage": "60mg once to twice daily with meals.",
+      "Interactions": "May enhance anticoagulant and antiplatelet effects — use caution with warfarin, aspirin, and NSAIDs. Avoid with MAOIs.",
+      "Duration of Use": "Regular use over 6–12 weeks is needed to assess cognitive benefits. Long-term use is supported.",
+      "Best Time to Take": "Take with breakfast and/or dinner.",
+      "Other Therapies": "Complements Omega-3 fatty acids and Bacopa for comprehensive cognitive support.",
+      "Precautions": "Stop 2 weeks before surgery due to mild antiplatelet effects. Not recommended during pregnancy. Rare reports of headache or GI upset during the first week of use."
+    },
+    "image": ""
+  },
+  {
+    "id": 30,
+    "brand": "nf",
+    "name": "Milk thistle 250mg",
+    "category": "herbal supplement",
+    "composition": "milk thistle 250mg (standardised to silymarin 150mg)",
+    "details": {
+      "Overview &amp Key Benefits": "Milk Thistle standardised to 60% Silymarin is the most evidence-supported herbal support for liver health. It helps protect liver cells from toxins, support liver regeneration, and may be particularly useful for individuals with alcohol-related liver concerns.",
+      "How It Works": "Silymarin (active complex of silybin, silydianin, silychristin) protects liver cell membranes from toxin entry, promotes liver cell regeneration, and acts as an antioxidant within liver tissue.",
+      "Indications": "Beneficial for individuals with liver health concerns, those taking hepatotoxic medications, people with elevated liver enzymes, and those with alcohol-related liver strain.",
+      "Dosage": "250mg (containing 150mg Silymarin) once to three times daily with meals.",
+      "Interactions": "May affect the metabolism of some medications via cytochrome P450 enzymes — consult a pharmacist. Generally well tolerated.",
+      "Duration of Use": "Long-term use is safe. Liver enzyme improvements are typically seen within 4–8 weeks.",
+      "Best Time to Take": "Take with meals for optimal absorption.",
+      "Other Therapies": "Combines well with NAC and Glutathione for comprehensive liver detoxification and protection.",
+      "Precautions": "Consult a doctor for significant liver disease (hepatitis, cirrhosis) — not a replacement for medical treatment. May have mild laxative effects at high doses. Avoid if allergic to ragweed or related plants."
+    },
+    "image": ""
+  },
+  {
+    "id": 31,
+    "brand": "nf",
+    "name": "Muscle recovery &amp; growth 156g",
+    "category": "herbal + amino acid",
+    "composition": "l-glutamine 5g, theracurmin curcumin 30mg per serving",
+    "details": {
+      "Overview &amp Key Benefits": "A synergistic combination of L-Glutamine and highly bioavailable Theracurmin Curcumin formulated to help support muscle cell repair, recovery after exercise, immune function, and digestive health.",
+      "How It Works": "L-Glutamine is the most abundant amino acid in muscle tissue and a primary fuel for intestinal cells and immune cells; Theracurmin's superior bioavailability curcumin potently suppresses inflammatory cytokines (NF-κB pathway) to reduce exercise-induced inflammation.",
+      "Indications": "Ideal for athletes and active individuals seeking faster muscle recovery, those with inflammatory gut conditions, individuals post-surgery, and people with immune health concerns.",
+      "Dosage": "One scoop mixed into water or a smoothie once to twice daily.",
+      "Interactions": "Generally safe. Curcumin may mildly enhance anticoagulant effects. L-Glutamine is well tolerated with most medications.",
+      "Duration of Use": "Can be used continuously as part of an athletic or wellness programme.",
+      "Best Time to Take": "Post-workout is ideal; alternatively, any time of day with or without food.",
+      "Other Therapies": "Works synergistically with Omega-3 fatty acids and protein supplementation for comprehensive athletic recovery.",
+      "Precautions": "Avoid high-dose glutamine in individuals with liver cirrhosis, bipolar disorder, or a history of seizures without medical supervision. Theracurmin is generally very safe."
+    },
+    "image": ""
+  },
+  {
+    "id": 32,
+    "brand": "nf",
+    "name": "Saw palmetto 160mg + lycopene 2mg",
+    "category": "herbal supplement",
+    "composition": "saw palmetto extract 160mg, lycopene 2mg (from tomato extract 34mg)",
+    "details": {
+      "Overview &amp Key Benefits": "This synergistic formula combines Saw Palmetto with Lycopene to help support healthy prostate function, improve urinary flow, reduce frequent nighttime urination, and support overall male urinary and reproductive health.",
+      "How It Works": "Saw Palmetto inhibits 5-alpha reductase, reducing conversion of testosterone to DHT (a key driver of prostate enlargement); Lycopene from tomato extract provides antioxidant protection to prostate tissue.",
+      "Indications": "Specifically designed for men over 40 with benign prostatic hyperplasia (BPH) symptoms including poor urinary flow, frequent urination, nighttime awakenings, and general prostate maintenance.",
+      "Dosage": "1 softgel (Saw Palmetto 160mg + Lycopene 2mg) once to twice daily with meals.",
+      "Interactions": "May enhance anticoagulant and antiplatelet effects. May interact with hormonal medications. Consult a doctor before combining with alpha-blockers or 5-alpha reductase inhibitors.",
+      "Duration of Use": "Long-term use is appropriate for BPH symptom management. Benefits typically appear after 4–6 weeks.",
+      "Best Time to Take": "Take with meals to minimise any GI discomfort.",
+      "Other Therapies": "Complements Zinc supplementation and Selenium for comprehensive prostate health.",
+      "Precautions": "Not a substitute for medical evaluation of prostate symptoms — always rule out prostate cancer with a doctor. Not for use by women or children. Consult a doctor if on hormonal or blood-thinning medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 33,
+    "brand": "nf",
+    "name": "Melatonin 3mg sublingual",
+    "category": "hormonal supplement",
+    "composition": "melatonin 3mg sublingual tablet",
+    "details": {
+      "Overview &amp Key Benefits": "Melatonin 3mg in fast-dissolving sublingual form helps regulate the body's sleep-wake cycle, assisting with falling asleep faster, staying asleep, and adjusting to shift work or jet lag.",
+      "How It Works": "Melatonin is a naturally produced pineal gland hormone that signals the body's biological clock (circadian rhythm) to initiate sleep. Sublingual delivery provides faster onset than standard oral tablets.",
+      "Indications": "For adults with occasional sleep disturbances, jet lag, shift work sleep disorder, or difficulty falling and staying asleep.",
+      "Dosage": "3mg (1 tablet) dissolved under the tongue 30 minutes before desired bedtime.",
+      "Interactions": "May enhance the sedative effects of CNS depressants, benzodiazepines, and anticoagulants. Avoid combining with alcohol.",
+      "Duration of Use": "Recommended for short-term use (1–4 weeks). Can be used intermittently (e.g. for travel). Consult a doctor for longer-term use.",
+      "Best Time to Take": "Take 30 minutes before bedtime in a dim environment.",
+      "Other Therapies": "Pairs well with L-Theanine and Magnesium for a comprehensive natural sleep support programme.",
+      "Precautions": "May cause morning drowsiness — avoid driving or operating machinery until you know how it affects you. Not for use during pregnancy. Consult a doctor if on immunosuppressants or anticoagulants."
+    },
+    "image": ""
+  },
+  {
+    "id": 34,
+    "brand": "nf",
+    "name": "Melatonin 5mg sublingual",
+    "category": "hormonal supplement",
+    "composition": "melatonin 5mg sublingual tablet",
+    "details": {
+      "Overview &amp Key Benefits": "Melatonin 5mg provides a moderate-strength dose for adults with more pronounced sleep onset difficulties, helping to re-establish a healthy sleep-wake cycle and improve sleep quality.",
+      "How It Works": "Acts on melatonin receptors (MT1 and MT2) in the hypothalamus to shift circadian phase, reduce sleep onset latency, and improve sleep efficiency.",
+      "Indications": "For adults with moderate sleep disturbances, jet lag, shift work, or as directed by a healthcare professional.",
+      "Dosage": "5mg (1 tablet) dissolved under the tongue 30–60 minutes before bedtime.",
+      "Interactions": "May potentiate CNS depressants and anticoagulants. Avoid with alcohol.",
+      "Duration of Use": "Short to medium-term use (up to 3 months). Reassess with a healthcare professional for longer use.",
+      "Best Time to Take": "30–60 minutes before intended bedtime in a dark or dimly lit environment.",
+      "Other Therapies": "Combines well with Magnesium Nighttime formula and L-Theanine.",
+      "Precautions": "Avoid driving or operating machinery. Not for use in pregnancy. Start with a lower dose (1–3mg) if melatonin-naive. Consult a doctor for children's use."
+    },
+    "image": ""
+  },
+  {
+    "id": 35,
+    "brand": "nf",
+    "name": "Melatonin 10mg sublingual",
+    "category": "hormonal supplement",
+    "composition": "melatonin 10mg sublingual tablet",
+    "details": {
+      "Overview &amp Key Benefits": "High-dose Melatonin 10mg sublingual formulation for adults with significant sleep challenges, or for use under healthcare professional guidance for specific circadian rhythm disorders.",
+      "How It Works": "At higher doses, melatonin has both circadian-resetting and antioxidant properties, providing stronger sleep onset support and free radical protection.",
+      "Indications": "For adults with severe sleep-onset insomnia, circadian rhythm disorders, or as directed by a healthcare professional.",
+      "Dosage": "10mg (1 tablet) dissolved under the tongue 30–60 minutes before bedtime.",
+      "Interactions": "Avoid with sedatives, CNS depressants, alcohol, and anticoagulants. Use with caution in combination with blood pressure medications.",
+      "Duration of Use": "Use only for the shortest effective duration. Do not use long-term without medical supervision.",
+      "Best Time to Take": "30–60 minutes before bedtime.",
+      "Other Therapies": "To be used as part of a comprehensive sleep hygiene programme.",
+      "Precautions": "High-dose melatonin is not recommended for routine use. Begin with the lowest effective dose (3mg or 5mg). Not for use during pregnancy, breastfeeding, or in children without medical supervision."
+    },
+    "image": ""
+  },
+  {
+    "id": 36,
+    "brand": "nf",
+    "name": "Melatonin 10mg bilayer",
+    "category": "hormonal supplement",
+    "composition": "melatonin 10mg bilayer (immediate + sustained release) tablet",
+    "details": {
+      "Overview &amp Key Benefits": "The bilayer technology provides both an immediate-release portion to help initiate sleep and a sustained-release portion to help maintain sleep throughout the night, addressing both sleep onset and sleep maintenance issues.",
+      "How It Works": "The immediate-release layer dissolves quickly to initiate sleep; the sustained-release layer dissolves gradually to maintain therapeutic melatonin levels throughout the night.",
+      "Indications": "For adults with combined sleep-onset and sleep-maintenance difficulties, or those who wake frequently during the night.",
+      "Dosage": "1 tablet (10mg bilayer) taken 30–60 minutes before bedtime. Do not crush or split.",
+      "Interactions": "Same cautions as other melatonin formulations — avoid sedatives, alcohol, and anticoagulants.",
+      "Duration of Use": "Short to medium-term use. Consult a healthcare professional for ongoing use beyond 3 months.",
+      "Best Time to Take": "30–60 minutes before bedtime.",
+      "Other Therapies": "Part of a comprehensive sleep wellness programme including sleep hygiene, stress management, and relaxation techniques.",
+      "Precautions": "Do not crush or chew — this destroys the sustained-release mechanism. Not for use during pregnancy. Begin with lower-dose melatonin products if new to melatonin."
+    },
+    "image": ""
+  },
+  {
+    "id": 37,
+    "brand": "nf",
+    "name": "Magnesium bisglycinate 200mg capsules",
+    "category": "mineral",
+    "composition": "magnesium bisglycinate 200mg (highly absorbable chelated form)",
+    "details": {
+      "Overview &amp Key Benefits": "Magnesium Bisglycinate provides the most bioavailable form of magnesium, chelated to the amino acid glycine for superior absorption and minimal laxative effect. It helps support muscle function, bone health, nervous system calm, and quality sleep.",
+      "How It Works": "Magnesium is an essential cofactor in over 300 enzymatic reactions. It supports muscle relaxation (including the heart), regulates NMDA receptors (nervous system calm), assists in bone mineralisation, and regulates energy (ATP) production.",
+      "Indications": "Suitable for adults with muscle cramps, poor sleep quality, anxiety, high stress, constipation, or inadequate dietary magnesium intake. Critical for bone and cardiovascular health.",
+      "Dosage": "200mg once to twice daily with meals.",
+      "Interactions": "May reduce absorption of some antibiotics (fluoroquinolones, tetracyclines) — separate by 2 hours. May enhance the effect of muscle relaxants and antihypertensive medications.",
+      "Duration of Use": "Can be used long-term as a daily nutritional supplement. Magnesium deficiency is common in modern diets.",
+      "Best Time to Take": "Evening or bedtime use is particularly beneficial for sleep and muscle relaxation.",
+      "Other Therapies": "Pairs well with Calcium, Vitamin D3, and Vitamin K2 for comprehensive bone health support.",
+      "Precautions": "Use with caution in individuals with kidney disease (reduced magnesium excretion). High doses may cause loose stools — reduce dose if this occurs. Bisglycinate form is best tolerated."
+    },
+    "image": ""
+  },
+  {
+    "id": 38,
+    "brand": "nf",
+    "name": "Magnesium bisglycinate 200mg powder 145g",
+    "category": "mineral",
+    "composition": "magnesium bisglycinate 200mg per serving (unflavoured powder)",
+    "details": {
+      "Overview &amp Key Benefits": "Same highly bioavailable Magnesium Bisglycinate in a convenient, versatile powder form that can be mixed into water, juice, or smoothies, making it ideal for those who prefer not to swallow capsules.",
+      "How It Works": "Identical mechanism to the capsule form — chelated bisglycinate ensures superior gastrointestinal absorption and minimal digestive side effects compared to oxide or carbonate forms.",
+      "Indications": "Suitable for all adults requiring magnesium supplementation, especially those who prefer powders or higher flexibility in dosing.",
+      "Dosage": "One scoop (200mg magnesium) mixed into water or any beverage once to twice daily.",
+      "Interactions": "Same as capsule form — separate from fluoroquinolone and tetracycline antibiotics by 2 hours.",
+      "Duration of Use": "Safe for ongoing long-term daily use.",
+      "Best Time to Take": "Evening use is recommended to maximise sleep and relaxation benefits.",
+      "Other Therapies": "Ideal to include in evening 'wind-down' beverage alongside L-Theanine or chamomile tea.",
+      "Precautions": "Same precautions as bisglycinate capsules. Avoid very high doses in individuals with kidney impairment."
+    },
+    "image": ""
+  },
+  {
+    "id": 39,
+    "brand": "nf",
+    "name": "Sr magnesium nighttime 120g",
+    "category": "mineral",
+    "composition": "magnesium 200mg, l-theanine 50mg, gaba 100mg per serving",
+    "details": {
+      "Overview &amp Key Benefits": "A targeted evening formula combining Magnesium with L-Theanine and GABA — three clinically recognised relaxation and sleep-supporting nutrients — designed to help promote natural relaxation and improve sleep quality.",
+      "How It Works": "Magnesium relaxes muscles and supports melatonin production; L-Theanine promotes alpha brain waves and calm alertness; GABA is the brain's primary inhibitory neurotransmitter, reducing neuronal excitability and promoting tranquillity.",
+      "Indications": "For adults with stress-related sleep difficulties, anxiety, racing thoughts at bedtime, or general difficulty unwinding in the evening.",
+      "Dosage": "One scoop mixed into warm water or milk 30–60 minutes before bedtime.",
+      "Interactions": "May enhance the effects of sedative medications and CNS depressants. Avoid with alcohol.",
+      "Duration of Use": "Can be used nightly as part of an ongoing sleep wellness routine.",
+      "Best Time to Take": "30–60 minutes before bedtime only.",
+      "Other Therapies": "Excellent complement to melatonin, sleep hygiene protocols, and relaxation practices.",
+      "Precautions": "Not for daytime use due to relaxation effects. Not recommended during pregnancy without medical advice. Avoid if operating machinery in the evening."
+    },
+    "image": ""
+  },
+  {
+    "id": 40,
+    "brand": "nf",
+    "name": "Super immune formula softgels",
+    "category": "mineral",
+    "composition": "vitamin a, vitamin d3, zinc, and omega-3 fatty acids per softgel",
+    "details": {
+      "Overview &amp Key Benefits": "A targeted immune-support formula combining four critical immune-supporting nutrients in one softgel — Vitamin A for mucosal immunity, Vitamin D3 for immune modulation, Zinc for immune cell function, and Omega-3 for anti-inflammatory support.",
+      "How It Works": "Each nutrient targets a different immune pathway: Vitamin A supports mucous membrane integrity; D3 activates innate and adaptive immunity; Zinc is essential for T-cell and natural killer cell production; Omega-3 modulates inflammatory immune responses.",
+      "Indications": "Ideal during cold and flu season, for individuals with frequent infections, those deficient in key immune nutrients, and anyone seeking year-round immune protection.",
+      "Dosage": "1–2 softgels daily with a fat-containing meal.",
+      "Interactions": "Fat-soluble vitamins (A and D3) accumulate — do not exceed recommended dose. Zinc may reduce absorption of copper over long-term use.",
+      "Duration of Use": "Safe for long-term use at recommended doses during cold and flu seasons. Short courses can be used at onset of illness.",
+      "Best Time to Take": "Take with meals containing fat for optimal absorption of fat-soluble nutrients.",
+      "Other Therapies": "Complements Vitamin C and Zinc Lozenges during active immune challenges.",
+      "Precautions": "Do not exceed recommended dose of Vitamins A and D3 as these accumulate in the body. Pregnant women should monitor Vitamin A intake carefully. Consult a doctor if on immunosuppressant therapy."
+    },
+    "image": ""
+  },
+  {
+    "id": 41,
+    "brand": "nf",
+    "name": "Zinc bisglycinate 50mg",
+    "category": "mineral",
+    "composition": "zinc bisglycinate 50mg (chelated, superior absorption)",
+    "details": {
+      "Overview &amp Key Benefits": "Zinc Bisglycinate is the most bioavailable and gentle form of zinc, chelated with the amino acid glycine. It supports immune function, healthy skin, wound healing, and overall wellness with minimal gastrointestinal side effects.",
+      "How It Works": "Zinc is essential for over 300 enzymes and plays critical roles in immune cell development, protein synthesis, wound healing, testosterone production, and antioxidant defence (SOD enzyme).",
+      "Indications": "Suitable for individuals with frequent infections, poor wound healing, skin conditions (acne), immune deficiency, reproductive health concerns, or dietary zinc deficiency.",
+      "Dosage": "50mg once daily with food.",
+      "Interactions": "Zinc inhibits the absorption of copper and iron when taken long-term — consider periodic copper supplementation. Separate from calcium, iron supplements, and tetracycline antibiotics by 2 hours.",
+      "Duration of Use": "Can be used long-term; however, add a copper supplement (1–2mg/day) if used continuously beyond 3 months.",
+      "Best Time to Take": "Take with meals to minimise potential nausea.",
+      "Other Therapies": "Complements Vitamin C and Elderberry for immune support, and Vitamin A for skin health.",
+      "Precautions": "Do not exceed 40mg elemental zinc long-term without medical supervision (risk of copper deficiency). Bisglycinate form minimises the nausea common with other zinc forms."
+    },
+    "image": ""
+  },
+  {
+    "id": 42,
+    "brand": "nf",
+    "name": "Zinc citrate 50mg tablets",
+    "category": "mineral",
+    "composition": "zinc citrate 50mg",
+    "details": {
+      "Overview &amp Key Benefits": "Zinc Citrate 50mg provides a well-absorbed, cost-effective form of zinc that supports immune function, skin health, reproductive health, and overall wellness.",
+      "How It Works": "Same mechanisms as Zinc Bisglycinate — supports immune enzyme systems, antioxidant defence, protein synthesis, and skin integrity.",
+      "Indications": "As for Zinc Bisglycinate — immune support, skin health, wound healing, and overall wellness. The citrate form offers good bioavailability at a more accessible price point.",
+      "Dosage": "50mg (1 tablet) once daily with food.",
+      "Interactions": "Same as Zinc Bisglycinate — separate from antibiotics and iron supplements.",
+      "Duration of Use": "Long-term use safe with copper monitoring.",
+      "Best Time to Take": "With meals to reduce nausea.",
+      "Other Therapies": "Pairs with Vitamin C and Elderberry for immune support.",
+      "Precautions": "Same precautions as Zinc Bisglycinate. Long-term high-dose zinc can impair copper absorption."
+    },
+    "image": ""
+  },
+  {
+    "id": 43,
+    "brand": "nf",
+    "name": "Zinc citrate 15mg",
+    "category": "mineral",
+    "composition": "zinc citrate 15mg",
+    "details": {
+      "Overview &amp Key Benefits": "A maintenance-dose zinc supplement providing 15mg of elemental zinc as the citrate form, ideal for daily nutritional insurance and ongoing immune and skin health support without the risk of excess intake.",
+      "How It Works": "Supports essential zinc-dependent enzyme functions, immune cell health, and antioxidant defence at a safe, maintenance-level dose suitable for daily long-term use.",
+      "Indications": "Suitable for daily nutritional support for all adults, children (with appropriate dosing), pregnant women (under guidance), and individuals seeking zinc maintenance without exceeding upper intake levels.",
+      "Dosage": "15mg (1 tablet) once daily with food.",
+      "Interactions": "Minimal at this dose. Safe alongside most medications.",
+      "Duration of Use": "Safe for ongoing long-term daily use at this dose level.",
+      "Best Time to Take": "Any time with food.",
+      "Other Therapies": "Ideal as part of a daily multivitamin and mineral programme.",
+      "Precautions": "Well tolerated at this dose. Suitable for long-term use without copper depletion concerns at 15mg."
+    },
+    "image": ""
+  },
+  {
+    "id": 44,
+    "brand": "nf",
+    "name": "Zinc elderberry immune lozenges",
+    "category": "mineral",
+    "composition": "black elderberry 125mg, echinacea 30mg, vitamin c 25mg, zinc gluconate 10mg per lozenge",
+    "details": {
+      "Overview &amp Key Benefits": "A convenient throat-soothing lozenge combining four proven immune-supporting ingredients — Elderberry, Echinacea, Vitamin C, and Zinc — for fast-acting upper respiratory immune support and sore throat relief.",
+      "How It Works": "Elderberry anthocyanins bind and block viral surface proteins; Echinacea stimulates macrophage and natural killer cell activity; Zinc and Vitamin C support the immune cell activities needed to fight respiratory infections.",
+      "Indications": "For adults and older children at the onset of cold or flu symptoms, sore throat, and for immune support during high-exposure periods.",
+      "Dosage": "1 lozenge every 2–3 hours at onset of illness, up to 6 per day. For maintenance, 1–2 lozenges daily.",
+      "Interactions": "Generally safe. Echinacea should be used with caution in those on immunosuppressants.",
+      "Duration of Use": "Short-term use (5–7 days) at therapeutic doses. Maintenance use can be continued during illness season.",
+      "Best Time to Take": "Allow to dissolve slowly in the mouth for direct throat contact. Can be used at any time.",
+      "Other Therapies": "Complements Vitamin C 1000mg and Liposomal Vitamin C for enhanced immune response.",
+      "Precautions": "Avoid continuous use of Echinacea beyond 8 weeks. Not recommended for individuals with autoimmune conditions or on immunosuppressants without medical guidance."
+    },
+    "image": ""
+  },
+  {
+    "id": 45,
+    "brand": "nf",
+    "name": "Magnesium chelate 125mg",
+    "category": "mineral",
+    "composition": "magnesium chelate 125mg",
+    "details": {
+      "Overview &amp Key Benefits": "Magnesium Chelate 125mg provides a well-absorbed chelated magnesium for wound healing support, calming muscle spasms, and promoting a regular healthy heartbeat.",
+      "How It Works": "Chelated magnesium is bound to amino acids for improved absorption. It supports the electrical activity of muscle cells (including cardiac muscle), collagen synthesis for wound healing, and acts as a natural calcium channel regulator.",
+      "Indications": "For individuals with muscle cramps, irregular heartbeat (under medical supervision), poor wound healing, or general magnesium deficiency.",
+      "Dosage": "125–250mg (1–2 capsules) daily with meals.",
+      "Interactions": "Separate from certain antibiotics. May enhance muscle relaxant effects.",
+      "Duration of Use": "Long-term daily use is safe as part of a nutritional programme.",
+      "Best Time to Take": "Evenings preferred for muscle relaxation benefits.",
+      "Other Therapies": "Pairs with Calcium and Vitamin D3 for bone and cardiovascular health.",
+      "Precautions": "Caution in kidney disease. Very high doses may cause loose stools. Always use alongside heart medications under medical supervision."
+    },
+    "image": ""
+  },
+  {
+    "id": 46,
+    "brand": "nf",
+    "name": "Magnesium citrate 150mg chewable",
+    "category": "mineral",
+    "composition": "magnesium citrate 150mg chewable tablet",
+    "details": {
+      "Overview &amp Key Benefits": "A pleasant chewable magnesium citrate supplement providing 150mg of elemental magnesium in a well-absorbed citrate form, ideal for those who find swallowing tablets difficult and those who prefer a more natural gentle laxative effect.",
+      "How It Works": "Magnesium citrate is highly water-soluble and well absorbed; in addition to systemic magnesium benefits, its osmotic properties gently attract water into the bowel, supporting regularity.",
+      "Indications": "Suitable for adults and older children with magnesium deficiency, muscle cramps, constipation, or those who prefer a chewable supplement format.",
+      "Dosage": "1–2 chewable tablets once daily, or as directed.",
+      "Interactions": "Same precautions as other magnesium formulations — separate from antibiotics by 2 hours.",
+      "Duration of Use": "Safe for long-term use. The citrate form's mild laxative effect is typically only noticeable at higher doses.",
+      "Best Time to Take": "Evening preferred. Can be taken at any time.",
+      "Other Therapies": "Pairs with Calcium and Vitamin D3 for bone health support.",
+      "Precautions": "Not suitable for individuals with kidney impairment. The laxative effect at higher doses is normal for citrate form."
+    },
+    "image": ""
+  },
+  {
+    "id": 47,
+    "brand": "nf",
+    "name": "Vitamin k2 120mcg + d3 1000iu",
+    "category": "multi-mineral",
+    "composition": "vitamin k2 (mk-7) 120mcg, vitamin d3 25mcg (1000iu) per softgel",
+    "details": {
+      "Overview &amp Key Benefits": "This synergistic Vitamin K2+D3 combination helps direct calcium to bones (where it is needed) and away from arterial walls, helping to reduce LDL cholesterol levels and support the cardiovascular system.",
+      "How It Works": "Vitamin D3 enhances calcium absorption; Vitamin K2 (MK-7 form) activates osteocalcin (putting calcium into bones) and matrix Gla protein (preventing arterial calcification) — together preventing the paradox of calcium supplementation causing arterial deposits.",
+      "Indications": "Essential for anyone taking calcium supplements, individuals at risk of osteoporosis, those with cardiovascular concerns, and anyone seeking to prevent arterial calcification.",
+      "Dosage": "1 softgel daily with a fat-containing meal.",
+      "Interactions": "Vitamin K2 may affect anticoagulant therapy (warfarin) — monitor INR carefully with your doctor.",
+      "Duration of Use": "Safe for long-term daily use — this is considered essential nutritional support for bone and cardiovascular health.",
+      "Best Time to Take": "Take with the main meal of the day as both vitamins are fat-soluble.",
+      "Other Therapies": "Essential companion to Calcium and Magnesium supplementation. Part of a comprehensive bone health programme.",
+      "Precautions": "Inform your doctor if on anticoagulants before starting K2 — dose adjustments may be needed. Generally very safe at the recommended dose."
+    },
+    "image": ""
+  },
+  {
+    "id": 48,
+    "brand": "nf",
+    "name": "Calcium/magnesium citrate + d3 + zinc",
+    "category": "multi-mineral",
+    "composition": "calcium citrate 250mg, magnesium citrate 250mg, zinc citrate 5mg, potassium citrate 20mg, vitamin d3",
+    "details": {
+      "Overview &amp Key Benefits": "A comprehensive bone and muscle mineral formula in highly absorbable citrate form, providing calcium, magnesium, zinc, and potassium alongside Vitamin D3 to support the development and long-term maintenance of bones and teeth.",
+      "How It Works": "Calcium is the primary structural mineral for bones and teeth; Magnesium ensures calcium enters bone tissue rather than soft tissue; Vitamin D3 enables intestinal calcium absorption; Zinc supports bone cell (osteoblast) activity; Potassium reduces urinary calcium losses.",
+      "Indications": "Suitable for children, adolescents, adults, and the elderly for bone health maintenance. Essential post-menopause, for athletes, and those with dairy restrictions.",
+      "Dosage": "1–3 tablets daily with meals.",
+      "Interactions": "Separate calcium from iron supplements and tetracycline antibiotics (reduces absorption). Vitamin D3 is fat-soluble — take with meals.",
+      "Duration of Use": "Long-term daily use is safe and recommended, especially for bone maintenance.",
+      "Best Time to Take": "Split doses with meals throughout the day for best calcium absorption.",
+      "Other Therapies": "Add Vitamin K2 to direct calcium to bones rather than arteries. Complements weight-bearing exercise.",
+      "Precautions": "Do not exceed 2500mg total daily calcium from all sources. Avoid in hypercalcaemia or hyperparathyroidism. Citrate form is safe for individuals prone to kidney stones (unlike carbonate)."
+    },
+    "image": ""
+  },
+  {
+    "id": 49,
+    "brand": "nf",
+    "name": "Chromium &amp; vanadium 125mcg",
+    "category": "multi-mineral",
+    "composition": "chromium gtf (hvp chelate) 100mcg, vanadium citrate 25mcg",
+    "details": {
+      "Overview &amp Key Benefits": "This unique mineral combination helps the body metabolise protein, carbohydrates, and fats more efficiently while helping to support healthy blood sugar levels already within the normal range.",
+      "How It Works": "Chromium as Glucose Tolerance Factor (GTF) potentiates insulin receptor signalling, improving insulin sensitivity. Vanadium mimics insulin action and may support glucose uptake by cells independent of insulin.",
+      "Indications": "Suitable for individuals with blood sugar regulation concerns, metabolic syndrome, type 2 diabetes (as adjunct therapy), carbohydrate cravings, and those seeking improved metabolic efficiency.",
+      "Dosage": "1 capsule daily with meals.",
+      "Interactions": "May enhance the blood-glucose-lowering effects of insulin and oral antidiabetics — monitor blood glucose closely.",
+      "Duration of Use": "Long-term use is appropriate as part of a metabolic wellness programme.",
+      "Best Time to Take": "With the main meal of the day for optimal metabolic effect.",
+      "Other Therapies": "Combines well with Berberine and the WellBet Diabetic MultiVit for comprehensive metabolic support.",
+      "Precautions": "Monitor blood glucose if on antidiabetic medications. High-dose vanadium (beyond recommended) can be toxic — do not exceed stated dose. Not a replacement for prescribed diabetic medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 50,
+    "brand": "nf",
+    "name": "Detoxitech 592g",
+    "category": "multi-mineral",
+    "composition": "vitamins a,b,c,d,e + full b-complex + folate + calcium + magnesium + zinc + bb536 probiotic + molybdenum + selenium + chromium + nac per serving",
+    "details": {
+      "Overview &amp Key Benefits": "Detoxitech is a comprehensive all-in-one detoxification and nutritional formula providing a broad-spectrum vitamin and mineral complex alongside NAC for liver support, BB536 probiotic for gut health, and antioxidants for intensive cellular detoxification.",
+      "How It Works": "NAC replenishes glutathione for Phase II liver detoxification; B vitamins support Phase I detox enzymes; Molybdenum activates sulphite oxidase for sulphur metabolism; the probiotic supports gut microbiome balance to reduce recirculation of toxins; antioxidants neutralise free radicals generated during detox.",
+      "Indications": "Designed for individuals undergoing structured detoxification programmes, those with high toxic burden (environmental exposure, medications, alcohol), and anyone seeking comprehensive nutritional fortification.",
+      "Dosage": "As directed by a healthcare professional — typically 1–2 scoops daily with water.",
+      "Interactions": "Contains multiple nutrients — monitor for interactions with specific medications. NAC may interact with nitroglycerin.",
+      "Duration of Use": "Structured detox programmes typically run 2–4 weeks. Maintenance doses can be continued longer under professional guidance.",
+      "Best Time to Take": "With meals throughout the day.",
+      "Other Therapies": "Best used as part of a supervised detoxification protocol with appropriate dietary modifications.",
+      "Precautions": "Always inform your healthcare provider when undertaking a detoxification programme. Not appropriate for pregnant or breastfeeding women without medical supervision."
+    },
+    "image": ""
+  },
+  {
+    "id": 51,
+    "brand": "nf",
+    "name": "Potassium citrate 99mg",
+    "category": "multi-mineral",
+    "composition": "potassium citrate 99mg, calcium (dicalcium phosphate) 36mg",
+    "details": {
+      "Overview &amp Key Benefits": "Potassium Citrate helps maintain healthy electrolyte balance, supports normal muscle and nerve function, may help reduce urinary calcium oxalate stone formation, and contributes to overall good health.",
+      "How It Works": "Potassium is an essential intracellular electrolyte that maintains fluid balance, regulates heart rhythm, enables muscle contractions and nerve impulses. The citrate form alkalinises urine, reducing calcium oxalate crystal formation.",
+      "Indications": "For individuals with low dietary potassium, those prone to kidney stones, people on diuretic medications (which deplete potassium), and those with muscle weakness or cramps.",
+      "Dosage": "1 tablet (99mg) one to three times daily with meals.",
+      "Interactions": "Use with caution alongside ACE inhibitors, potassium-sparing diuretics, and NSAIDs (risk of hyperkalaemia).",
+      "Duration of Use": "Long-term daily use is appropriate for ongoing electrolyte balance.",
+      "Best Time to Take": "With meals to reduce GI discomfort.",
+      "Other Therapies": "Pairs with Magnesium for comprehensive electrolyte and muscle health support.",
+      "Precautions": "Consult a doctor before use in kidney disease or if on medications that raise potassium levels. Monitor potassium levels if on ACE inhibitors or potassium-sparing diuretics."
+    },
+    "image": ""
+  },
+  {
+    "id": 52,
+    "brand": "nf",
+    "name": "Hi-potency b-complex 50mg",
+    "category": "multi-vitamin",
+    "composition": "b1 50mg, b2 50mg, b3 50mg, b6 50mg, b5 50mg, b12 50mcg, biotin 50mcg, paba 50mcg",
+    "details": {
+      "Overview &amp Key Benefits": "A high-potency B-Complex formula providing all essential B vitamins at 50mg/50mcg levels to help support energy metabolism, reduce fatigue, maintain nervous system health, and support red blood cell formation.",
+      "How It Works": "B vitamins are essential coenzymes in energy-producing Krebs cycle reactions, neurotransmitter synthesis, methylation (B12, B6, Folate), and DNA/RNA synthesis — collectively supporting cellular energy and nervous system function.",
+      "Indications": "Ideal for individuals under stress, vegetarians/vegans (B12 deficiency risk), those with fatigue, nervous system concerns, high alcohol intake, or those on medications that deplete B vitamins (e.g. metformin).",
+      "Dosage": "1 capsule once daily with food.",
+      "Interactions": "Large doses of B6 (&gt;100mg/day long-term) may cause peripheral neuropathy — the 50mg dose in this formula is safe. B vitamins may reduce the effectiveness of levodopa for Parkinson's (consult doctor).",
+      "Duration of Use": "Safe for long-term daily use. B vitamins are water-soluble and excess is excreted.",
+      "Best Time to Take": "Take with breakfast — B vitamins support daytime energy metabolism.",
+      "Other Therapies": "Pairs excellently with Magnesium and Zinc for comprehensive metabolic and nervous system support.",
+      "Precautions": "Urine will appear bright yellow (riboflavin colouration) — this is normal and harmless. Niacin (B3) at higher doses may cause transient flushing — the 50mg dose rarely causes this."
+    },
+    "image": ""
+  },
+  {
+    "id": 53,
+    "brand": "nf",
+    "name": "B friends vitamin c 250mg chewable",
+    "category": "multi-vitamin",
+    "composition": "vitamin c 250mg chewable (tangy orange flavour)",
+    "details": {
+      "Overview &amp Key Benefits": "A pleasant-tasting chewable Vitamin C supplement providing 250mg per tablet in a child- and adult-friendly format that helps support the immune system and maintain strong bones, teeth, and gums.",
+      "How It Works": "Vitamin C is an essential water-soluble antioxidant that supports collagen synthesis (skin, gums, bones), enhances iron absorption, stimulates white blood cell production, and neutralises free radicals.",
+      "Indications": "Suitable for children and adults seeking daily immune support and antioxidant protection. Particularly useful when dietary Vitamin C intake is insufficient.",
+      "Dosage": "1–2 chewable tablets daily. Children: 1 tablet daily (under adult supervision).",
+      "Interactions": "Enhances iron absorption — take with iron supplements. High doses may reduce the anticoagulant effect of warfarin.",
+      "Duration of Use": "Safe for long-term daily use as part of a nutritional supplement routine.",
+      "Best Time to Take": "Any time of day — Vitamin C is water-soluble and not affected by meal timing.",
+      "Other Therapies": "Pairs with Zinc for enhanced immune support. Complements Elderberry formulations during illness season.",
+      "Precautions": "Do not exceed 2000mg total daily Vitamin C from all sources. Very high doses may cause loose stools or kidney stone formation in susceptible individuals."
+    },
+    "image": ""
+  },
+  {
+    "id": 54,
+    "brand": "nf",
+    "name": "B friends children's multivitamin chewable",
+    "category": "multi-vitamin &amp; mineral",
+    "composition": "complete multivitamins and minerals in a chewable jungle berry flavour tablet",
+    "details": {
+      "Overview &amp Key Benefits": "A comprehensive children's multivitamin and mineral chewable tablet formulated to support the development and maintenance of healthy bones, teeth, gums, eyesight, skin, and immune function in growing children.",
+      "How It Works": "Provides the full spectrum of essential vitamins and minerals required for childhood growth and development — supporting skeletal growth, immune development, cognitive function, and energy metabolism.",
+      "Indications": "Suitable for children aged 4–12 years as a daily nutritional supplement to fill dietary gaps and support healthy growth and development.",
+      "Dosage": "1–2 chewable tablets daily as directed on the label, or by a healthcare professional.",
+      "Interactions": "Contains iron — separate from tetracycline antibiotics if relevant. Generally safe for children.",
+      "Duration of Use": "Can be used daily as part of an ongoing paediatric nutritional programme.",
+      "Best Time to Take": "With breakfast for best adherence and to support daytime energy needs.",
+      "Other Therapies": "Complements a balanced diet and Omega-3 supplementation for comprehensive children's health.",
+      "Precautions": "Keep out of reach of young children — chewable tablets can be mistaken for sweets. Do not exceed recommended dose. Contains iron — excess iron is toxic in children."
+    },
+    "image": ""
+  },
+  {
+    "id": 55,
+    "brand": "nf",
+    "name": "Wellbet diabetic multivit &amp; mineral",
+    "category": "multivitamin",
+    "composition": "specialised diabetic formula: spirulina, green tea, curcumin + full vitamin and mineral profile including b vitamins, antioxidants, chromium",
+    "details": {
+      "Overview &amp Key Benefits": "A specifically formulated multivitamin and mineral supplement designed for individuals with diabetes or pre-diabetes, providing targeted nutrients to support healthy glucose metabolism, reduce oxidative stress, and address nutritional gaps common in diabetic patients.",
+      "How It Works": "Chromium and Vanadium support insulin sensitivity; B vitamins support nerve health (critical in diabetic neuropathy); antioxidants (Vitamin C, E, Spirulina, Green Tea, Curcumin) combat elevated oxidative stress common in diabetes; Magnesium supports insulin receptor function.",
+      "Indications": "Specifically designed for type 1 and type 2 diabetic patients and individuals with pre-diabetes, metabolic syndrome, or those seeking to support healthy blood sugar management.",
+      "Dosage": "2 tablets once or twice daily with meals, or as directed by a healthcare professional.",
+      "Interactions": "May enhance blood-glucose-lowering effects of diabetic medications — careful glucose monitoring is essential. Green Tea extract contains caffeine (small amount).",
+      "Duration of Use": "Safe for long-term daily use as part of a diabetic wellness programme.",
+      "Best Time to Take": "With main meals for optimal nutrient absorption alongside food.",
+      "Other Therapies": "Complements Berberine, R-Alpha Lipoic Acid, and Chromium &amp; Vanadium for comprehensive diabetic nutritional support.",
+      "Precautions": "Not a replacement for prescribed diabetic medications. Monitor blood glucose closely when starting. Inform your endocrinologist or diabetologist of all supplements being taken."
+    },
+    "image": ""
+  },
+  {
+    "id": 56,
+    "brand": "nf",
+    "name": "Acidophilus &amp; bifidus 5 billion cfu",
+    "category": "probiotic",
+    "composition": "lactobacillus acidophilus and bifidobacterium bifidum double strength 5 billion active cells per capsule",
+    "details": {
+      "Overview &amp Key Benefits": "A dual-strain probiotic providing 5 billion CFU of beneficial bacteria to help support healthy gut bacterial balance, intestinal health, regular bowel function, and immune system support.",
+      "How It Works": "L. acidophilus colonises the small intestine and produces lactic acid, maintaining an acidic environment that inhibits pathogens; B. bifidum colonises the large intestine, supports gut barrier function, produces B vitamins, and modulates immune responses.",
+      "Indications": "Beneficial for individuals with antibiotic-associated diarrhoea, IBS, irregular bowel habits, traveller's diarrhoea, bloating, and those seeking general gut microbiome maintenance.",
+      "Dosage": "1–2 capsules daily. During antibiotic therapy, take 2 hours after each antibiotic dose.",
+      "Interactions": "Take 2 hours apart from antibiotic medications to prevent inactivation. Generally safe with all medications.",
+      "Duration of Use": "Can be taken continuously for ongoing microbiome support. Essential during and for 2 weeks after antibiotic courses.",
+      "Best Time to Take": "On an empty stomach in the morning, or 30 minutes before meals.",
+      "Other Therapies": "Pairs with Reliefibre (prebiotic) for synbiotic (probiotic + prebiotic) gut health support.",
+      "Precautions": "Store in the refrigerator or cool dry place to maintain viability. Generally safe for all ages. Consult a doctor before use if severely immunocompromised."
+    },
+    "image": ""
+  },
+  {
+    "id": 57,
+    "brand": "nf",
+    "name": "Vitamin b12 cyanocobalamin 1000mcg",
+    "category": "vitamin",
+    "composition": "vitamin b12 (cyanocobalamin) 1000mcg",
+    "details": {
+      "Overview &amp Key Benefits": "Cyanocobalamin is the stable, cost-effective form of Vitamin B12 that supports red blood cell formation, prevents megaloblastic anaemia, and supports healthy nerve function.",
+      "How It Works": "B12 is a cofactor for methionine synthase and L-methylmalonyl-CoA mutase — essential for DNA synthesis (red blood cell formation), myelin sheath maintenance (nerve protection), and homocysteine metabolism.",
+      "Indications": "Essential for vegetarians, vegans, older adults (who absorb B12 less efficiently), individuals on metformin, those with pernicious anaemia, and anyone with documented B12 deficiency.",
+      "Dosage": "1000mcg once daily, or as directed by a healthcare professional.",
+      "Interactions": "Proton pump inhibitors (PPIs), H2 blockers, and Metformin reduce B12 absorption — supplementation is essential in these patients.",
+      "Duration of Use": "Long-term daily use is safe and often necessary for high-risk individuals. B12 excess is excreted by the kidneys.",
+      "Best Time to Take": "Can be taken at any time of day.",
+      "Other Therapies": "Pairs with Folate and B6 for complete homocysteine management and cardiovascular health.",
+      "Precautions": "Very safe — excess is excreted. However, if B12 deficiency is suspected, always confirm with a blood test and consult a doctor. Cyanocobalamin requires conversion to active form — some individuals with MTHFR mutations absorb methylcobalamin better."
+    },
+    "image": ""
+  },
+  {
+    "id": 58,
+    "brand": "nf",
+    "name": "Vitamin b12 methylcobalamin 5000mcg sublingual",
+    "category": "vitamin",
+    "composition": "vitamin b12 (methylcobalamin) 5000mcg sublingual tablet",
+    "details": {
+      "Overview &amp Key Benefits": "Methylcobalamin is the biologically active, immediately usable form of Vitamin B12. The high 5000mcg sublingual dose provides maximum absorption, ideal for correcting significant B12 deficiency and supporting neurological health.",
+      "How It Works": "Unlike cyanocobalamin, methylcobalamin requires no conversion and is directly used in methylation reactions and myelin synthesis. Sublingual delivery bypasses gastric absorption issues that reduce B12 uptake in many people.",
+      "Indications": "For individuals with confirmed B12 deficiency, pernicious anaemia, neurological symptoms of B12 deficiency, those on metformin or PPIs, and individuals with MTHFR gene polymorphisms who cannot convert cyanocobalamin.",
+      "Dosage": "5000mcg (1 tablet) dissolved under the tongue once daily or weekly as directed by a healthcare professional.",
+      "Interactions": "Same as Cyanocobalamin B12.",
+      "Duration of Use": "Long-term use is safe. High doses may be used initially to correct deficiency, then maintenance doses continued.",
+      "Best Time to Take": "Morning use supports energy metabolism throughout the day.",
+      "Other Therapies": "Part of a complete methylation support programme with Folate (5-MTHF), B6, and Magnesium.",
+      "Precautions": "Very safe. Confirm deficiency with blood test. This high-dose formulation is particularly appropriate when absorption is compromised."
+    },
+    "image": ""
+  },
+  {
+    "id": 59,
+    "brand": "nf",
+    "name": "Biotin 5000mcg",
+    "category": "vitamin",
+    "composition": "biotin 5,000mcg",
+    "details": {
+      "Overview &amp Key Benefits": "Biotin (Vitamin B7) at 5000mcg provides targeted support for healthy skin, stronger hair, and harder nails, while also supporting energy metabolism and nerve function.",
+      "How It Works": "Biotin is an essential cofactor for carboxylase enzymes involved in fatty acid synthesis, gluconeogenesis, and amino acid metabolism. It is critical for keratin protein production in hair follicles and nails.",
+      "Indications": "For individuals with brittle nails, hair thinning or loss, dry skin, and those with biotin deficiency (common in pregnancy, raw egg consumption, and antibiotic use).",
+      "Dosage": "5000mcg (1 capsule) once daily.",
+      "Interactions": "May interfere with certain thyroid function tests and troponin assays — inform your doctor before blood tests. High-dose biotin is otherwise generally safe.",
+      "Duration of Use": "Long-term use is safe. Results typically seen in hair and nails after 3–6 months of consistent use.",
+      "Best Time to Take": "Can be taken at any time of day, with or without food.",
+      "Other Therapies": "Pairs with Marine Collagen and Zinc for comprehensive hair, skin, and nail support.",
+      "Precautions": "Inform your healthcare provider and laboratory before blood tests, as high-dose biotin can interfere with biotin-streptavidin immunoassays (falsely high or low results)."
+    },
+    "image": ""
+  },
+  {
+    "id": 60,
+    "brand": "nf",
+    "name": "Biotin 10,000mcg",
+    "category": "vitamin",
+    "composition": "biotin 10,000mcg",
+    "details": {
+      "Overview &amp Key Benefits": "A high-potency 10,000mcg Biotin formulation for individuals seeking maximum support for hair growth, nail strength, and skin health. Particularly beneficial where significant biotin deficiency is suspected.",
+      "How It Works": "Same as Biotin 5000mcg, but at a higher dose to more aggressively address deficiency states and provide stronger substrate availability for keratin synthesis.",
+      "Indications": "For adults with significant hair loss, severely brittle nails, or confirmed biotin deficiency requiring higher-dose repletion.",
+      "Dosage": "10,000mcg (1 capsule) once daily.",
+      "Interactions": "Same as Biotin 5000mcg — critically important: inform all healthcare providers and laboratories when on high-dose biotin.",
+      "Duration of Use": "Reassess after 3–6 months. May switch to lower maintenance dose (5000mcg) once results are seen.",
+      "Best Time to Take": "Any time, with or without food.",
+      "Other Therapies": "As for Biotin 5000mcg.",
+      "Precautions": "Critical: High-dose biotin causes significant interference with many laboratory blood tests (thyroid, cardiac troponin, hormone panels). Always disclose biotin supplementation to your doctor before any blood tests — stop biotin 48–72 hours before testing if possible."
+    },
+    "image": ""
+  },
+  {
+    "id": 61,
+    "brand": "nf",
+    "name": "Vitamin a 10,000iu",
+    "category": "vitamin",
+    "composition": "vitamin a (palmitate from cod liver oil) 10,000iu (3000mcg rae)",
+    "details": {
+      "Overview &amp Key Benefits": "Vitamin A is a fat-soluble vitamin essential for eye health (especially night vision), immune function, skin cell renewal, and gene expression. This supplement helps support vision, immune defences, and healthy skin.",
+      "How It Works": "Retinol (Vitamin A) is converted to retinoic acid, which regulates gene expression for cell differentiation, immune cell maturation, and retinal visual pigment (rhodopsin) synthesis.",
+      "Indications": "For individuals with Vitamin A deficiency, poor night vision, recurrent infections, dry or rough skin, and those requiring nutritional support for mucosal immune barriers.",
+      "Dosage": "10,000IU (1 softgel) once daily with a fat-containing meal. This is a therapeutic dose — not intended for indefinite daily use without medical guidance.",
+      "Interactions": "Isotretinoin (Roaccutane) and other retinoids — avoid co-administration due to risk of toxicity. Fat-soluble — take with meals.",
+      "Duration of Use": "At 10,000IU, limit to 2–4 weeks unless otherwise directed by a healthcare professional. Maintenance doses are lower (typically 2500–5000IU).",
+      "Best Time to Take": "With the main meal of the day.",
+      "Other Therapies": "Works synergistically with Zinc (required for Vitamin A transport) and Vitamin D for immune function.",
+      "Precautions": "Vitamin A is fat-soluble and accumulates — do NOT exceed 10,000IU daily for prolonged periods. Pregnant women must NOT exceed 3000mcg (10,000IU) RAE daily — teratogenic risk. Regular monitoring recommended at high doses."
+    },
+    "image": ""
+  },
+  {
+    "id": 62,
+    "brand": "nf",
+    "name": "Vitamin d3 2500iu / 1000iu softgels",
+    "category": "vitamin",
+    "composition": "vitamin d3 (cholecalciferol) 2500iu (62.5mcg) or 1000iu (25mcg) per softgel",
+    "details": {
+      "Overview &amp Key Benefits": "Vitamin D3 (Cholecalciferol) is the most active and best-absorbed form of Vitamin D. It helps support a healthy immune system, aids in the development of strong teeth and bones, and helps prevent and correct Vitamin D deficiency — extremely common in Africa.",
+      "How It Works": "D3 is converted in the liver to 25(OH)D, then in the kidneys to the active calcitriol, which regulates calcium absorption, modulates immune cell function, supports muscle function, and influences gene expression across most body tissues.",
+      "Indications": "Essential for individuals with limited sun exposure, dark skin, obesity, malabsorption conditions, osteoporosis risk, frequent infections, and the general population given the high prevalence of deficiency.",
+      "Dosage": "1000IU daily for maintenance. 2500IU daily for deficiency correction. Dosing above 4000IU/day requires blood monitoring.",
+      "Interactions": "Fat-soluble — take with meals. Corticosteroids deplete Vitamin D — supplementation important for those on long-term steroids. Always pair with Vitamin K2.",
+      "Duration of Use": "Long-term daily supplementation is safe and often necessary, particularly in equatorial Africa despite sun exposure (skin pigmentation and indoor work reduce synthesis).",
+      "Best Time to Take": "With the largest meal of the day for optimal fat-soluble absorption.",
+      "Other Therapies": "Pair with Vitamin K2 to direct calcium to bones. Essential alongside Calcium and Magnesium for bone health.",
+      "Precautions": "Vitamin D toxicity (hypercalcaemia) is rare but possible at very high doses (&gt;10,000IU/day long-term). Test 25(OH)D levels before and during supplementation. Pair with K2 to avoid arterial calcium deposition."
+    },
+    "image": ""
+  },
+  {
+    "id": 63,
+    "brand": "nf",
+    "name": "Vitamin e 400iu",
+    "category": "vitamin",
+    "composition": "vitamin e d-alpha tocopheryl acetate 400iu (268mg at)",
+    "details": {
+      "Overview &amp Key Benefits": "Natural-source Vitamin E (d-alpha tocopheryl) is a powerful fat-soluble antioxidant that protects cell membranes from oxidative damage, helping to maintain overall good health and supporting cardiovascular and skin health.",
+      "How It Works": "Vitamin E intercepts lipid peroxyl radicals in cell membranes, preventing oxidative chain reactions. It also supports immune function, platelet aggregation regulation, and gene expression.",
+      "Indications": "For individuals with oxidative stress concerns, dry skin, cardiovascular risk factors, or inadequate dietary Vitamin E intake. Particularly beneficial in combination with Vitamin C.",
+      "Dosage": "400IU (1 softgel) once daily with a fat-containing meal.",
+      "Interactions": "At higher doses, may enhance anticoagulant effects of warfarin. May reduce the efficacy of chemotherapy if taken concurrently — consult oncologist. Works synergistically with Vitamin C.",
+      "Duration of Use": "Long-term use at 400IU is generally safe. Doses above 1000IU/day are not recommended without medical supervision.",
+      "Best Time to Take": "With the main meal of the day.",
+      "Other Therapies": "Pairs with Vitamin C and Selenium for comprehensive antioxidant support.",
+      "Precautions": "Use with caution if on anticoagulant medications — may enhance bleeding risk at high doses. The natural d-alpha form (used here) is twice as potent as synthetic dl-alpha tocopherol."
+    },
+    "image": ""
+  },
+  {
+    "id": 64,
+    "brand": "nf",
+    "name": "Niacin (vitamin b3) 500mg",
+    "category": "vitamin",
+    "composition": "nicotinic acid (niacin) 500mg",
+    "details": {
+      "Overview &amp Key Benefits": "Niacin (Nicotinic Acid) at 500mg supports cholesterol metabolism, nerve function, protein metabolism, and various enzyme activities. It is one of the most studied vitamins for cardiovascular health support.",
+      "How It Works": "Niacin raises HDL ('good') cholesterol, reduces triglycerides, shifts LDL particle size to larger (less atherogenic) particles, and serves as a precursor to NAD+ (critical for energy metabolism and DNA repair).",
+      "Indications": "For individuals with lipid imbalances (elevated triglycerides, low HDL), those seeking cardiovascular health support, and for broader metabolic and nerve health.",
+      "Dosage": "500mg once daily with meals. Start at lower doses if flushing is a concern.",
+      "Interactions": "May enhance blood-pressure-lowering effects. Statins combined with high-dose niacin can increase myopathy risk — medical supervision required.",
+      "Duration of Use": "Long-term use is appropriate under healthcare supervision. Annual liver function monitoring at sustained high doses is prudent.",
+      "Best Time to Take": "With meals to reduce flushing and gastrointestinal discomfort.",
+      "Other Therapies": "Part of a comprehensive cardiovascular programme alongside Omega-3 fatty acids and CoQ10.",
+      "Precautions": "Flushing (skin redness and warmth) is common and harmless at higher doses — take aspirin 30 minutes before if troublesome. Use non-flush (inositol hexanicotinate) form if flushing is a concern. Monitor liver enzymes and blood sugar at high doses. Consult a doctor if on statin medications."
+    },
+    "image": ""
+  },
+  {
+    "id": 65,
+    "brand": "nf",
+    "name": "Vitamin c 1000mg time release",
+    "category": "vitamin",
+    "composition": "vitamin c 1000mg time release tablet",
+    "details": {
+      "Overview &amp Key Benefits": "Vitamin C 1000mg in a time-release formulation maintains elevated blood levels of ascorbic acid throughout the day, providing sustained immune support, collagen synthesis support, and antioxidant protection.",
+      "How It Works": "The time-release matrix slowly dissolves over 8–12 hours, maintaining higher, more consistent plasma Vitamin C levels compared to standard immediate-release tablets, improving utilisation and reducing urinary losses.",
+      "Indications": "For adults needing robust, sustained immune support, those recovering from illness, smokers (increased Vitamin C requirements), and anyone seeking antioxidant protection throughout the day.",
+      "Dosage": "1000mg (1 tablet) once daily. Higher doses may be used short-term during illness.",
+      "Interactions": "Enhances iron absorption — beneficial for those with iron deficiency; may cause excessive iron absorption in hereditary haemochromatosis. High doses may reduce anticoagulant effect of warfarin.",
+      "Duration of Use": "Safe for long-term daily use. Water-soluble; excess is excreted.",
+      "Best Time to Take": "Morning preferred for sustained immune support throughout the day.",
+      "Other Therapies": "Pairs with Zinc and Elderberry for immune support. Works synergistically with Vitamin E as an antioxidant pair.",
+      "Precautions": "Do not exceed 2000mg total daily Vitamin C. Very high doses may cause loose stools (bowel tolerance). Use with caution in kidney stones (oxalate-type) — stay well hydrated."
+    },
+    "image": ""
+  },
+  {
+    "id": 66,
+    "brand": "nf",
+    "name": "Vitamin c 500mg fruit chew",
+    "category": "vitamin",
+    "composition": "vitamin c 500mg 100% fruit chew (berry flavour)",
+    "details": {
+      "Overview &amp Key Benefits": "Vitamin C 500mg in a delicious, 100% fruit-chew format that makes daily supplementation enjoyable for adults and older children who prefer not to swallow tablets.",
+      "How It Works": "Same as standard Vitamin C — immune support, collagen synthesis, antioxidant protection, and enhanced iron absorption.",
+      "Indications": "Suitable for all adults and older children (over 12) as a daily immune and antioxidant supplement.",
+      "Dosage": "1–2 chewable tablets daily.",
+      "Interactions": "Same as other Vitamin C formulations.",
+      "Duration of Use": "Safe for long-term daily use.",
+      "Best Time to Take": "Can be taken any time of day.",
+      "Other Therapies": "Complements Zinc and daily multivitamin for comprehensive daily nutrition.",
+      "Precautions": "Contains natural fruit sugars — consider this in diabetic individuals. Do not exceed total daily 2000mg Vitamin C. May cause dental sensitivity if chewed excessively without water."
+    },
+    "image": ""
+  },
+  {
+    "id": 67,
+    "brand": "nf",
+    "name": "Liposomal vitamin c 1000mg",
+    "category": "vitamin",
+    "composition": "liposomal vitamin c 1000mg per softgel",
+    "details": {
+      "Overview &amp Key Benefits": "Liposomal Vitamin C encapsulates ascorbic acid in phospholipid vesicles (liposomes), dramatically improving cellular absorption and bioavailability — delivering Vitamin C levels approaching intravenous administration without gastrointestinal side effects.",
+      "How It Works": "Liposomes fuse with cell membranes, directly delivering Vitamin C intracellularly, bypassing the saturable intestinal transport mechanism that limits standard oral Vitamin C absorption. This results in 3–5x higher plasma levels than conventional oral Vitamin C.",
+      "Indications": "For individuals seeking maximum immune defence, those recovering from serious illness or surgery, individuals with high oxidative stress, or those who experience GI discomfort with standard high-dose Vitamin C.",
+      "Dosage": "1000mg (1–2 softgels) once to twice daily, or as directed by a healthcare professional.",
+      "Interactions": "Same as standard Vitamin C at equivalent doses.",
+      "Duration of Use": "Safe for long-term daily use. Ideal for periods of high immune demand.",
+      "Best Time to Take": "Can be taken any time, with or without food.",
+      "Other Therapies": "Premium substitute for standard Vitamin C whenever maximum bioavailability is needed. Pairs with Glutathione and NAC for comprehensive antioxidant support.",
+      "Precautions": "Contains soy lecithin (phospholipid source) — caution in severe soy allergy. Generally free of GI side effects unlike high-dose regular Vitamin C."
+    },
+    "image": ""
+  },
+  {
+    "id": 68,
+    "brand": "nf",
+    "name": "Vitamin b12 methylcobalamin 1000mcg sublingual",
+    "category": "vitamin",
+    "composition": "vitamin b12 (methylcobalamin) 1000mcg sublingual tablet",
+    "details": {
+      "Overview &amp Key Benefits": "Methylcobalamin 1000mcg sublingual provides the active, immediately bioavailable form of B12 at a maintenance dose, supporting red blood cell formation, nerve health, and energy metabolism.",
+      "How It Works": "Sublingual delivery of methylcobalamin directly enters circulation via the oral mucosa, bypassing the gastrointestinal absorption mechanism that fails in pernicious anaemia and many elderly individuals. Methylcobalamin is the neurologically active form, directly supporting myelin synthesis.",
+      "Indications": "For B12 maintenance supplementation in vegetarians, vegans, older adults, and individuals on medications that reduce B12 absorption (metformin, PPIs). Also appropriate for nerve health support.",
+      "Dosage": "1000mcg (1 sublingual tablet) dissolved under the tongue once daily.",
+      "Interactions": "Same as other B12 formulations.",
+      "Duration of Use": "Safe for indefinite daily use — essential for lifelong supplementation in vegans and individuals with absorption difficulties.",
+      "Best Time to Take": "Morning to support all-day energy and cognitive function.",
+      "Other Therapies": "Part of a complete B-vitamin and methylation support programme.",
+      "Precautions": "Confirm B12 status with blood tests if deficiency is suspected. Very safe profile. Methylcobalamin is preferred over cyanocobalamin for individuals with kidney impairment."
+    },
+    "image": ""
+  },
+  {
+    "id": 69,
+    "brand": "dh",
+    "name": "Omega-3 + ginkgo 60 caps",
+    "category": "omega + ginkgo",
+    "composition": "fish oil 1000mg (epa 180mg/dha 120mg) + ginkgo extract 100mg + b1, niacin, b5, b12, vit e 12mg",
+    "details": {
+      "Overview &amp Key Benefits": "A targeted brain and heart formula combining Omega-3 fatty acids with Ginkgo Biloba and key B vitamins to simultaneously support cardiovascular function and enhance cerebral circulation, memory, and cognitive performance.",
+      "How It Works": "EPA and DHA support heart rhythm, lower triglycerides, and maintain brain cell membrane fluidity; Ginkgo improves microcirculation and provides neuroprotective antioxidant effects; B vitamins (B1, B12, Niacin) support energy metabolism in brain and heart cells.",
+      "Indications": "Ideal for adults over 40 seeking simultaneous heart and brain health support, those with early cognitive decline, poor concentration, circulatory concerns, or age-related cardiovascular risk.",
+      "Dosage": "1–2 capsules daily with meals.",
+      "Interactions": "Omega-3 and Ginkgo may both have mild antiplatelet effects — use with extra caution if on anticoagulants (warfarin, clopidogrel). Avoid with MAOIs.",
+      "Duration of Use": "Long-term daily use is recommended for sustained cardiovascular and cognitive benefits.",
+      "Best Time to Take": "With a meal containing fat for optimal Omega-3 and fat-soluble vitamin absorption.",
+      "Other Therapies": "Complements CoQ10 for heart function and Phosphatidylserine for memory support.",
+      "Precautions": "Inform your doctor before use if on anticoagulants. Stop 2 weeks before elective surgery. Not for use during pregnancy without medical advice."
+    },
+    "image": ""
+  },
+  {
+    "id": 70,
+    "brand": "dh",
+    "name": "Kids omega-3 syrup 250ml",
+    "category": "children's omega",
+    "composition": "per 15ml: fish oil 535mg (dha 125mg/epa 27mg) + vitamins a, c, d3, e, b1, b2, b6, b12, niacin, pantothenic acid, biotin",
+    "details": {
+      "Overview &amp Key Benefits": "A complete children's Omega-3 and multivitamin syrup combining DHA-rich fish oil with a full spectrum of essential vitamins to support brain development, cognitive function, vision, immunity, and overall growth in children.",
+      "How It Works": "DHA is the primary structural fatty acid in the developing brain and retina — adequate DHA intake is critical for neurological development. The accompanying vitamin complex provides complete micronutrient support for all aspects of paediatric health.",
+      "Indications": "Suitable for children from 3 years of age. Particularly important for children with limited fish intake, fussy eaters, those with learning or attention concerns, and during periods of rapid growth.",
+      "Dosage": "15ml (1 tablespoon) once daily with a meal. Shake well before use.",
+      "Interactions": "Generally very safe in children. Contains Vitamin D — monitor total D3 intake if child takes other supplements.",
+      "Duration of Use": "Can be used daily throughout childhood as a nutritional supplement.",
+      "Best Time to Take": "With breakfast for best child compliance and to support daytime brain activity.",
+      "Other Therapies": "Pairs with B Friends Children's Multivitamin Chewable if additional mineral support is needed.",
+      "Precautions": "Contains fish oil — avoid in children with known fish allergy. Store refrigerated after opening. Keep out of reach of young children to prevent accidental overconsumption."
+    },
+    "image": ""
+  },
+  {
+    "id": 71,
+    "brand": "dh",
+    "name": "Relax &amp; sleep 30 tabs (melatonin + herbs)",
+    "category": "sleep support",
+    "composition": "melatonin 1mg + hop cones 200mg + melissa leaves 100mg + lavender 30mg + magnesium 56.3mg + vitamin b6",
+    "details": {
+      "Overview &amp Key Benefits": "A gentle, multi-herbal sleep support formula combining low-dose Melatonin with traditionally used calming herbs (Hops, Lemon Balm, Lavender) and Magnesium to help regulate the biological clock and promote quick, natural sleep onset.",
+      "How It Works": "Melatonin shifts the circadian sleep signal; Hops and Lemon Balm (Melissa) enhance GABAergic inhibitory neurotransmission; Lavender aromatics act on serotonin receptors; Magnesium relaxes muscles and supports melatonin synthesis; B6 supports neurotransmitter conversion.",
+      "Indications": "For adults with mild-to-moderate sleep onset difficulties, jet lag, shift work, stress-related insomnia, and those who prefer a gentle, low-dose herbal approach to sleep support.",
+      "Dosage": "1 tablet 30 minutes before bedtime.",
+      "Interactions": "May enhance CNS depressants. Avoid with alcohol. Lemon Balm may potentiate sedative medications.",
+      "Duration of Use": "Short to medium-term use (4–8 weeks). Can be used intermittently for travel and shift work.",
+      "Best Time to Take": "30 minutes before desired bedtime.",
+      "Other Therapies": "Pairs with SR Magnesium Nighttime and good sleep hygiene for a comprehensive sleep programme.",
+      "Precautions": "May cause morning drowsiness — do not drive until you know how this affects you. Not for use during pregnancy. The low 1mg melatonin dose makes this an ideal starting product for melatonin-naive individuals."
+    },
+    "image": ""
+  },
+  {
+    "id": 72,
+    "brand": "dh",
+    "name": "Aktiv joints ultra 30 caps",
+    "category": "joint support",
+    "composition": "glucosamine sulphate 750mg, chondroitin 40mg, collagen hydrolysate 100mg, msm 50mg, hyaluronic acid 7.5mg, vit c 40mg, vit k1 20mcg, vit d3 5mcg",
+    "details": {
+      "Overview &amp Key Benefits": "Doppelherz Aktiv Joints Ultra is a premium multi-ingredient joint formula combining the most clinically supported joint nutrients to help support cartilage integrity, joint lubrication, reduce inflammation, and maintain full joint mobility.",
+      "How It Works": "Glucosamine provides building blocks for glycosaminoglycan synthesis in cartilage; Chondroitin inhibits cartilage-degrading enzymes; MSM provides sulphur for connective tissue; Collagen and HA support synovial fluid viscosity and joint cushioning; Vitamin C enables collagen cross-linking; D3 and K1 support bone health.",
+      "Indications": "For adults with osteoarthritis, joint stiffness, reduced range of motion, post-injury joint support, and active individuals seeking preventive joint maintenance.",
+      "Dosage": "1 capsule once daily with a meal.",
+      "Interactions": "Glucosamine may mildly enhance anticoagulant effects. Monitor blood glucose if diabetic.",
+      "Duration of Use": "Allow 4–8 weeks for measurable benefit. Long-term use is encouraged for ongoing joint maintenance.",
+      "Best Time to Take": "With a main meal.",
+      "Other Therapies": "Complements physiotherapy, Omega-3 supplementation, and anti-inflammatory diet for comprehensive joint care.",
+      "Precautions": "Avoid if allergic to shellfish (glucosamine is shellfish-derived). Not recommended during pregnancy. Consult a doctor if on anticoagulants."
+    },
+    "image": ""
+  },
+  {
+    "id": 73,
+    "brand": "dh",
+    "name": "Omega-3 + folic acid + b6 + b12 30 caps",
+    "category": "adult heart health",
+    "composition": "fish oil 1000mg (epa 180mg/dha 120mg) + vit e 10mg + folic acid 300mcg + b6 3mg + b12 3mcg per capsule",
+    "details": {
+      "Overview &amp Key Benefits": "A scientifically formulated adult heart health capsule combining Omega-3 fatty acids with the homocysteine-lowering trio of Folic Acid, B6, and B12 — addressing two major cardiovascular risk factors (triglycerides and homocysteine) simultaneously.",
+      "How It Works": "EPA/DHA lower triglycerides and reduce inflammatory cardiovascular mediators; Folic Acid, B6, and B12 together convert homocysteine (an independent cardiovascular risk factor) to harmless methionine, reducing arterial damage and thrombotic risk.",
+      "Indications": "Particularly recommended for adults with elevated homocysteine levels, cardiovascular risk factors, family history of heart disease, and those seeking comprehensive heart health support.",
+      "Dosage": "1 capsule once daily with a meal.",
+      "Interactions": "May mildly enhance anticoagulant effects. B vitamins interact with levodopa (Parkinson's medications).",
+      "Duration of Use": "Long-term daily use for sustained cardiovascular benefit.",
+      "Best Time to Take": "With a fat-containing meal.",
+      "Other Therapies": "Complements CoQ10, Vitamin K2+D3, and Magnesium for a comprehensive cardiac health programme.",
+      "Precautions": "Consult a doctor if on anticoagulants. Not for use during pregnancy without medical guidance. Homocysteine testing is recommended to monitor supplementation efficacy."
+    },
+    "image": ""
+  },
+  {
+    "id": 74,
+    "brand": "dh",
+    "name": "Magnesium + calcium + d3 30 tabs",
+    "category": "bone &amp; muscle",
+    "composition": "magnesium 250mg + calcium 450mg + vitamin d3 10mcg (400iu) per tablet",
+    "details": {
+      "Overview &amp Key Benefits": "A convenient all-in-one bone and muscle health tablet combining the three key nutrients — Magnesium, Calcium, and Vitamin D3 — in optimal ratios to help support muscle function and maintain strong, healthy bones.",
+      "How It Works": "Vitamin D3 enhances intestinal calcium and magnesium absorption; Calcium provides the primary mineral matrix for bone; Magnesium activates Vitamin D, supports the parathyroid hormone response, and ensures calcium enters bone tissue.",
+      "Indications": "Suitable for all adults seeking bone health maintenance, the elderly at risk of osteoporosis, post-menopausal women, those with muscle cramps, and individuals with low dietary calcium or magnesium.",
+      "Dosage": "1 tablet once daily with a meal.",
+      "Interactions": "Separate from iron supplements and tetracycline antibiotics. Fat-soluble D3 requires dietary fat for absorption.",
+      "Duration of Use": "Long-term daily use is safe and recommended for ongoing bone density maintenance.",
+      "Best Time to Take": "With the main meal of the day.",
+      "Other Therapies": "Add Vitamin K2 to direct calcium to bones. Combine with weight-bearing exercise for maximum bone density benefit.",
+      "Precautions": "Do not exceed recommended doses of Vitamin D3 and Calcium without medical monitoring. Consult a doctor if history of kidney stones (calcium-type) or hypercalcaemia."
+    },
+    "image": ""
+  },
+  {
+    "id": 75,
+    "brand": "dh",
+    "name": "Collagen beauty drinking shots 30 amps",
+    "category": "beauty &amp; skin",
+    "composition": "per bottle: collagen peptides 2.5g + acai 100mg + zinc 5mg + vit e 3mg + beta-carotene + copper 0.15mg + biotin 150mcg + vit c 80mg",
+    "details": {
+      "Overview &amp Key Benefits": "A premium liquid beauty supplement combining hydrolysed collagen peptides with antioxidant-rich Acai, Zinc, Biotin, Vitamin C, and Vitamin E to help deliver smoother, healthier, more youthful-looking skin, stronger nails, and vibrant hair.",
+      "How It Works": "Collagen peptides stimulate dermal fibroblasts to synthesise new collagen; Vitamin C is essential for collagen cross-linking; Zinc and Copper are required for structural protein synthesis; Biotin supports keratin production; Acai berry extract provides powerful antioxidant skin protection.",
+      "Indications": "Designed for adults seeking visible skin rejuvenation, reduction in fine lines, improved skin hydration and elasticity, stronger nails, and healthier hair.",
+      "Dosage": "1 bottle (shot) once daily. Drink directly or dilute in water.",
+      "Interactions": "Generally free of significant drug interactions. Contains copper — do not combine with additional high-dose copper supplements.",
+      "Duration of Use": "Best results seen after 4–8 weeks of consistent daily use.",
+      "Best Time to Take": "Can be taken at any time. Many prefer it as a morning beauty ritual.",
+      "Other Therapies": "Complements topical skincare, adequate hydration, and sun protection for optimal aesthetic outcomes.",
+      "Precautions": "Contains fish-derived collagen — avoid if allergic to fish. Contains copper — do not exceed combined intake from all sources. Store in a cool place."
+    },
+    "image": ""
+  },
+  {
+    "id": 76,
+    "brand": "dh",
+    "name": "A-z effervescent multivitamin 15 tabs",
+    "category": "multivitamin",
+    "composition": "21 micronutrients: vitamins a, b1, b2, b6, b12, c 200mg, d3, e, k + folic acid + biotin + niacin + pantothenic acid + calcium + magnesium + phosphorus + chromium + iodine + molybdenum + selenium + zinc per effervescent tablet",
+    "details": {
+      "Overview &amp Key Benefits": "A comprehensive 21-micronutrient effervescent multivitamin offering complete daily vitamin and mineral support in a convenient, fast-dissolving format that is particularly enjoyable and easy to absorb.",
+      "How It Works": "Effervescent delivery creates an ionised solution with superior absorption compared to standard tablets. The complete micronutrient profile supports energy metabolism, immune function, antioxidant defence, bone health, thyroid function (iodine), and cellular antioxidant protection (selenium).",
+      "Indications": "Ideal as a daily nutritional insurance supplement for all adults, particularly busy professionals, those with poor dietary variety, athletes, the elderly, and anyone seeking broad-spectrum vitamin and mineral support.",
+      "Dosage": "1 effervescent tablet dissolved in 200ml of water once daily.",
+      "Interactions": "Contains multiple fat-soluble vitamins — do not combine with additional high-dose Vitamin A or D supplementation without monitoring.",
+      "Duration of Use": "Safe for long-term daily use.",
+      "Best Time to Take": "Morning with or after breakfast.",
+      "Other Therapies": "Provides an excellent nutritional base that can be complemented with specific targeted supplements such as Omega-3 or probiotics.",
+      "Precautions": "Contains sodium (from effervescent formulation) — consider this in individuals on sodium-restricted diets. Inform doctor if taking with other supplements or medications for interactions screening."
+    },
+    "image": ""
+  },
+  {
+    "id": 77,
+    "brand": "dh",
+    "name": "Lacta+ breastfeeding support 30 caps",
+    "category": "lactation support",
+    "composition": "per 2 capsules: calcium 300mg + anise seed 50mg + dill herb 50mg + fennel seed 100mg + iron 8mg + iodine 100mcg + vit d3 + b1 + b2 + b6 + pantothenic acid + niacin + biotin 100mcg",
+    "details": {
+      "Overview &amp Key Benefits": "Lacta+ is a specialised lactation supplement combining galactogenic herbs (Anise, Dill, Fennel) with critical nutritional needs of breastfeeding mothers (Calcium, Iron, Iodine, Vitamins) to help support adequate breast milk production and maternal health.",
+      "How It Works": "The trio of Anise, Dill, and Fennel seeds are traditional galactagogues (milk-production supporters) containing phytoestrogens and volatile oils that stimulate prolactin activity. The vitamins and minerals replenish the high nutritional demands of lactation.",
+      "Indications": "Specifically designed for breastfeeding mothers from delivery onwards to support milk production, replenish nutritional stores depleted by lactation, and support both maternal and infant health.",
+      "Dosage": "2 capsules once daily, preferably with food.",
+      "Interactions": "Contains Iron — separate from tetracycline antibiotics and calcium supplements by 2 hours. Iodine may interact with thyroid medications — inform your doctor.",
+      "Duration of Use": "Safe throughout the entire breastfeeding period.",
+      "Best Time to Take": "With a meal at any time of day.",
+      "Other Therapies": "Complements postnatal multivitamin supplementation and adequate hydration for comprehensive lactation support.",
+      "Precautions": "For use only by breastfeeding mothers. Do not use during pregnancy without medical guidance. Consult a doctor or pharmacist if on thyroid medication due to iodine content. Fennel and Anise should be avoided in women with hormone-sensitive conditions."
+    },
+    "image": ""
+  },
+  {
+    "id": 78,
+    "brand": "dh",
+    "name": "Vitamin c 1000mg + vitamin d3",
+    "category": "immune support",
+    "composition": "vitamin c 1000mg + vitamin d3 20mcg (800iu) per tablet",
+    "details": {
+      "Overview &amp Key Benefits": "A targeted immune-boosting duo combining high-dose Vitamin C with Vitamin D3 — the two most evidence-based micronutrients for immune system support — in a single daily tablet to help strengthen immune defences year-round.",
+      "How It Works": "Vitamin C stimulates the production and function of white blood cells (neutrophils, lymphocytes), enhances barrier function, and neutralises free radicals. Vitamin D3 activates innate and adaptive immune pathways, including antimicrobial peptide production, and regulates inflammatory immune responses.",
+      "Indications": "For all adults seeking strong daily immune support, particularly during cold and flu season, in individuals with Vitamin D deficiency (common in East Africa despite sun exposure), and during and after illness.",
+      "Dosage": "1 tablet once daily with a meal.",
+      "Interactions": "Vitamin C enhances iron absorption. Vitamin D3 is fat-soluble — take with food.",
+      "Duration of Use": "Safe for long-term daily use as primary immune support supplementation.",
+      "Best Time to Take": "With the main meal of the day.",
+      "Other Therapies": "Excellent standalone immune support or as a base to which Zinc Elderberry Lozenges or Echinacea can be added during active illness.",
+      "Precautions": "Do not combine with additional high-dose Vitamin D3 supplements without monitoring blood levels. Very high dose Vitamin C (&gt;2000mg/day) may cause loose stools. Consult a doctor if on immunosuppressant therapy."
+    },
+    "image": ""
+  }
+]
