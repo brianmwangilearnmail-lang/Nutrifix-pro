@@ -175,8 +175,13 @@ const App = () => {
         details: {
           "Overview & Key Benefits": "",
           "How It Works": "",
+          "Indications": "",
+          "Precautions": "",
           "Dosage": "",
-          "Interactions": ""
+          "Interactions": "",
+          "Duration of Use": "",
+          "Other Therapies": "",
+          "Best Time To Take": ""
         }
       });
     } catch (err) {
@@ -272,7 +277,7 @@ const App = () => {
           }
         }
 
-        // --- BODY SECTIONS (WITH RED SQUARES) ---
+        // --- BODY SECTIONS (DYNAMICALLY RENDER ALL DETAILS) ---
         const drawSectionHeader = (title, y) => {
           doc.setFillColor(231, 76, 60); // Red
           doc.rect(15, y - 4, 4, 4, 'F');
@@ -280,61 +285,47 @@ const App = () => {
           doc.setFontSize(11);
           doc.setFont(undefined, 'bold');
           doc.text(title.toUpperCase(), 22, y);
-          doc.line(15, y + 2, 120, y + 2);
+          doc.setDrawColor(231, 76, 60);
+          doc.line(15, y + 2, 195, y + 2); // Full-width line for prestige
         };
 
-        // Section: Overview
-        drawSectionHeader("Executive Summary", contentY);
-        doc.setFont(undefined, 'normal');
-        doc.setTextColor(51, 65, 85);
-        doc.setFontSize(9.5);
-        const overviewLines = doc.splitTextToSize(product.details["Overview & Key Benefits"] || "N/A", 110);
-        doc.text(overviewLines, 15, contentY + 10);
-        
-        contentY += (overviewLines.length * 5) + 20;
+        // Render all available details with auto-pagination
+        Object.entries(product.details).forEach(([key, value]) => {
+          if (!value) return; // Skip empty fields
 
-        // Section: Uses and Benefits
-        drawSectionHeader("Scientific Profile", contentY);
-        doc.setFont(undefined, 'normal');
-        doc.setTextColor(51, 65, 85);
-        const howItWorksLines = doc.splitTextToSize(product.details["How It Works"] || "N/A", 110);
-        doc.text(howItWorksLines, 15, contentY + 10);
-        
-        contentY += (howItWorksLines.length * 5) + 20;
+          if (contentY > 260) {
+            doc.addPage();
+            contentY = 30;
+          }
 
-        // --- TWO COLUMN TECH DATA (PRISTINE) ---
-        if (contentY > 210) {
-          doc.addPage();
-          contentY = 30;
+          drawSectionHeader(key, contentY);
+          doc.setFont(undefined, 'normal');
+          doc.setTextColor(51, 65, 85);
+          doc.setFontSize(9.5);
+          const lines = doc.splitTextToSize(value, 180);
+          doc.text(lines, 15, contentY + 10);
+          
+          contentY += (lines.length * 5) + 20;
+        });
+
+        // Ensure Composition is always included as a special technical section
+        if (product.composition) {
+          if (contentY > 260) {
+              doc.addPage();
+              contentY = 30;
+          }
+          drawSectionHeader("Technical Composition", contentY);
+          doc.setFont(undefined, 'normal');
+          doc.setTextColor(51, 65, 85);
+          doc.setFontSize(9.5);
+          const compLines = doc.splitTextToSize(product.composition, 180);
+          doc.text(compLines, 15, contentY + 10);
+          contentY += (compLines.length * 5) + 20;
         }
 
-        doc.setDrawColor(31, 41, 55);
-        doc.line(15, contentY, 195, contentY);
-
-        // Column 1: Composition
-        doc.setTextColor(231, 76, 60);
-        doc.setFontSize(10);
-        doc.setFont(undefined, 'bold');
-        doc.text("INGREDIENTS", 15, contentY + 10);
-        doc.setTextColor(51, 65, 85);
-        doc.setFont(undefined, 'normal');
-        const compLines = doc.splitTextToSize(product.composition || "N/A", 85);
-        doc.text(compLines, 15, contentY + 18);
-
-        // Column 2: Dosage & Cautions
-        doc.setTextColor(231, 76, 60);
-        doc.setFont(undefined, 'bold');
-        doc.text("DOSAGE & CAUTIONS", 110, contentY + 10);
-        doc.setTextColor(51, 65, 85);
-        doc.setFont(undefined, 'normal');
-        const dosageValue = `DOSAGE: ${product.details.Dosage || "N/A"}\n\nINTERACTIONS: ${product.details.Interactions || "N/A"}`;
-        const dosageLines = doc.splitTextToSize(dosageValue, 85);
-        doc.text(dosageLines, 110, contentY + 18);
-
-        // --- FOOTER BRAND LOGO ---
+        // --- FOOTER BRAND LOGO (STICKY AT BOTTOM) ---
         const footerLogo = product.brand === 'nf' ? nfLogo : dhLogo;
         if (footerLogo) {
-          // Adjust brand logo sizing to be less stretched
           const w = product.brand === 'nf' ? 30 : 25;
           const h = product.brand === 'nf' ? 15 : 18;
           doc.addImage(footerLogo, 'PNG', 195 - w, 265, w, h);
@@ -342,7 +333,7 @@ const App = () => {
         
         doc.setTextColor(156, 163, 175);
         doc.setFontSize(8);
-        doc.text(`Official Data Sheet | Page ${doc.internal.getNumberOfPages()}`, 15, 285);
+        doc.text(`Scientific Reference Sheet | Page ${doc.internal.getNumberOfPages()}`, 15, 285);
       }
 
       doc.save(`Nutrifix_Professional_Catalogue_${new Date().getFullYear()}.pdf`);
