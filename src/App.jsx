@@ -211,101 +211,137 @@ const App = () => {
         format: 'a4'
       });
 
+      // Load static logos once
+      const nutrifixLogo = await fetchImageAsBase64('/nutrifix-logo.png');
+      const nfLogo = await fetchImageAsBase64('/nf-logo.png');
+      const dhLogo = await fetchImageAsBase64('/dh-logo.png');
+
       // --- COVER PAGE ---
       doc.setFillColor(31, 41, 55); // Dark Slate
       doc.rect(0, 0, 210, 297, 'F');
       
+      if (nutrifixLogo) {
+        doc.addImage(nutrifixLogo, 'PNG', 55, 100, 100, 50);
+      }
+      
       doc.setTextColor(255, 255, 255);
-      doc.setFontSize(40);
-      doc.text("NATURAL FACTORS", 105, 120, { align: 'center' });
-      doc.setFontSize(18);
-      doc.text("Product Technical Catalogue", 105, 135, { align: 'center' });
-      doc.setFontSize(10);
+      doc.setFontSize(28);
+      doc.setFont(undefined, 'bold');
+      doc.text("TECHNICAL CATALOGUE", 105, 160, { align: 'center' });
+      
+      doc.setFontSize(12);
+      doc.setFont(undefined, 'normal');
       const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      doc.text(`Generated on: ${date}`, 105, 150, { align: 'center' });
-      doc.text("© Nutrifix Pro Management System", 105, 280, { align: 'center' });
-
-      // --- CONTENT PAGES ---
+      doc.text(`Updated: ${date}`, 105, 175, { align: 'center' });
+      
+      // --- PRODUCT PAGES ---
       for (const product of products) {
         doc.addPage();
         
-        // Header Bar
-        doc.setFillColor(31, 41, 55); // Premium Charcoal
-        doc.rect(0, 0, 210, 35, 'F');
+        // --- TOP HEADER ---
+        if (nutrifixLogo) {
+          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 50, 20); // Top Left
+        }
         
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(9);
-        doc.text(product.brand === 'nf' ? "OFFICIAL PRODUCT FILE | NATURAL FACTORS" : "OFFICIAL PRODUCT FILE | DOPPELHERZ", 20, 12);
+        doc.setTextColor(156, 163, 175);
+        doc.setFontSize(14);
+        doc.setFont(undefined, 'bold');
+        doc.text("Product Profile", 195, 18, { align: 'right' });
         
+        doc.setDrawColor(229, 231, 235);
+        doc.line(15, 32, 195, 32); // Header Separator
+
+        // --- PRODUCT MAIN INFO ---
+        doc.setTextColor(15, 23, 42); // Black
         doc.setFontSize(24);
         doc.setFont(undefined, 'bold');
-        doc.text(product.name.toUpperCase(), 20, 25);
+        doc.text(product.name.toUpperCase(), 15, 45);
         
-        // Category Badge
-        doc.setFillColor(243, 244, 246); // Light Gray
-        doc.roundedRect(150, 20, 40, 8, 1, 1, 'F');
-        doc.setTextColor(31, 41, 55);
-        doc.setFontSize(7);
-        doc.setFont(undefined, 'bold');
-        doc.text(product.category.toUpperCase(), 170, 25.5, { align: 'center' });
+        doc.setFontSize(11);
+        doc.setTextColor(71, 85, 105);
+        doc.text(product.category.toUpperCase(), 15, 52);
 
-        // Product Image (if exists)
-        let yPos = 55;
+        // --- PRODUCT IMAGE (LARGE) ---
+        let contentY = 70;
         if (product.image_url) {
           const imgData = await fetchImageAsBase64(product.image_url);
           if (imgData) {
-             // Calculate aspect ratio for image
-             doc.addImage(imgData, 'JPEG', 140, 50, 50, 50); // Small professional preview on the right
+             // Position larger image on the right as per vitamin C reference
+             doc.addImage(imgData, 'JPEG', 140, 45, 55, 55);
           }
         }
 
-        // --- Main Content Section ---
-        doc.setTextColor(31, 41, 55);
-        doc.setFontSize(11);
-        doc.setFont(undefined, 'bold');
-        doc.text("TECHNICAL COMPOSITION", 20, 55);
-        
-        doc.setDrawColor(229, 231, 235); // Light separator
-        doc.line(20, 58, 120, 58);
+        // --- BODY SECTIONS (WITH RED SQUARES) ---
+        const drawSectionHeader = (title, y) => {
+          doc.setFillColor(231, 76, 60); // Red
+          doc.rect(15, y - 4, 4, 4, 'F');
+          doc.setTextColor(15, 23, 42);
+          doc.setFontSize(11);
+          doc.setFont(undefined, 'bold');
+          doc.text(title.toUpperCase(), 22, y);
+          doc.line(15, y + 2, 120, y + 2);
+        };
 
+        // Section: Overview
+        drawSectionHeader("Executive Summary", contentY);
         doc.setFont(undefined, 'normal');
         doc.setTextColor(51, 65, 85);
-        const compositionLines = doc.splitTextToSize(product.composition || "N/A", 110);
-        doc.text(compositionLines, 20, 65);
+        doc.setFontSize(9.5);
+        const overviewLines = doc.splitTextToSize(product.details["Overview & Key Benefits"] || "N/A", 110);
+        doc.text(overviewLines, 15, contentY + 10);
         
-        yPos = Math.max(85, 65 + (compositionLines.length * 5) + 10);
+        contentY += (overviewLines.length * 5) + 20;
 
-        // Map Sections with Clinical Styling
-        Object.entries(product.details).forEach(([key, value]) => {
-          if (yPos > 260) {
-            doc.addPage();
-            yPos = 30;
-          }
-          doc.setTextColor(31, 41, 55);
-          doc.setFontSize(10);
-          doc.setFont(undefined, 'bold');
-          doc.text(key.toUpperCase(), 20, yPos);
-          
-          doc.line(20, yPos + 2, 190, yPos + 2); // Full width separator
-          
-          doc.setFont(undefined, 'normal');
-          doc.setTextColor(71, 85, 105);
-          const lines = doc.splitTextToSize(value, 170);
-          doc.text(lines, 20, yPos + 8);
-          yPos += (lines.length * 5) + 15;
-        });
-
-        // Sticky Footer on every page
-        doc.setFillColor(249, 250, 251);
-        doc.rect(0, 280, 210, 17, 'F');
-        doc.setFontSize(7);
-        doc.setTextColor(156, 163, 175);
+        // Section: Uses and Benefits
+        drawSectionHeader("Scientific Profile", contentY);
         doc.setFont(undefined, 'normal');
-        doc.text("Scientific Data provided by Nutrifix Integrated Management System", 20, 288);
-        doc.text(`Page ${doc.internal.getNumberOfPages()}`, 190, 288, { align: 'right' });
+        doc.setTextColor(51, 65, 85);
+        const howItWorksLines = doc.splitTextToSize(product.details["How It Works"] || "N/A", 110);
+        doc.text(howItWorksLines, 15, contentY + 10);
+        
+        contentY += (howItWorksLines.length * 5) + 20;
+
+        // --- TWO COLUMN TECH DATA (PRISTINE) ---
+        if (contentY > 210) {
+          doc.addPage();
+          contentY = 30;
+        }
+
+        doc.setDrawColor(31, 41, 55);
+        doc.line(15, contentY, 195, contentY);
+
+        // Column 1: Composition
+        doc.setTextColor(231, 76, 60);
+        doc.setFontSize(10);
+        doc.setFont(undefined, 'bold');
+        doc.text("INGREDIENTS", 15, contentY + 10);
+        doc.setTextColor(51, 65, 85);
+        doc.setFont(undefined, 'normal');
+        const compLines = doc.splitTextToSize(product.composition || "N/A", 85);
+        doc.text(compLines, 15, contentY + 18);
+
+        // Column 2: Dosage & Cautions
+        doc.setTextColor(231, 76, 60);
+        doc.setFont(undefined, 'bold');
+        doc.text("DOSAGE & CAUTIONS", 110, contentY + 10);
+        doc.setTextColor(51, 65, 85);
+        doc.setFont(undefined, 'normal');
+        const dosageValue = `DOSAGE: ${product.details.Dosage || "N/A"}\n\nINTERACTIONS: ${product.details.Interactions || "N/A"}`;
+        const dosageLines = doc.splitTextToSize(dosageValue, 85);
+        doc.text(dosageLines, 110, contentY + 18);
+
+        // --- FOOTER BRAND LOGO ---
+        const footerLogo = product.brand === 'nf' ? nfLogo : dhLogo;
+        if (footerLogo) {
+          doc.addImage(footerLogo, 'PNG', 160, 265, 35, 20);
+        }
+        
+        doc.setTextColor(156, 163, 175);
+        doc.setFontSize(8);
+        doc.text(`Official Data Sheet | Page ${doc.internal.getNumberOfPages()}`, 15, 285);
       }
 
-      doc.save("Nutrifix_Pro_Catalogue.pdf");
+      doc.save(`Nutrifix_Professional_Catalogue_${new Date().getFullYear()}.pdf`);
     } catch (err) {
       console.error("PDF generation error:", err);
       alert("Failed to generate PDF. Please try again.");
