@@ -195,9 +195,23 @@ const App = () => {
       const response = await fetch(url);
       const blob = await response.blob();
       return new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
-        reader.readAsDataURL(blob);
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          
+          // Max width for PDF images to save memory
+          const MAX_WIDTH = 800;
+          const scale = MAX_WIDTH / img.width;
+          const width = img.width > MAX_WIDTH ? MAX_WIDTH : img.width;
+          const height = img.width > MAX_WIDTH ? img.height * scale : img.height;
+          
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+          resolve(canvas.toDataURL('image/jpeg', 0.7)); // Compress to 70% JPEG
+        };
+        img.src = URL.createObjectURL(blob);
       });
     } catch (e) {
       console.error("Failed to load image for PDF:", e);
@@ -267,9 +281,7 @@ const App = () => {
           const imgData = await fetchImageAsBase64(product.image_url);
           if (imgData) {
              // Position in the center of the black column
-             // Sidebar width 70, starts at 140. Center is 175.
-             // Image width ~55
-             doc.addImage(imgData, 'JPEG', 147.5, 40, 55, 55);
+             doc.addImage(imgData, 'JPEG', 147.5, 40, 55, 55, undefined, 'FAST');
           }
         }
 
