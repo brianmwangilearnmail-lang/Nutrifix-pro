@@ -230,21 +230,14 @@ const App = () => {
         format: 'a4'
       });
 
-      // Load static logo once
-      const nutrifixLogo = await fetchImageAsBase64('/nutrifix-logo.png');
-
       // --- COVER PAGE ---
       doc.setFillColor(15, 23, 42); // Deep Navy/Slate
       doc.rect(0, 0, 210, 297, 'F');
       
-      if (nutrifixLogo) {
-        doc.addImage(nutrifixLogo, 'PNG', 55, 100, 100, 50);
-      }
-      
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(32);
       doc.setFont(undefined, 'bold');
-      doc.text("PRODUCT CATALOGUE", 105, 165, { align: 'center' });
+      doc.text("PRODUCT CATALOGUE", 105, 150, { align: 'center' });
       
       doc.setFontSize(14);
       doc.setFont(undefined, 'normal');
@@ -260,23 +253,21 @@ const App = () => {
         doc.setFillColor(0, 0, 0);
         doc.rect(140, 0, 70, 297, 'F');
         
-        // --- 1. TOP HEADER (Nutrifix Logo) ---
-        if (nutrifixLogo) {
-          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 35, 14); // Scaled for top left
-        }
-
-        // --- 2. PRODUCT MAIN HEADER ---
+        // --- 1. PRODUCT MAIN HEADER (WITH WRAP) ---
         doc.setTextColor(15, 23, 42); // Black
         doc.setFontSize(22);
         doc.setFont(undefined, 'bold');
-        doc.text(product.name.toUpperCase(), 15, 45);
+        const nameLines = doc.splitTextToSize(product.name.toUpperCase(), 115);
+        doc.text(nameLines, 15, 45);
         
+        const headerBottom = 45 + (nameLines.length * 8);
+
         doc.setFontSize(12);
         doc.setFont(undefined, 'bold');
         doc.setTextColor(51, 65, 85);
-        doc.text(product.category.toUpperCase(), 15, 52);
+        doc.text(product.category.toUpperCase(), 15, headerBottom + 2);
 
-        // --- 3. HERO IMAGE (In Black Sidebar) ---
+        // --- 2. HERO IMAGE (In Black Sidebar) ---
         if (product.image_url) {
           const imgData = await fetchImageAsBase64(product.image_url);
           if (imgData) {
