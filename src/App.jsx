@@ -413,10 +413,9 @@ const App = () => {
           </button>
         )}
         <button 
-          className={`add-btn ${isGeneratingPDF ? 'loading' : ''}`} 
+          className={`download-btn ${isGeneratingPDF ? 'loading' : ''}`} 
           onClick={handleDownloadPDF} 
           disabled={isGeneratingPDF}
-          style={{ background: 'var(--slate-700)', border: 'none' }}
         >
           {isGeneratingPDF ? (
             <Loader2 size={18} className="animate-spin" />

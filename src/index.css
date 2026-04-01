@@ -10,6 +10,8 @@
   --text-main: #0f172a;
   --text-muted: #64748b;
   --glass-border: rgba(0, 0, 0, 0.05);
+  --slate-700: #334155;
+  --slate-800: #1e293b;
 }
 
 * {
@@ -172,6 +174,33 @@ header {
 .add-btn:hover {
   background: #164e32;
   transform: translateY(-1px);
+}
+
+.download-btn {
+  background: var(--slate-700);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.download-btn:hover {
+  background: var(--slate-800);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.download-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* GRID */
