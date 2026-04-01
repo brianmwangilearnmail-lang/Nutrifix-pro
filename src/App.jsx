@@ -220,7 +220,7 @@ const App = () => {
       const nutrifixLogo = await fetchImageAsBase64('/nutrifix-logo.png');
 
       // --- COVER PAGE ---
-      doc.setFillColor(31, 41, 55); // Dark Slate
+      doc.setFillColor(15, 23, 42); // Deep Navy/Slate
       doc.rect(0, 0, 210, 297, 'F');
       
       if (nutrifixLogo) {
@@ -228,103 +228,114 @@ const App = () => {
       }
       
       doc.setTextColor(255, 255, 255);
-      doc.setFontSize(28);
+      doc.setFontSize(32);
       doc.setFont(undefined, 'bold');
-      doc.text("TECHNICAL CATALOGUE", 105, 160, { align: 'center' });
+      doc.text("PRODUCT CATALOGUE", 105, 165, { align: 'center' });
       
-      doc.setFontSize(12);
+      doc.setFontSize(14);
       doc.setFont(undefined, 'normal');
       const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      doc.text(`Updated: ${date}`, 105, 175, { align: 'center' });
+      doc.text(date, 105, 175, { align: 'center' });
       
       // --- PRODUCT PAGES ---
       for (const product of products) {
         doc.addPage();
         
-        // --- TOP HEADER ---
+        // --- 0. GEOMETRIC FOUNDATION (SPLIT COLUMNS) ---
+        // Right Column (Black Sidebar)
+        doc.setFillColor(0, 0, 0);
+        doc.rect(140, 0, 70, 297, 'F');
+        
+        // --- 1. TOP HEADER (Nutrifix Logo) ---
         if (nutrifixLogo) {
-          // Maintaining Nutrifix aspect ratio (original is wide)
-          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 45, 18); // Top Left
+          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 35, 14); // Scaled for top left
         }
-        
-        doc.setTextColor(156, 163, 175);
-        doc.setFontSize(14);
-        doc.setFont(undefined, 'bold');
-        doc.text("Product Profile", 195, 18, { align: 'right' });
-        
-        doc.setDrawColor(229, 231, 235);
-        doc.line(15, 32, 195, 32); // Header Separator
 
-        // --- PRODUCT MAIN INFO ---
+        // --- 2. PRODUCT MAIN HEADER ---
         doc.setTextColor(15, 23, 42); // Black
-        doc.setFontSize(24);
+        doc.setFontSize(22);
         doc.setFont(undefined, 'bold');
         doc.text(product.name.toUpperCase(), 15, 45);
         
-        doc.setFontSize(11);
-        doc.setTextColor(71, 85, 105);
+        doc.setFontSize(12);
+        doc.setFont(undefined, 'bold');
+        doc.setTextColor(51, 65, 85);
         doc.text(product.category.toUpperCase(), 15, 52);
 
-        // --- PRODUCT IMAGE (LARGE) ---
-        let contentY = 70;
+        // --- 3. HERO IMAGE (In Black Sidebar) ---
         if (product.image_url) {
           const imgData = await fetchImageAsBase64(product.image_url);
           if (imgData) {
-             // Position larger image on the right as per vitamin C reference
-             doc.addImage(imgData, 'JPEG', 140, 45, 55, 55);
+             // Position in the center of the black column
+             // Sidebar width 70, starts at 140. Center is 175.
+             // Image width ~55
+             doc.addImage(imgData, 'JPEG', 147.5, 40, 55, 55);
           }
         }
 
-        // --- BODY SECTIONS (DYNAMICALLY RENDER ALL DETAILS) ---
-        const drawSectionHeader = (title, y) => {
-          doc.setFillColor(231, 76, 60); // Red
-          doc.rect(15, y - 4, 4, 4, 'F');
+        let contentY = 75;
+
+        // --- 4. CLINICAL DATA SECTIONS (LEFT COLUMN) ---
+        const drawSplitSectionHeader = (title, y) => {
+          // Red Square Bullet
+          doc.setFillColor(234, 84, 85); // Red (#EA5455)
+          doc.rect(15, y - 4, 6, 4, 'F'); 
+          
           doc.setTextColor(15, 23, 42);
-          doc.setFontSize(11);
+          doc.setFontSize(14);
           doc.setFont(undefined, 'bold');
-          doc.text(title.toUpperCase(), 22, y);
-          doc.setDrawColor(231, 76, 60);
-          doc.line(15, y + 2, 195, y + 2); // Full-width line for prestige
+          doc.text(title.toUpperCase(), 25, y);
+          
+          // Red Horizontal Underline
+          doc.setDrawColor(234, 84, 85);
+          doc.setLineWidth(0.5);
+          doc.line(15, y + 2, 130, y + 2); // Stays in the white section
         };
 
-        // Render all available details with auto-pagination
+        // Render all available details with auto-pagination logic
         Object.entries(product.details).forEach(([key, value]) => {
-          if (!value) return; // Skip empty fields
+          if (!value) return; 
 
-          if (contentY > 260) {
+          // Pagination check
+          if (contentY > 250) {
             doc.addPage();
+            // Re-draw background on new page
+            doc.setFillColor(0, 0, 0);
+            doc.rect(140, 0, 70, 297, 'F');
             contentY = 30;
           }
 
-          drawSectionHeader(key, contentY);
+          drawSplitSectionHeader(key, contentY);
           doc.setFont(undefined, 'normal');
           doc.setTextColor(51, 65, 85);
-          doc.setFontSize(9.5);
-          const lines = doc.splitTextToSize(value, 180);
-          doc.text(lines, 15, contentY + 10);
+          doc.setFontSize(11); // Slightly larger for better readability
           
-          contentY += (lines.length * 5) + 20;
+          const lines = doc.splitTextToSize(value, 115); // Width restricted to white area
+          doc.text(lines, 15, contentY + 12);
+          
+          contentY += (lines.length * 6) + 22;
         });
 
-        // Ensure Composition is always included as a special technical section
+        // Technical Composition (The last section usually)
         if (product.composition) {
-          if (contentY > 260) {
+          if (contentY > 250) {
               doc.addPage();
+              doc.setFillColor(0, 0, 0);
+              doc.rect(140, 0, 70, 297, 'F');
               contentY = 30;
           }
-          drawSectionHeader("Technical Composition", contentY);
+          drawSplitSectionHeader("Active Reagents", contentY);
           doc.setFont(undefined, 'normal');
           doc.setTextColor(51, 65, 85);
-          doc.setFontSize(9.5);
-          const compLines = doc.splitTextToSize(product.composition, 180);
-          doc.text(compLines, 15, contentY + 10);
-          contentY += (compLines.length * 5) + 20;
+          doc.setFontSize(11);
+          const compLines = doc.splitTextToSize(product.composition, 115);
+          doc.text(compLines, 15, contentY + 12);
         }
 
-        // --- FOOTER (PRISTINE CLEAN) ---
+        // --- 5. FOOTER (CLEAN & MINIMAL) ---
         doc.setTextColor(156, 163, 175);
-        doc.setFontSize(8);
-        doc.text(`Scientific Reference Sheet | Page ${doc.internal.getNumberOfPages()}`, 15, 285);
+        doc.setFontSize(10);
+        doc.text(`REFERENCE PG. ${doc.internal.getNumberOfPages()}`, 15, 285);
       }
 
       doc.save(`Nutrifix_Professional_Catalogue_${new Date().getFullYear()}.pdf`);
