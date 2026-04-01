@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package } from 'lucide-react';
-import productsData from './data/products.json';
+import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2 } from 'lucide-react';
+import { supabase } from './supabaseClient';
 
 const App = () => {
   // ROLE STATE
@@ -8,32 +8,17 @@ const App = () => {
   const [loginForm, setLoginForm] = useState({ name: '', password: '' });
   const [loginError, setLoginError] = useState('');
 
-  // PRODUCT STATE (Load from localStorage if exists, else use JSON)
-  const [products, setProducts] = useState(() => {
-    try {
-      const saved = localStorage.getItem('nutrifix_products');
-      return saved ? JSON.parse(saved) : productsData;
-    } catch (e) {
-      console.error("Initial Load Error (Products):", e);
-      return productsData;
-    }
-  });
+  // PRODUCT STATE
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [currentBrand, setCurrentBrand] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   
-  // IMAGE STATE
-  const [images, setImages] = useState(() => {
-    try {
-      const saved = localStorage.getItem('nutrifix_images');
-      return saved ? JSON.parse(saved) : {};
-    } catch (e) {
-      console.error("Initial Load Error (Images):", e);
-      return {};
-    }
-  });
+  // IMAGE CACHE (Local cache for performance, but source is Supabase image_url)
+  const [images, setImages] = useState({});
 
   // NEW PRODUCT FORM STATE
   const [newProduct, setNewProduct] = useState({
@@ -50,23 +35,25 @@ const App = () => {
     tempImage: null
   });
 
-  // PERSISTENCE (Safe wrapper)
+  // FETCH PRODUCTS ON MOUNT
   useEffect(() => {
-    try {
-      localStorage.setItem('nutrifix_products', JSON.stringify(products));
-    } catch (e) {
-      console.error("Storage Error: Local storage is full.", e);
-    }
-  }, [products]);
+    fetchProducts();
+  }, []);
 
-  useEffect(() => {
-    try {
-      localStorage.setItem('nutrifix_images', JSON.stringify(images));
-    } catch (e) {
-      console.error("Storage Error: Images are too large for local storage.", e);
-      alert("Warning: Local storage quota exceeded. This image might be too large to save permanently.");
+  const fetchProducts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .order('name', { ascending: true });
+    
+    if (error) {
+      console.error('Error fetching products:', error);
+    } else {
+      setProducts(data || []);
     }
-  }, [images]);
+    setLoading(false);
+  };
 
   useEffect(() => {
     if (userRole) {
@@ -96,63 +83,104 @@ const App = () => {
   };
 
   // PRODUCT ACTIONS
-  const handleImageUpload = (id, e) => {
+  const uploadToStorage = async (file) => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Math.random()}.${fileExt}`;
+    const filePath = `product-images/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('product-images')
+      .upload(filePath, file);
+
+    if (uploadError) throw uploadError;
+
+    const { data: { publicUrl } } = supabase.storage
+      .from('product-images')
+      .getPublicUrl(filePath);
+
+    return publicUrl;
+  };
+
+  const handleImageUpload = async (id, e) => {
     if (userRole !== 'admin') return;
     const file = e.target.files[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setImages(prev => ({
-        ...prev,
-        [id]: event.target.result
-      }));
-    };
-    reader.readAsDataURL(file);
+    try {
+      const publicUrl = await uploadToStorage(file);
+      
+      const { error } = await supabase
+        .from('products')
+        .update({ image_url: publicUrl })
+        .eq('id', id);
+
+      if (error) throw error;
+      fetchProducts(); // Refresh
+    } catch (err) {
+      console.error('Upload failed:', err);
+      alert('Failed to upload image. Please check your Supabase Storage settings.');
+    }
   };
 
-  const handleDeleteProduct = (id, e) => {
+  const handleDeleteProduct = async (id, e) => {
     e.stopPropagation();
     if (!window.confirm('Are you sure you want to delete this product?')) return;
-    setProducts(prev => prev.filter(p => p.id !== id));
+    
+    const { error } = await supabase
+      .from('products')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Delete error:', error);
+    } else {
+      fetchProducts();
+    }
   };
 
-  const handleAddProduct = (e) => {
+  const handleAddProduct = async (e) => {
     e.preventDefault();
-    // Defensive ID generation (prevents NaN)
-    const validIds = products.map(p => Number(p.id)).filter(id => !isNaN(id));
-    const id = validIds.length > 0 ? Math.max(...validIds) + 1 : 1;
     
-    if (newProduct.tempImage) {
-      const updatedImages = { ...images, [id]: newProduct.tempImage };
-      setImages(updatedImages);
-      localStorage.setItem('nutrifix_images', JSON.stringify(updatedImages));
-    }
-
-    const productToAdd = {
-      id,
-      brand: newProduct.brand,
-      name: newProduct.name,
-      category: newProduct.category,
-      composition: newProduct.composition,
-      details: newProduct.details
-    };
-
-    setProducts(prev => [...prev, productToAdd]);
-    setShowAddModal(false);
-    setNewProduct({
-      brand: 'nf',
-      name: '',
-      category: '',
-      composition: '',
-      tempImage: null,
-      details: {
-        "Overview & Key Benefits": "",
-        "How It Works": "",
-        "Dosage": "",
-        "Interactions": ""
+    try {
+      let finalImageUrl = null;
+      if (newProduct.tempImageFile) {
+        finalImageUrl = await uploadToStorage(newProduct.tempImageFile);
       }
-    });
+
+      const { data, error } = await supabase
+        .from('products')
+        .insert([{
+          id: Date.now(), // Unique ID
+          brand: newProduct.brand,
+          name: newProduct.name,
+          category: newProduct.category,
+          composition: newProduct.composition,
+          details: newProduct.details,
+          image_url: finalImageUrl
+        }]);
+
+      if (error) throw error;
+      
+      fetchProducts();
+      setShowAddModal(false);
+      setNewProduct({
+        brand: 'nf',
+        name: '',
+        category: '',
+        composition: '',
+        tempImageFile: null,
+        tempImageUrl: null,
+        details: {
+          "Overview & Key Benefits": "",
+          "How It Works": "",
+          "Dosage": "",
+          "Interactions": ""
+        }
+      });
+    } catch (err) {
+      console.error('Add product failed:', err);
+      alert('Failed to add product to the cloud.');
+    }
   };
 
   // SEARCH & FILTER (Defensive)
@@ -269,8 +297,8 @@ const App = () => {
             )}
 
             <div className="image-container">
-              {images[product.id] ? (
-                <img src={images[product.id]} alt={product.name} />
+              {product.image_url ? (
+                <img src={product.image_url} alt={product.name} />
               ) : (
                 <div className="flex flex-col items-center text-slate-300">
                    <Package size={32} strokeWidth={1} />
@@ -314,8 +342,8 @@ const App = () => {
             <div className="modal-body">
               <div className="modal-image">
                 <div className="image-container" style={{ borderRadius: '1.5rem', background: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                  {images[selectedProduct.id] ? (
-                    <img src={images[selectedProduct.id]} alt={selectedProduct.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  {selectedProduct.image_url ? (
+                    <img src={selectedProduct.image_url} alt={selectedProduct.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   ) : (
                     <div className="flex flex-col items-center justify-center h-full text-slate-300">
                       {userRole === 'admin' ? (
@@ -393,16 +421,12 @@ const App = () => {
                     <input type="file" className="hidden" accept="image/*" onChange={(e) => {
                       const file = e.target.files[0];
                       if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (re) => {
-                          // Temp state for the modal until save
-                          setNewProduct({...newProduct, tempImage: re.target.result});
-                        };
-                        reader.readAsDataURL(file);
+                        const url = URL.createObjectURL(file);
+                        setNewProduct({...newProduct, tempImageFile: file, tempImageUrl: url});
                       }
                     }} />
                   </label>
-                  {newProduct.tempImage && <span className="text-[10px] text-primary font-bold uppercase tracking-wider">Image Selected ✅</span>}
+                  {newProduct.tempImageUrl && <span className="text-[10px] text-primary font-bold uppercase tracking-wider">Image Selected ✅</span>}
                 </div>
               </div>
 
