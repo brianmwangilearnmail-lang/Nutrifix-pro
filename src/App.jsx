@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2 } from 'lucide-react';
+import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2, Download } from 'lucide-react';
 import { supabase } from './supabaseClient';
+import { jsPDF } from 'jspdf';
 
 const App = () => {
   // ROLE STATE
@@ -16,6 +17,7 @@ const App = () => {
   const [currentBrand, setCurrentBrand] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   
   // IMAGE CACHE (Local cache for performance, but source is Supabase image_url)
   const [images, setImages] = useState({});
@@ -182,6 +184,135 @@ const App = () => {
       alert('Failed to add product to the cloud.');
     }
   };
+  // PDF GENERATION
+  const fetchImageAsBase64 = async (url) => {
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.readAsDataURL(blob);
+      });
+    } catch (e) {
+      console.error("Failed to load image for PDF:", e);
+      return null;
+    }
+  };
+
+  const handleDownloadPDF = async () => {
+    if (products.length === 0) return;
+    setIsGeneratingPDF(true);
+
+    try {
+      const doc = new jsPDF({
+        orientation: 'p',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      // --- COVER PAGE ---
+      doc.setFillColor(31, 41, 55); // Dark Slate
+      doc.rect(0, 0, 210, 297, 'F');
+      
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(40);
+      doc.text("NATURAL FACTORS", 105, 120, { align: 'center' });
+      doc.setFontSize(18);
+      doc.text("Product Technical Catalogue", 105, 135, { align: 'center' });
+      doc.setFontSize(10);
+      const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      doc.text(`Generated on: ${date}`, 105, 150, { align: 'center' });
+      doc.text("© Nutrifix Pro Management System", 105, 280, { align: 'center' });
+
+      // --- CONTENT PAGES ---
+      for (const product of products) {
+        doc.addPage();
+        
+        // Header Bar
+        doc.setFillColor(31, 41, 55); // Premium Charcoal
+        doc.rect(0, 0, 210, 35, 'F');
+        
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(9);
+        doc.text(product.brand === 'nf' ? "OFFICIAL PRODUCT FILE | NATURAL FACTORS" : "OFFICIAL PRODUCT FILE | DOPPELHERZ", 20, 12);
+        
+        doc.setFontSize(24);
+        doc.setFont(undefined, 'bold');
+        doc.text(product.name.toUpperCase(), 20, 25);
+        
+        // Category Badge
+        doc.setFillColor(243, 244, 246); // Light Gray
+        doc.roundedRect(150, 20, 40, 8, 1, 1, 'F');
+        doc.setTextColor(31, 41, 55);
+        doc.setFontSize(7);
+        doc.setFont(undefined, 'bold');
+        doc.text(product.category.toUpperCase(), 170, 25.5, { align: 'center' });
+
+        // Product Image (if exists)
+        let yPos = 55;
+        if (product.image_url) {
+          const imgData = await fetchImageAsBase64(product.image_url);
+          if (imgData) {
+             // Calculate aspect ratio for image
+             doc.addImage(imgData, 'JPEG', 140, 50, 50, 50); // Small professional preview on the right
+          }
+        }
+
+        // --- Main Content Section ---
+        doc.setTextColor(31, 41, 55);
+        doc.setFontSize(11);
+        doc.setFont(undefined, 'bold');
+        doc.text("TECHNICAL COMPOSITION", 20, 55);
+        
+        doc.setDrawColor(229, 231, 235); // Light separator
+        doc.line(20, 58, 120, 58);
+
+        doc.setFont(undefined, 'normal');
+        doc.setTextColor(51, 65, 85);
+        const compositionLines = doc.splitTextToSize(product.composition || "N/A", 110);
+        doc.text(compositionLines, 20, 65);
+        
+        yPos = Math.max(85, 65 + (compositionLines.length * 5) + 10);
+
+        // Map Sections with Clinical Styling
+        Object.entries(product.details).forEach(([key, value]) => {
+          if (yPos > 260) {
+            doc.addPage();
+            yPos = 30;
+          }
+          doc.setTextColor(31, 41, 55);
+          doc.setFontSize(10);
+          doc.setFont(undefined, 'bold');
+          doc.text(key.toUpperCase(), 20, yPos);
+          
+          doc.line(20, yPos + 2, 190, yPos + 2); // Full width separator
+          
+          doc.setFont(undefined, 'normal');
+          doc.setTextColor(71, 85, 105);
+          const lines = doc.splitTextToSize(value, 170);
+          doc.text(lines, 20, yPos + 8);
+          yPos += (lines.length * 5) + 15;
+        });
+
+        // Sticky Footer on every page
+        doc.setFillColor(249, 250, 251);
+        doc.rect(0, 280, 210, 17, 'F');
+        doc.setFontSize(7);
+        doc.setTextColor(156, 163, 175);
+        doc.setFont(undefined, 'normal');
+        doc.text("Scientific Data provided by Nutrifix Integrated Management System", 20, 288);
+        doc.text(`Page ${doc.internal.getNumberOfPages()}`, 190, 288, { align: 'right' });
+      }
+
+      doc.save("Nutrifix_Pro_Catalogue.pdf");
+    } catch (err) {
+      console.error("PDF generation error:", err);
+      alert("Failed to generate PDF. Please try again.");
+    } finally {
+      setIsGeneratingPDF(false);
+    }
+  };
 
   // SEARCH & FILTER (Defensive)
   const filteredProducts = products.filter(p => {
@@ -276,10 +407,25 @@ const App = () => {
           ))}
         </div>
         {userRole === 'admin' && (
-          <button className="add-btn" onClick={() => setShowAddModal(true)}>
-            <PlusCircle size={18} />
-            Add Product 
-          </button>
+          <>
+            <button className="add-btn" onClick={() => setShowAddModal(true)}>
+              <PlusCircle size={18} />
+              Add Product 
+            </button>
+            <button 
+              className={`add-btn ${isGeneratingPDF ? 'loading' : ''}`} 
+              onClick={handleDownloadPDF} 
+              disabled={isGeneratingPDF}
+              style={{ background: 'var(--slate-700)', border: 'none' }}
+            >
+              {isGeneratingPDF ? (
+                <Loader2 size={18} className="animate-spin" />
+              ) : (
+                <Download size={18} />
+              )}
+              {isGeneratingPDF ? 'Generating...' : 'Download Catalogue'}
+            </button>
+          </>
         )}
       </div>
 
