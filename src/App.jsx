@@ -240,7 +240,8 @@ const App = () => {
         
         // --- TOP HEADER ---
         if (nutrifixLogo) {
-          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 50, 20); // Top Left
+          // Maintaining Nutrifix aspect ratio (original is wide)
+          doc.addImage(nutrifixLogo, 'PNG', 15, 10, 45, 18); // Top Left
         }
         
         doc.setTextColor(156, 163, 175);
@@ -333,7 +334,10 @@ const App = () => {
         // --- FOOTER BRAND LOGO ---
         const footerLogo = product.brand === 'nf' ? nfLogo : dhLogo;
         if (footerLogo) {
-          doc.addImage(footerLogo, 'PNG', 160, 265, 35, 20);
+          // Adjust brand logo sizing to be less stretched
+          const w = product.brand === 'nf' ? 30 : 25;
+          const h = product.brand === 'nf' ? 15 : 18;
+          doc.addImage(footerLogo, 'PNG', 195 - w, 265, w, h);
         }
         
         doc.setTextColor(156, 163, 175);
