@@ -3,8 +3,10 @@ import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2, Do
 import { supabase } from './supabaseClient';
 import { jsPDF } from 'jspdf';
 
-const MultiCategorySelector = ({ rawValue, options, onChange }) => {
+const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => {
   const [inputValue, setInputValue] = useState('');
+  const [editingTag, setEditingTag] = useState(null);
+  const [editValue, setEditValue] = useState('');
   
   const currentTags = rawValue ? rawValue.split(',').map(s => s.trim()).filter(Boolean) : [];
 
@@ -13,6 +15,31 @@ const MultiCategorySelector = ({ rawValue, options, onChange }) => {
       onChange(currentTags.filter(t => t !== tag).join(', '));
     } else {
       onChange([...currentTags, tag].join(', '));
+    }
+  };
+
+  const startEditing = (e, tag) => {
+    e.stopPropagation();
+    setEditingTag(tag);
+    setEditValue(tag);
+  };
+
+  const handleEditKeyDown = (e, oldTag) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const newTag = editValue.trim();
+      if (newTag && newTag !== oldTag) {
+        if (onRenameTag) {
+          onRenameTag(oldTag, newTag);
+        } else {
+          // Fallback if global rename isn't provided
+          const updated = currentTags.map(t => t === oldTag ? newTag : t);
+          onChange(updated.join(', '));
+        }
+      }
+      setEditingTag(null);
+    } else if (e.key === 'Escape') {
+      setEditingTag(null);
     }
   };
 
@@ -34,13 +61,32 @@ const MultiCategorySelector = ({ rawValue, options, onChange }) => {
     <div className="category-pill-container" onClick={e => e.stopPropagation()}>
       {displayTags.map(tag => {
         const isSelected = currentTags.includes(tag);
+        const isEditing = editingTag === tag;
+
         return (
           <span 
             key={tag}
-            onClick={() => toggleTag(tag)}
+            onClick={(e) => !isEditing && toggleTag(tag)}
+            onDoubleClick={(e) => isSelected && startEditing(e, tag)}
             className={`category-pill ${isSelected ? 'selected' : ''}`}
+            title={isSelected ? "Double click to edit" : ""}
           >
-            {isSelected && <span style={{marginRight: '4px'}}>✓</span>} {tag}
+            {isEditing ? (
+              <input 
+                autoFocus
+                className="inline-pill-input"
+                value={editValue}
+                onChange={e => setEditValue(e.target.value)}
+                onKeyDown={e => handleEditKeyDown(e, tag)}
+                onBlur={() => setEditingTag(null)}
+                onClick={e => e.stopPropagation()}
+              />
+            ) : (
+              <>
+                {isSelected && <span style={{marginRight: '4px'}}>✓</span>} 
+                {tag}
+              </>
+            )}
           </span>
         );
       })}
@@ -206,6 +252,53 @@ const App = () => {
         }
       }
     });
+  };
+
+  const handleGlobalRename = async (oldTag, newTag) => {
+    if (userRole !== 'admin') return;
+    
+    try {
+      // 1. Update all products in the database
+      const { data: allProducts, error: fetchError } = await supabase.from('products').select('*');
+      if (fetchError) throw fetchError;
+
+      const updates = allProducts
+        .filter(p => {
+          const tags = p.category ? p.category.split(',').map(s => s.trim()) : [];
+          return tags.includes(oldTag);
+        })
+        .map(p => {
+          const tags = p.category.split(',').map(s => s.trim());
+          const updatedTags = tags.map(t => t === oldTag ? newTag : t);
+          return {
+            id: p.id,
+            category: updatedTags.join(', ')
+          };
+        });
+
+      if (updates.length > 0) {
+        for (const update of updates) {
+          const { error: updateError } = await supabase
+            .from('products')
+            .update({ category: update.category })
+            .eq('id', update.id);
+          if (updateError) throw updateError;
+        }
+      }
+
+      // 2. Update local state for the currently edited product if any
+      if (tempProduct) {
+        const tags = tempProduct.category.split(',').map(s => s.trim());
+        const updatedTags = tags.map(t => t === oldTag ? newTag : t);
+        setTempProduct({ ...tempProduct, category: updatedTags.join(', ') });
+      }
+
+      showToast(`Renamed "${oldTag}" to "${newTag}" across ${updates.length} products.`, 'success');
+      fetchProducts();
+    } catch (err) {
+      console.error('Rename failed:', err);
+      showToast('Failed to rename tag globally.', 'error');
+    }
   };
 
   const handleAddProduct = async (e) => {
@@ -667,6 +760,7 @@ const App = () => {
                         rawValue={tempProduct?.category || ''}
                         onChange={(val) => setTempProduct({...tempProduct, category: val})}
                         options={uniqueCategories.filter(c => c !== 'All')}
+                        onRenameTag={handleGlobalRename}
                       />
                       <input 
                         className="edit-input-composition" 
@@ -803,6 +897,7 @@ const App = () => {
                     rawValue={newProduct.category}
                     onChange={(val) => setNewProduct({...newProduct, category: val})}
                     options={uniqueCategories.filter(c => c !== 'All')}
+                    onRenameTag={handleGlobalRename}
                   />
                 </div>
               </div>
