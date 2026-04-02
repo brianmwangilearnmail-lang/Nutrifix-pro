@@ -402,7 +402,9 @@ header {
   max-height: 90vh;
   border-radius: 2rem;
   position: relative;
-  overflow-y: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
@@ -442,6 +444,25 @@ header {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 3rem;
+  overflow: hidden;
+  flex: 1;
+}
+
+.modal-details {
+  overflow-y: auto;
+  padding-right: 1.5rem;
+  height: 100%;
+}
+
+.modal-details::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-details::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-details::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
 }
 
 @media (max-width: 800px) {
