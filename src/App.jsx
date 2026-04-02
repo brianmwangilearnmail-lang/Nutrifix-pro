@@ -593,16 +593,31 @@ const App = () => {
                       value={tempProduct?.name || ''} 
                       onChange={(e) => setTempProduct({...tempProduct, name: e.target.value})}
                     />
-                    <input 
-                      className="edit-input-composition" 
-                      value={tempProduct?.composition || ''} 
-                      onChange={(e) => setTempProduct({...tempProduct, composition: e.target.value})}
-                    />
+                    <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                      <select 
+                        className="form-select" 
+                        value={tempProduct?.category || ''}
+                        onChange={(e) => setTempProduct({...tempProduct, category: e.target.value})}
+                        style={{ padding: '0.25rem 0.5rem' }}
+                      >
+                         <option value="" disabled>Select Category</option>
+                         {uniqueCategories.filter(c => c !== 'All').map(c => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                      <input 
+                        className="edit-input-composition" 
+                        value={tempProduct?.composition || ''} 
+                        onChange={(e) => setTempProduct({...tempProduct, composition: e.target.value})}
+                        style={{ flex: 1, margin: 0 }}
+                      />
+                    </div>
                   </>
                 ) : (
                   <>
                     <h2 className="product-name" style={{fontSize: '1.8rem', color: 'var(--primary)'}}>{selectedProduct.name}</h2>
-                    <p className="product-category" style={{marginTop: '0.25rem'}}>{selectedProduct.composition}</p>
+                    <span className="category-badge" style={{ marginTop: '0.25rem', marginBottom: '0.5rem', cursor: 'default' }}>{selectedProduct.category}</span>
+                    <div className="composition-scrollable">
+                       {selectedProduct.composition}
+                    </div>
                   </>
                 )}
               </div>

@@ -821,3 +821,24 @@ header {
   flex-direction: column;
   gap: 1.25rem;
 }
+
+/* COMPOSITION SCROLLABLE */
+.composition-scrollable {
+  max-height: 4.5rem; /* ~3 lines */
+  overflow-y: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding-right: 0.5rem;
+}
+
+.composition-scrollable::-webkit-scrollbar {
+  width: 4px;
+}
+.composition-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+.composition-scrollable::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
