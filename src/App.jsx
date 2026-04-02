@@ -594,15 +594,17 @@ const App = () => {
                       onChange={(e) => setTempProduct({...tempProduct, name: e.target.value})}
                     />
                     <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                      <select 
-                        className="form-select" 
+                      <input 
+                        list="category-list"
+                        className="edit-input-composition" 
                         value={tempProduct?.category || ''}
                         onChange={(e) => setTempProduct({...tempProduct, category: e.target.value})}
-                        style={{ padding: '0.25rem 0.5rem' }}
-                      >
-                         <option value="" disabled>Select Category</option>
-                         {uniqueCategories.filter(c => c !== 'All').map(c => <option key={c} value={c}>{c}</option>)}
-                      </select>
+                        placeholder="Category"
+                        style={{ padding: '0.25rem 0.5rem', width: '140px', margin: 0 }}
+                      />
+                      <datalist id="category-list">
+                         {uniqueCategories.filter(c => c !== 'All').map(c => <option key={c} value={c} />)}
+                      </datalist>
                       <input 
                         className="edit-input-composition" 
                         value={tempProduct?.composition || ''} 
@@ -728,7 +730,7 @@ const App = () => {
                 </div>
                 <div className="form-field">
                   <label className="form-label">Category</label>
-                  <input className="form-input" placeholder="e.g. Vitamins" value={newProduct.category} onChange={e => setNewProduct({...newProduct, category: e.target.value})} required/>
+                  <input list="category-list" className="form-input" placeholder="Select or type..." value={newProduct.category} onChange={e => setNewProduct({...newProduct, category: e.target.value})} required/>
                 </div>
               </div>
               <div className="form-field">
