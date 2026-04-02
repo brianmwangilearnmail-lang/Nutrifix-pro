@@ -769,3 +769,25 @@ header {
   0% { opacity: 0; transform: translate(-50%, 20px); }
   100% { opacity: 1; transform: translate(-50%, 0); }
 }
+
+/* CATEGORY BADGE */
+.category-badge {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.category-badge:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+}

@@ -15,6 +15,7 @@ const App = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [currentBrand, setCurrentBrand] = useState('all');
+  const [currentCategory, setCurrentCategory] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [tempProduct, setTempProduct] = useState(null);
@@ -400,8 +401,11 @@ const App = () => {
                           category.includes(query) ||
                           composition.includes(query);
     const matchesBrand = currentBrand === 'all' || p.brand === currentBrand;
-    return matchesSearch && matchesBrand;
+    const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
+    return matchesSearch && matchesBrand && matchesCategory;
   });
+
+  const uniqueCategories = ['All', ...new Set(products.map(p => p.category).filter(Boolean))];
 
   // INITIAL LOGIN SCREEN
   if (!userRole) {
@@ -480,6 +484,17 @@ const App = () => {
             </button>
           ))}
         </div>
+        
+        <select 
+          className="form-select filter-btn" 
+          value={currentCategory} 
+          onChange={e => setCurrentCategory(e.target.value)}
+          style={{ width: 'auto', minWidth: '150px', background: 'white', border: '1px solid #e2e8f0', padding: '0.5rem 1rem' }}
+        >
+          {uniqueCategories.map(cat => (
+             <option key={cat} value={cat}>{cat === 'All' ? 'All Categories' : cat}</option>
+          ))}
+        </select>
         {userRole === 'admin' && (
           <button className="add-btn" onClick={() => setShowAddModal(true)}>
             <PlusCircle size={18} />
@@ -534,9 +549,22 @@ const App = () => {
             </div>
 
             <div className="product-info">
-              <span className="product-category">{product.category}</span>
               <h3 className="product-name">{product.name}</h3>
               <p className="composition line-clamp-1 italic">{product.composition}</p>
+            </div>
+            
+            <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center' }}>
+               <span 
+                 className="category-badge" 
+                 onClick={(e) => { 
+                   e.stopPropagation(); 
+                   setCurrentCategory(product.category);
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                 }}
+                 title="Click to filter by this category"
+               >
+                 {product.category}
+               </span>
             </div>
           </div>
         ))}
