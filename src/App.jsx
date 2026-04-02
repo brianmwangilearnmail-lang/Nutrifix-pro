@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2, Download } from 'lucide-react';
+import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2, Download, Edit3 } from 'lucide-react';
 import { supabase } from './supabaseClient';
 import { jsPDF } from 'jspdf';
 
@@ -20,6 +20,16 @@ const App = () => {
   const [tempProduct, setTempProduct] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  
+  // TOAST NOTIFICATION STATE
+  const [toastMessage, setToastMessage] = useState(null);
+  const [toastType, setToastType] = useState('success');
+
+  const showToast = (message, type = 'success') => {
+    setToastMessage(message);
+    setToastType(type);
+    setTimeout(() => setToastMessage(null), 3000);
+  };
   
   // IMAGE CACHE (Local cache for performance, but source is Supabase image_url)
   const [images, setImages] = useState({});
@@ -122,7 +132,7 @@ const App = () => {
       fetchProducts(); // Refresh
     } catch (err) {
       console.error('Upload failed:', err);
-      alert('Failed to upload image. Please check your Supabase Storage settings.');
+      showToast('Failed to upload image. Please check your Supabase Storage settings.', 'error');
     }
   };
 
@@ -188,7 +198,7 @@ const App = () => {
       });
     } catch (err) {
       console.error('Add product failed:', err);
-      alert('Failed to add product to the cloud.');
+      showToast('Failed to add product to the cloud.', 'error');
     }
   };
 
@@ -212,10 +222,10 @@ const App = () => {
       setProducts(prev => prev.map(p => p.id === tempProduct.id ? tempProduct : p));
       setSelectedProduct(tempProduct);
       setIsEditing(false);
-      alert('Product updated successfully!');
+      showToast('Product updated successfully!', 'success');
     } catch (err) {
       console.error('Update failed:', err);
-      alert('Failed to sync changes to the cloud.');
+      showToast('Failed to sync changes to the cloud.', 'error');
     }
   };
   // PDF GENERATION
@@ -372,7 +382,7 @@ const App = () => {
       doc.save(`Nutrifix_Professional_Catalogue_${new Date().getFullYear()}.pdf`);
     } catch (err) {
       console.error("PDF generation error:", err);
-      alert("Failed to generate PDF. Please try again.");
+      showToast("Failed to generate PDF. Please try again.", 'error');
     } finally {
       setIsGeneratingPDF(false);
     }
@@ -507,9 +517,9 @@ const App = () => {
               {product.image_url ? (
                 <img src={product.image_url} alt={product.name} />
               ) : (
-                <div className="flex flex-col items-center text-slate-300">
+                <div className="no-visual-placeholder">
                    <Package size={32} strokeWidth={1} />
-                   <span className="text-[10px] uppercase font-bold mt-2">No Visual</span>
+                   <span className="no-visual-text">No Visual</span>
                 </div>
               )}
               
@@ -547,7 +557,7 @@ const App = () => {
         }}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div className="modal-header">
-              <div className="flex-1 mr-4">
+              <div className="modal-header-content">
                 {isEditing ? (
                   <>
                     <input 
@@ -568,28 +578,29 @@ const App = () => {
                   </>
                 )}
               </div>
-              <div className="flex items-center gap-3">
+              <div className="modal-header-actions">
                 {userRole === 'admin' && !isEditing && (
                   <button 
-                    className="p-2 text-slate-400 hover:text-emerald-500 transition-colors"
+                    className="edit-action-btn"
                     onClick={() => {
                       setTempProduct({...selectedProduct});
                       setIsEditing(true);
                     }}
                   >
-                    <Edit3 size={20} />
+                    <Edit3 size={16} />
+                    <span>Edit</span>
                   </button>
                 )}
                 {isEditing && (
                   <>
                     <button 
-                      className="px-3 py-1 bg-emerald-500 text-white rounded-lg text-sm font-bold shadow-sm"
+                      className="action-btn-save"
                       onClick={handleUpdateProduct}
                     >
                       Save
                     </button>
                     <button 
-                      className="px-3 py-1 bg-slate-200 text-slate-600 rounded-lg text-sm font-bold hover:bg-slate-300"
+                      className="action-btn-cancel"
                       onClick={() => setIsEditing(false)}
                     >
                       Cancel
@@ -611,29 +622,29 @@ const App = () => {
                   {selectedProduct.image_url ? (
                     <img src={selectedProduct.image_url} alt={selectedProduct.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   ) : (
-                    <div className="flex flex-col items-center justify-center h-full text-slate-300">
+                    <div className="no-visual-placeholder-modal">
                       {userRole === 'admin' ? (
-                        <label className="plus-btn mb-4">
+                        <label className="plus-btn-modal">
                            <Plus size={24} />
                            <input type="file" className="hidden" accept="image/*" onChange={(e) => handleImageUpload(selectedProduct.id, e)} />
                         </label>
                       ) : <Package size={48} />}
-                      <p className="text-[10px] font-bold uppercase">Scientific File Visual Missing</p>
+                      <p className="no-visual-text-modal">Scientific File Visual Missing</p>
                     </div>
                   )}
                 </div>
               </div>
               
               <div className="modal-details text-left">
-                {isEditing ? (
-                  Object.entries(tempProduct.details).map(([key, value]) => (
+                {isEditing && tempProduct && tempProduct.details ? (
+                  Object.entries(tempProduct.details || {}).map(([key, value]) => (
                     <div key={key} className="info-section">
-                      <label className="info-label text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1 block">
+                      <label className="info-label edit-label">
                         {key}
                       </label>
                       <textarea 
                         className="edit-textarea"
-                        value={value}
+                        value={value || ''}
                         onChange={(e) => {
                           const newDetails = {...tempProduct.details, [key]: e.target.value};
                           setTempProduct({...tempProduct, details: newDetails});
@@ -642,7 +653,7 @@ const App = () => {
                     </div>
                   ))
                 ) : (
-                  Object.entries(selectedProduct.details).map(([key, value]) => (
+                  Object.entries(selectedProduct?.details || {}).map(([key, value]) => (
                     <div key={key} className="info-section">
                       <div className="info-label">{key}</div>
                       <div className="info-value">{value}</div>
@@ -717,6 +728,13 @@ const App = () => {
               <button type="submit" className="login-btn mt-4">Save to Master Catalogue</button>
             </form>
           </div>
+        </div>
+      )}
+
+      {/* TOAST NOTIFICATION */}
+      {toastMessage && (
+        <div className={`toast-notification ${toastType}`}>
+          {toastMessage}
         </div>
       )}
     </div>
