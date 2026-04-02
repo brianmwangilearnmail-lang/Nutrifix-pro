@@ -3,52 +3,56 @@ import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2, Do
 import { supabase } from './supabaseClient';
 import { jsPDF } from 'jspdf';
 
-const EditableCategorySelect = ({ value, options, onChange, placeholder, className, style }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const isCustomValue = value && !options.includes(value);
+const MultiCategorySelector = ({ rawValue, options, onChange }) => {
+  const [inputValue, setInputValue] = useState('');
+  
+  const currentTags = rawValue ? rawValue.split(',').map(s => s.trim()).filter(Boolean) : [];
 
-  if (isEditing) {
-    return (
-      <div style={{ display: 'flex', gap: '0.25rem', ...style }}>
-        <input 
-          autoFocus
-          className={className} 
-          value={value} 
-          onChange={(e) => onChange(e.target.value)}
-          placeholder="New custom..."
-          style={{ flex: 1, margin: 0, padding: '0.25rem 0.5rem' }}
-        />
-        <button 
-          type="button" 
-          onClick={() => setIsEditing(false)} 
-          style={{ padding: '0 0.4rem', border: '1px solid #cbd5e1', background: '#f8fafc', borderRadius: '0.25rem', cursor: 'pointer' }}
-          title="Return to list"
-        >
-          <X size={14} />
-        </button>
-      </div>
-    );
-  }
+  const toggleTag = (tag) => {
+    if (currentTags.includes(tag)) {
+      onChange(currentTags.filter(t => t !== tag).join(', '));
+    } else {
+      onChange([...currentTags, tag].join(', '));
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const newTag = inputValue.trim();
+      if (newTag && !currentTags.includes(newTag)) {
+        onChange([...currentTags, newTag].join(', '));
+      }
+      setInputValue('');
+    }
+  };
+
+  const globalTags = options || [];
+  const displayTags = [...new Set([...globalTags, ...currentTags])];
 
   return (
-    <select 
-      className={className} 
-      value={isCustomValue ? '___CUSTOM___' : (value || '')}
-      onChange={(e) => {
-        if (e.target.value === '___CUSTOM___') {
-          setIsEditing(true);
-          onChange('');
-        } else {
-          onChange(e.target.value);
-        }
-      }}
-      style={{ margin: 0, ...style }}
-    >
-      <option value="" disabled>{placeholder}</option>
-      {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
-      {isCustomValue && <option value="___CUSTOM___">{value}</option>}
-      <option value="___CUSTOM___" style={{ fontWeight: 'bold' }}>+ New Category (Edit)</option>
-    </select>
+    <div className="category-pill-container" onClick={e => e.stopPropagation()}>
+      {displayTags.map(tag => {
+        const isSelected = currentTags.includes(tag);
+        return (
+          <span 
+            key={tag}
+            onClick={() => toggleTag(tag)}
+            className={`category-pill ${isSelected ? 'selected' : ''}`}
+          >
+            {isSelected && <span style={{marginRight: '4px'}}>✓</span>} {tag}
+          </span>
+        );
+      })}
+      
+      <input 
+        className="pill-input"
+        value={inputValue}
+        onChange={e => setInputValue(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="+ Add tag..."
+      />
+    </div>
   );
 };
 
@@ -444,19 +448,23 @@ const App = () => {
   const filteredProducts = products.filter(p => {
     if (!p) return false;
     const name = p.name?.toLowerCase() || '';
-    const category = p.category?.toLowerCase() || '';
     const composition = p.composition?.toLowerCase() || '';
     const query = searchQuery.toLowerCase();
 
+    const productCategories = p.category ? p.category.split(',').map(s=>s.trim().toLowerCase()) : [];
+    const rawCategories = p.category?.toLowerCase() || '';
+
     const matchesSearch = name.includes(query) || 
-                          category.includes(query) ||
+                          rawCategories.includes(query) ||
                           composition.includes(query);
+                          
     const matchesBrand = currentBrand === 'all' || p.brand === currentBrand;
-    const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
+    const matchesCategory = currentCategory === 'All' || productCategories.includes(currentCategory.toLowerCase());
+    
     return matchesSearch && matchesBrand && matchesCategory;
   });
 
-  const uniqueCategories = ['All', ...new Set(products.map(p => p.category).filter(Boolean))];
+  const uniqueCategories = ['All', ...new Set(products.flatMap(p => p.category ? p.category.split(',').map(s=>s.trim()).filter(Boolean) : []))];
 
   // INITIAL LOGIN SCREEN
   if (!userRole) {
@@ -604,18 +612,25 @@ const App = () => {
               <p className="composition line-clamp-1 italic">{product.composition}</p>
             </div>
             
-            <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center' }}>
-               <span 
-                 className="category-badge" 
-                 onClick={(e) => { 
-                   e.stopPropagation(); 
-                   setCurrentCategory(product.category);
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                 }}
-                 title="Click to filter by this category"
-               >
-                 {product.category}
-               </span>
+            <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+               {product.category && product.category.split(',').map(cat => {
+                 const t = cat.trim();
+                 if (!t) return null;
+                 return (
+                   <span 
+                     key={t}
+                     className="category-badge" 
+                     onClick={(e) => { 
+                       e.stopPropagation(); 
+                       setCurrentCategory(t);
+                       window.scrollTo({ top: 0, behavior: 'smooth' });
+                     }}
+                     title={`Click to filter by ${t}`}
+                   >
+                     {t}
+                   </span>
+                 );
+               })}
             </div>
           </div>
         ))}
@@ -648,13 +663,10 @@ const App = () => {
                       onChange={(e) => setTempProduct({...tempProduct, name: e.target.value})}
                     />
                     <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                      <EditableCategorySelect 
-                        className="form-select"
-                        value={tempProduct?.category || ''}
+                      <MultiCategorySelector 
+                        rawValue={tempProduct?.category || ''}
                         onChange={(val) => setTempProduct({...tempProduct, category: val})}
                         options={uniqueCategories.filter(c => c !== 'All')}
-                        placeholder="Category"
-                        style={{ padding: '0.25rem 0.5rem', width: '160px' }}
                       />
                       <input 
                         className="edit-input-composition" 
@@ -667,7 +679,13 @@ const App = () => {
                 ) : (
                   <>
                     <h2 className="product-name" style={{fontSize: '1.8rem', color: 'var(--primary)'}}>{selectedProduct.name}</h2>
-                    <span className="category-badge" style={{ marginTop: '0.25rem', marginBottom: '0.5rem', cursor: 'default' }}>{selectedProduct.category}</span>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem', marginBottom: '0.5rem' }}>
+                      {selectedProduct.category && selectedProduct.category.split(',').map(cat => {
+                        const t = cat.trim();
+                        if (!t) return null;
+                        return <span key={t} className="category-badge" style={{ cursor: 'default' }}>{t}</span>;
+                      })}
+                    </div>
                     <div className="composition-scrollable">
                        {selectedProduct.composition}
                     </div>
@@ -781,12 +799,10 @@ const App = () => {
                 </div>
                 <div className="form-field">
                   <label className="form-label">Category</label>
-                  <EditableCategorySelect 
-                    className="form-select"
-                    value={newProduct.category}
+                  <MultiCategorySelector 
+                    rawValue={newProduct.category}
                     onChange={(val) => setNewProduct({...newProduct, category: val})}
                     options={uniqueCategories.filter(c => c !== 'All')}
-                    placeholder="Category"
                   />
                 </div>
               </div>
