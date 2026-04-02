@@ -25,6 +25,7 @@ const App = () => {
   // TOAST NOTIFICATION STATE
   const [toastMessage, setToastMessage] = useState(null);
   const [toastType, setToastType] = useState('success');
+  const [confirmDialog, setConfirmDialog] = useState(null);
 
   const showToast = (message, type = 'success') => {
     setToastMessage(message);
@@ -137,20 +138,21 @@ const App = () => {
     }
   };
 
-  const handleDeleteProduct = async (id, e) => {
+  const handleDeleteProduct = (id, e) => {
     e.stopPropagation();
-    if (!window.confirm('Are you sure you want to delete this product?')) return;
-    
-    const { error } = await supabase
-      .from('products')
-      .delete()
-      .eq('id', id);
-
-    if (error) {
-      console.error('Delete error:', error);
-    } else {
-      fetchProducts();
-    }
+    setConfirmDialog({
+      message: 'Are you sure you want to delete this product?',
+      onConfirm: async () => {
+        const { error } = await supabase.from('products').delete().eq('id', id);
+        if (error) {
+          console.error('Delete error:', error);
+          showToast('Failed to delete product', 'error');
+        } else {
+          showToast('Product deleted', 'success');
+          fetchProducts();
+        }
+      }
+    });
   };
 
   const handleAddProduct = async (e) => {
@@ -574,10 +576,13 @@ const App = () => {
       {selectedProduct && (
         <div className="modal-overlay" onClick={() => {
             if (isEditing) {
-              if (confirm('Discard unsaved changes?')) {
-                setSelectedProduct(null);
-                setIsEditing(false);
-              }
+              setConfirmDialog({
+                message: 'Discard unsaved changes?',
+                onConfirm: () => {
+                  setSelectedProduct(null);
+                  setIsEditing(false);
+                }
+              });
             } else {
               setSelectedProduct(null);
               setIsEditing(false);
@@ -772,6 +777,22 @@ const App = () => {
 
               <button type="submit" className="login-btn mt-4">Save to Master Catalogue</button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* CONFIRMATION MODAL */}
+      {confirmDialog && (
+        <div className="modal-overlay" style={{ zIndex: 10000 }}>
+          <div className="confirm-modal glass-panel" onClick={e => e.stopPropagation()}>
+            <h3 className="confirm-message">{confirmDialog.message}</h3>
+            <div className="confirm-actions">
+              <button className="guest-btn" style={{margin: 0, width: 'auto', padding: '0.75rem 2rem'}} onClick={() => setConfirmDialog(null)}>Cancel</button>
+              <button className="login-btn" style={{margin: 0, width: 'auto', padding: '0.75rem 2rem'}} onClick={() => {
+                confirmDialog.onConfirm();
+                setConfirmDialog(null);
+              }}>OK</button>
+            </div>
           </div>
         </div>
       )}
