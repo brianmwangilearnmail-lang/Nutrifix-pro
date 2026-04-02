@@ -3,6 +3,55 @@ import { Search, Plus, X, Trash2, PlusCircle, User, LogOut, Package, Loader2, Do
 import { supabase } from './supabaseClient';
 import { jsPDF } from 'jspdf';
 
+const EditableCategorySelect = ({ value, options, onChange, placeholder, className, style }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const isCustomValue = value && !options.includes(value);
+
+  if (isEditing) {
+    return (
+      <div style={{ display: 'flex', gap: '0.25rem', ...style }}>
+        <input 
+          autoFocus
+          className={className} 
+          value={value} 
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="New custom..."
+          style={{ flex: 1, margin: 0, padding: '0.25rem 0.5rem' }}
+        />
+        <button 
+          type="button" 
+          onClick={() => setIsEditing(false)} 
+          style={{ padding: '0 0.4rem', border: '1px solid #cbd5e1', background: '#f8fafc', borderRadius: '0.25rem', cursor: 'pointer' }}
+          title="Return to list"
+        >
+          <X size={14} />
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <select 
+      className={className} 
+      value={isCustomValue ? '___CUSTOM___' : (value || '')}
+      onChange={(e) => {
+        if (e.target.value === '___CUSTOM___') {
+          setIsEditing(true);
+          onChange('');
+        } else {
+          onChange(e.target.value);
+        }
+      }}
+      style={{ margin: 0, ...style }}
+    >
+      <option value="" disabled>{placeholder}</option>
+      {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+      {isCustomValue && <option value="___CUSTOM___">{value}</option>}
+      <option value="___CUSTOM___" style={{ fontWeight: 'bold' }}>+ New Category (Edit)</option>
+    </select>
+  );
+};
+
 const App = () => {
   // ROLE STATE
   const [userRole, setUserRole] = useState(() => localStorage.getItem('nutrifix_role'));
@@ -599,17 +648,14 @@ const App = () => {
                       onChange={(e) => setTempProduct({...tempProduct, name: e.target.value})}
                     />
                     <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                      <input 
-                        list="category-list"
-                        className="edit-input-composition" 
+                      <EditableCategorySelect 
+                        className="form-select"
                         value={tempProduct?.category || ''}
-                        onChange={(e) => setTempProduct({...tempProduct, category: e.target.value})}
+                        onChange={(val) => setTempProduct({...tempProduct, category: val})}
+                        options={uniqueCategories.filter(c => c !== 'All')}
                         placeholder="Category"
-                        style={{ padding: '0.25rem 0.5rem', width: '140px', margin: 0 }}
+                        style={{ padding: '0.25rem 0.5rem', width: '160px' }}
                       />
-                      <datalist id="category-list">
-                         {uniqueCategories.filter(c => c !== 'All').map(c => <option key={c} value={c} />)}
-                      </datalist>
                       <input 
                         className="edit-input-composition" 
                         value={tempProduct?.composition || ''} 
@@ -735,7 +781,13 @@ const App = () => {
                 </div>
                 <div className="form-field">
                   <label className="form-label">Category</label>
-                  <input list="category-list" className="form-input" placeholder="Select or type..." value={newProduct.category} onChange={e => setNewProduct({...newProduct, category: e.target.value})} required/>
+                  <EditableCategorySelect 
+                    className="form-select"
+                    value={newProduct.category}
+                    onChange={(val) => setNewProduct({...newProduct, category: val})}
+                    options={uniqueCategories.filter(c => c !== 'All')}
+                    placeholder="Category"
+                  />
                 </div>
               </div>
               <div className="form-field">
