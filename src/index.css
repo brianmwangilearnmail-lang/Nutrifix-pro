@@ -791,3 +791,33 @@ header {
   transform: translateY(-2px);
   box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
 }
+
+/* ADD PRODUCT FORM MODAL */
+.modal-form-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-form-body::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-form-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-form-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.form-section-divider {
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}

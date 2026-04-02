@@ -702,7 +702,7 @@ const App = () => {
               <h2 className="product-name">Add New Catalogue Item</h2>
               <button className="close-btn" onClick={() => setShowAddModal(false)}><X size={20}/></button>
             </div>
-            <form className="p-8 space-y-6" onSubmit={handleAddProduct}>
+            <form className="modal-form-body" onSubmit={handleAddProduct}>
               <div className="form-grid">
                 <div className="form-field">
                   <label className="form-label">Brand</label>
@@ -725,7 +725,7 @@ const App = () => {
                 <input className="form-input" placeholder="Active ingredients" value={newProduct.composition} onChange={e => setNewProduct({...newProduct, composition: e.target.value})} required/>
               </div>
               
-              <div className="space-y-4 pt-4 border-t border-slate-100">
+              <div className="form-section-divider">
                  {Object.keys(newProduct.details).map(detailKey => (
                     <div key={detailKey} className="form-field">
                       <label className="form-label">{detailKey}</label>
