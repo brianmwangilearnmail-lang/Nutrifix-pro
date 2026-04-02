@@ -973,3 +973,26 @@ header {
   min-width: 60px;
   width: auto;
 }
+
+.edit-pill-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 2px;
+}
+
+.category-pill:hover .edit-pill-btn {
+  opacity: 0.6;
+}
+
+.edit-pill-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.1);
+}

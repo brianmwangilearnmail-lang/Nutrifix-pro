@@ -67,9 +67,7 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
           <span 
             key={tag}
             onClick={(e) => !isEditing && toggleTag(tag)}
-            onDoubleClick={(e) => isSelected && startEditing(e, tag)}
             className={`category-pill ${isSelected ? 'selected' : ''}`}
-            title={isSelected ? "Double click to edit" : ""}
           >
             {isEditing ? (
               <input 
@@ -82,10 +80,17 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
                 onClick={e => e.stopPropagation()}
               />
             ) : (
-              <>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 {isSelected && <span style={{marginRight: '4px'}}>✓</span>} 
-                {tag}
-              </>
+                <span className="tag-text">{tag}</span>
+                <button 
+                  className="edit-pill-btn" 
+                  onClick={(e) => startEditing(e, tag)}
+                  title="Edit tag"
+                >
+                  <Edit3 size={10} strokeWidth={3} />
+                </button>
+              </div>
             )}
           </span>
         );
