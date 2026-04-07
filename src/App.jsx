@@ -158,6 +158,17 @@ const App = () => {
     setToastType(type);
     setTimeout(() => setToastMessage(null), 3000);
   };
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (selectedProduct || showAddModal || confirmDialog) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+    
+    return () => document.body.classList.remove('no-scroll');
+  }, [selectedProduct, showAddModal, confirmDialog]);
   
   // IMAGE CACHE (Local cache for performance, but source is Supabase image_url)
   const [images, setImages] = useState({});
