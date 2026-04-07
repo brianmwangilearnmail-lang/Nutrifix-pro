@@ -56,15 +56,17 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
       const newTag = inputValue.trim();
       if (newTag && !currentTags.includes(newTag)) {
         onChange([...currentTags, newTag].join(', '));
+        setSessionTags(prev => [...new Set([...prev, newTag])]);
       }
       setInputValue('');
-      setShowAll(true); // Show all when adding new
+      setShowAll(true);
     }
   };
 
   const globalTags = options || [];
-  const allAvailableTags = [...new Set([...globalTags, ...currentTags])];
-  const displayTags = showAll ? allAvailableTags : [...new Set([...sessionTags, ...currentTags])];
+  const allAvailableTags = [...new Set([...globalTags, ...currentTags])].sort((a, b) => a.localeCompare(b));
+  const activeSessionTags = [...new Set([...sessionTags, ...currentTags])].sort((a, b) => a.localeCompare(b));
+  const displayTags = showAll ? allAvailableTags : activeSessionTags;
 
   return (
     <div className="category-pill-container" onClick={e => e.stopPropagation()}>
@@ -807,11 +809,11 @@ const App = () => {
                         options={uniqueCategories.filter(c => c !== 'All')}
                         onRenameTag={handleGlobalRename}
                       />
-                      <input 
-                        className="edit-input-composition" 
+                      <textarea 
+                        className="edit-textarea edit-input-composition" 
                         value={tempProduct?.composition || ''} 
                         onChange={(e) => setTempProduct({...tempProduct, composition: e.target.value})}
-                        style={{ flex: 1, margin: 0 }}
+                        style={{ flex: 1, margin: 0, minHeight: '60px' }}
                       />
                     </div>
                   </>
@@ -951,8 +953,8 @@ const App = () => {
                 <input className="form-input" placeholder="e.g. Zinc Citrate" value={newProduct.name} onChange={e => setNewProduct({...newProduct, name: e.target.value})} required/>
               </div>
               <div className="form-field">
-                <label className="form-label">Composition</label>
-                <input className="form-input" placeholder="Active ingredients" value={newProduct.composition} onChange={e => setNewProduct({...newProduct, composition: e.target.value})} required/>
+                <label className="form-label">Composition (Clinical Micronutrients)</label>
+                <textarea className="form-textarea" placeholder="Enter active ingredients..." value={newProduct.composition} onChange={e => setNewProduct({...newProduct, composition: e.target.value})} required style={{minHeight: '80px'}}/>
               </div>
               
               <div className="form-section-divider">
