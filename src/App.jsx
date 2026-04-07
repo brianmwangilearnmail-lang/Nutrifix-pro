@@ -7,6 +7,7 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
   const [inputValue, setInputValue] = useState('');
   const [editingTag, setEditingTag] = useState(null);
   const [editValue, setEditValue] = useState('');
+  const [showAll, setShowAll] = useState(false);
   
   const currentTags = rawValue ? rawValue.split(',').map(s => s.trim()).filter(Boolean) : [];
 
@@ -32,7 +33,6 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
         if (onRenameTag) {
           onRenameTag(oldTag, newTag);
         } else {
-          // Fallback if global rename isn't provided
           const updated = currentTags.map(t => t === oldTag ? newTag : t);
           onChange(updated.join(', '));
         }
@@ -51,11 +51,13 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
         onChange([...currentTags, newTag].join(', '));
       }
       setInputValue('');
+      setShowAll(true); // Show all when adding new
     }
   };
 
   const globalTags = options || [];
-  const displayTags = [...new Set([...globalTags, ...currentTags])];
+  const allAvailableTags = [...new Set([...globalTags, ...currentTags])];
+  const displayTags = showAll ? allAvailableTags : currentTags;
 
   return (
     <div className="category-pill-container" onClick={e => e.stopPropagation()}>
@@ -96,13 +98,33 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
         );
       })}
       
-      <input 
-        className="pill-input"
-        value={inputValue}
-        onChange={e => setInputValue(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="+ Add tag..."
-      />
+      {!showAll && (
+        <button 
+          className="show-all-btn" 
+          onClick={() => setShowAll(true)}
+        >
+          View all tags...
+        </button>
+      )}
+
+      {showAll && (
+        <>
+          <input 
+            className="pill-input"
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="+ Add tag..."
+          />
+          <button 
+            className="show-all-btn" 
+            onClick={() => setShowAll(false)}
+            style={{ marginLeft: 'auto' }}
+          >
+            Minimize
+          </button>
+        </>
+      )}
     </div>
   );
 };
