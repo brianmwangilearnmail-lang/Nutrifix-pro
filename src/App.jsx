@@ -10,12 +10,19 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
   const [showAll, setShowAll] = useState(false);
   
   const currentTags = rawValue ? rawValue.split(',').map(s => s.trim()).filter(Boolean) : [];
+  const [sessionTags, setSessionTags] = useState(currentTags);
+
+  // Sync session tags if external value changes (like on load)
+  useEffect(() => {
+    setSessionTags(prev => [...new Set([...prev, ...currentTags])]);
+  }, [rawValue]);
 
   const toggleTag = (tag) => {
     if (currentTags.includes(tag)) {
       onChange(currentTags.filter(t => t !== tag).join(', '));
     } else {
       onChange([...currentTags, tag].join(', '));
+      setSessionTags(prev => [...new Set([...prev, tag])]);
     }
   };
 
@@ -57,7 +64,7 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
 
   const globalTags = options || [];
   const allAvailableTags = [...new Set([...globalTags, ...currentTags])];
-  const displayTags = showAll ? allAvailableTags : currentTags;
+  const displayTags = showAll ? allAvailableTags : [...new Set([...sessionTags, ...currentTags])];
 
   return (
     <div className="category-pill-container" onClick={e => e.stopPropagation()}>
