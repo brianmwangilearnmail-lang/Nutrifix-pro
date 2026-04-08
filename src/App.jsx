@@ -64,7 +64,7 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
   };
 
   const globalTags = options || [];
-  const allAvailableTags = [...new Set([...globalTags, ...currentTags])].sort((a, b) => a.localeCompare(b));
+  const allAvailableTags = [...new Set([...globalTags, ...currentTags, ...sessionTags])].sort((a, b) => a.localeCompare(b));
   const activeSessionTags = [...new Set([...sessionTags, ...currentTags])].sort((a, b) => a.localeCompare(b));
   const displayTags = showAll ? allAvailableTags : activeSessionTags;
 
@@ -153,6 +153,7 @@ const App = () => {
   const [currentCategory, setCurrentCategory] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [isFormulaExpanded, setIsFormulaExpanded] = useState(false);
   const [tempProduct, setTempProduct] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
@@ -348,6 +349,65 @@ const App = () => {
     }
   };
 
+  const handleGlobalDetailRename = async (oldKey, newKey) => {
+    if (userRole !== 'admin') return;
+    if (!newKey.trim() || oldKey === newKey.trim()) return;
+
+    const trimmedNewKey = newKey.trim();
+
+    setConfirmDialog({
+      message: `Rename "${oldKey}" to "${trimmedNewKey}" across ALL products?`,
+      onConfirm: async () => {
+        try {
+          const { data: allProducts, error: fetchError } = await supabase.from('products').select('*');
+          if (fetchError) throw fetchError;
+
+          const updates = allProducts
+            .filter(p => p.details && p.details.hasOwnProperty(oldKey))
+            .map(p => {
+              const newDetails = {};
+              for (const [k, v] of Object.entries(p.details)) {
+                if (k === oldKey) {
+                  newDetails[trimmedNewKey] = v;
+                } else {
+                  newDetails[k] = v;
+                }
+              }
+              return { id: p.id, details: newDetails };
+            });
+
+          if (updates.length > 0) {
+            for (const update of updates) {
+              const { error: updateError } = await supabase
+                .from('products')
+                .update({ details: update.details })
+                .eq('id', update.id);
+              if (updateError) throw updateError;
+            }
+          }
+
+          if (tempProduct && tempProduct.details && tempProduct.details.hasOwnProperty(oldKey)) {
+             const newDetails = {};
+             for (const [k, v] of Object.entries(tempProduct.details)) {
+               if (k === oldKey) {
+                 newDetails[trimmedNewKey] = v;
+               } else {
+                 newDetails[k] = v;
+               }
+             }
+             setTempProduct({ ...tempProduct, details: newDetails });
+          }
+
+          showToast(`Renamed "${oldKey}" to "${trimmedNewKey}" across ${updates.length} products.`, 'success');
+          fetchProducts();
+        } catch (err) {
+          console.error('Rename failed:', err);
+          showToast('Failed to rename detail category globally.', 'error');
+        }
+      }
+    });
+  };
+
   const handleAddProduct = async (e) => {
     e.preventDefault();
     
@@ -407,6 +467,7 @@ const App = () => {
         .update({
           name: tempProduct.name,
           brand: tempProduct.brand,
+          category: tempProduct.category,
           composition: tempProduct.composition,
           details: tempProduct.details
         })
@@ -802,19 +863,43 @@ const App = () => {
                       value={tempProduct?.name || ''} 
                       onChange={(e) => setTempProduct({...tempProduct, name: e.target.value})}
                     />
-                    <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                      <MultiCategorySelector 
-                        rawValue={tempProduct?.category || ''}
-                        onChange={(val) => setTempProduct({...tempProduct, category: val})}
-                        options={uniqueCategories.filter(c => c !== 'All')}
-                        onRenameTag={handleGlobalRename}
-                      />
-                      <textarea 
-                        className="edit-textarea edit-input-composition" 
-                        value={tempProduct?.composition || ''} 
-                        onChange={(e) => setTempProduct({...tempProduct, composition: e.target.value})}
-                        style={{ flex: 1, margin: 0, minHeight: '60px' }}
-                      />
+                    <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem', alignItems: 'flex-start' }}>
+                      {isFormulaExpanded ? (
+                        <button 
+                          className="action-btn-cancel" 
+                          onClick={() => setIsFormulaExpanded(false)}
+                          style={{ margin: 0, whiteSpace: 'nowrap', height: 'fit-content' }}
+                        >
+                          Edit Categories
+                        </button>
+                      ) : (
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                           <MultiCategorySelector 
+                             rawValue={tempProduct?.category || ''}
+                             onChange={(val) => setTempProduct({...tempProduct, category: val})}
+                             options={uniqueCategories.filter(c => c !== 'All')}
+                             onRenameTag={handleGlobalRename}
+                           />
+                        </div>
+                      )}
+
+                      {!isFormulaExpanded ? (
+                        <button 
+                          className="action-btn-save" 
+                          onClick={() => setIsFormulaExpanded(true)}
+                          style={{ margin: 0, whiteSpace: 'nowrap', height: 'fit-content', background: '#334155', color: 'white' }}
+                        >
+                          Edit Formula
+                        </button>
+                      ) : (
+                        <textarea 
+                          autoFocus
+                          className="edit-textarea edit-input-composition" 
+                          value={tempProduct?.composition || ''} 
+                          onChange={(e) => setTempProduct({...tempProduct, composition: e.target.value})}
+                          style={{ flex: 1, margin: 0, minHeight: '80px', width: '100%' }}
+                        />
+                      )}
                     </div>
                   </>
                 ) : (
@@ -892,11 +977,22 @@ const App = () => {
               
               <div className="modal-details text-left">
                 {isEditing && tempProduct && tempProduct.details ? (
-                  Object.entries(tempProduct.details || {}).map(([key, value]) => (
-                    <div key={key} className="info-section">
-                      <label className="info-label edit-label">
-                        {key}
-                      </label>
+                  Object.entries(tempProduct.details || {}).map(([key, value], index) => (
+                    <div key={index} className="info-section">
+                      <input 
+                        className="info-label edit-label"
+                        style={{ display: 'block', width: '100%', background: 'transparent', border: '1px dashed #cbd5e1', padding: '4px', marginBottom: '4px', textTransform: 'uppercase', outline: 'none', transition: 'border-color 0.2s', color: 'var(--primary)' }}
+                        defaultValue={key}
+                        placeholder="Detail Category Name"
+                        title="Press Enter to rename sitewide"
+                        onKeyDown={(e) => {
+                           if (e.key === 'Enter') {
+                             e.preventDefault();
+                             handleGlobalDetailRename(key, e.target.value);
+                             e.target.blur();
+                           }
+                        }}
+                      />
                       <textarea 
                         className="edit-textarea"
                         value={value || ''}
@@ -908,8 +1004,8 @@ const App = () => {
                     </div>
                   ))
                 ) : (
-                  Object.entries(selectedProduct?.details || {}).map(([key, value]) => (
-                    <div key={key} className="info-section">
+                  Object.entries(selectedProduct?.details || {}).map(([key, value], index) => (
+                    <div key={index} className="info-section">
                       <div className="info-label">{key}</div>
                       <div className="info-value">{value}</div>
                     </div>
