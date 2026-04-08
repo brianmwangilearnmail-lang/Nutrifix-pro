@@ -69,7 +69,7 @@ const MultiCategorySelector = ({ rawValue, options, onChange, onRenameTag }) => 
   const displayTags = showAll ? allAvailableTags : activeSessionTags;
 
   return (
-    <div className="category-pill-container" onClick={e => e.stopPropagation()}>
+    <div className="category-pill-container" style={{ maxHeight: '200px', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
       {displayTags.map(tag => {
         const isSelected = currentTags.includes(tag);
         const isEditing = editingTag === tag;
@@ -981,7 +981,7 @@ const App = () => {
                     <div key={index} className="info-section">
                       <input 
                         className="info-label edit-label"
-                        style={{ display: 'block', width: '100%', background: 'transparent', border: '1px dashed #cbd5e1', padding: '4px', marginBottom: '4px', textTransform: 'uppercase', outline: 'none', transition: 'border-color 0.2s', color: 'var(--primary)' }}
+                        style={{ display: 'block', width: '100%', boxSizing: 'border-box', background: 'transparent', border: '1px dashed #cbd5e1', padding: '6px', marginBottom: '4px', textTransform: 'uppercase', outline: 'none', transition: 'border-color 0.2s', color: 'var(--primary)', borderRadius: '4px' }}
                         defaultValue={key}
                         placeholder="Detail Category Name"
                         title="Press Enter to rename sitewide"
